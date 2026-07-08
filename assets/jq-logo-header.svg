@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 140" role="img" aria-labelledby="title desc">
+  <title id="title">Jose Quesada Data Engineering and Analytics</title>
+  <desc id="desc">Minimal transparent logo for Jose Quesada</desc>
+  <defs>
+    <style>
+      .navy{fill:#f5f8ff}
+      .muted{fill:#b5c2d6}
+      .accent{fill:#52d5ff}
+      .line{stroke:#52d5ff;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;fill:none}
+      .divider{stroke:#52d5ff;stroke-width:2.5;opacity:.9}
+    </style>
+  </defs>
+
+  <g transform="translate(8 16)">
+    <text x="0" y="82" class="navy" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="82" font-weight="850" letter-spacing="-8">JQ</text>
+    <polyline class="line" points="105,66 119,53 135,59 151,43"/>
+    <circle cx="105" cy="66" r="5" class="accent"/>
+    <circle cx="119" cy="53" r="5" class="accent"/>
+    <circle cx="135" cy="59" r="5" class="accent"/>
+    <circle cx="151" cy="43" r="5" class="accent"/>
+  </g>
+
+  <line x1="210" y1="30" x2="210" y2="112" class="divider"/>
+
+  <text x="238" y="68" class="navy" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="48" font-weight="780" letter-spacing="-1.8">Jose Quesada</text>
+  <text x="242" y="104" class="muted" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="18" font-weight="650" letter-spacing="5">DATA ENGINEERING</text>
+  <text x="460" y="104" class="accent" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="18" font-weight="750" letter-spacing="5">&amp; ANALYTICS</text>
+</svg>

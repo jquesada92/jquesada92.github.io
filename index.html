@@ -6,6 +6,7 @@
   <title>José Quesada Ortiz | Data Engineering & Analytics Services</title>
   <meta name="description" content="Bilingual landing page for José Quesada Ortiz. Data architecture consulting, data ingestion and integration, ETL/ELT pipelines, SQL, pandas, Polars, medallion architecture, data warehouse implementation, data analysis, analytics engineering, dashboards, Databricks, Azure, Microsoft Fabric, Power BI, Power Automate, WMS, ERP, web scraping, spreadsheets, forms, APIs, curated GitHub projects, embedded analytics dashboards and a professional data platform modernization success case." />
   <meta name="author" content="José Quesada Ortiz" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <style>
     :root {
       --bg: #07111f;
@@ -57,7 +58,7 @@
     }
 
     .nav {
-      min-height: 72px;
+      min-height: 64px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -67,23 +68,34 @@
     .brand {
       display: inline-flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
       font-weight: 850;
       letter-spacing: -0.02em;
       min-width: 0;
     }
 
-    .brand-mark {
-      width: 40px;
-      height: 40px;
-      flex: 0 0 40px;
-      border-radius: 14px;
-      display: grid;
-      place-items: center;
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      color: #06101e;
-      font-weight: 950;
-      box-shadow: 0 12px 30px rgba(82,213,255,.18);
+    .brand-logo-shell {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      border-radius: 0;
+      padding: 0;
+      border: 0;
+      box-shadow: none;
+      flex: 0 0 auto;
+    }
+
+    .brand-logo {
+      display: block;
+      width: 174px;
+      height: auto;
+      max-height: 38px;
+      object-fit: contain;
+    }
+
+    .brand-text {
+      display: none;
     }
 
     .nav-right {
@@ -152,8 +164,7 @@
       box-shadow: 0 16px 36px rgba(82,213,255,.18);
     }
     .btn-secondary { background: rgba(255,255,255,.06); color: var(--text); }
-
-    .hero { padding: 78px 0 54px; }
+.hero { padding: 78px 0 54px; }
     .hero-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -746,7 +757,14 @@
       .btn { width: 100%; }
       .hero-actions { width: 100%; }
       .nav-right { gap: 10px; }
-      .brand span:last-child { display: none; }
+      .brand-text { display: none; }
+      .brand-logo {
+      display: block;
+      width: 174px;
+      height: auto;
+      max-height: 38px;
+      object-fit: contain;
+    }
     }
 
     @media print {
@@ -762,14 +780,15 @@
   <header>
     <div class="container nav">
       <a class="brand" href="#top" aria-label="Go to top">
-        <span class="brand-mark">JQ</span>
-        <span>José Quesada Ortiz</span>
+        <span class="brand-logo-shell"><img class="brand-logo" src="assets/jq-logo-header.svg" alt="Jose Quesada Data Engineering & Analytics logo" /></span>
+        <span class="brand-text">José Quesada Ortiz</span>
       </a>
       <div class="nav-right">
         <nav class="nav-links" aria-label="Primary navigation">
           <a href="#services" data-i18n="navServices">Servicios</a>
           <a href="#education" data-i18n="navEducation">Estudios</a>
           <a href="#portfolio" data-i18n="navPortfolio">Portafolio</a>
+          <a href="cv.html" data-i18n="navCV">CV</a>
           <a href="#contact" data-i18n="navContact">Contacto</a>
         </nav>
         <div class="lang-switch" aria-label="Language selector">
@@ -785,13 +804,14 @@
       <section class="hero">
         <div class="container hero-grid">
           <div class="hero-copy">
-            <div class="eyebrow"><span class="dot"></span> Ingeniería de datos, analítica e integración de sistemas</div>
+<div class="eyebrow"><span class="dot"></span> Ingeniería de datos, analítica e integración de sistemas</div>
             <h1>Construyo plataformas de datos confiables para equipos que necesitan <span class="gradient-text">claridad, automatización y mejores decisiones</span>.</h1>
             <p class="lead">Soy José Quesada Ortiz, ingeniero industrial convertido en Data & Analytics Engineer. Mi enfoque combina pensamiento de procesos, ingeniería de datos y analítica aplicada.</p>
             <p class="hero-footnote"><strong>Lo que me motiva:</strong> entender cómo trabaja realmente una operación y transformar datos dispersos en soluciones que ahorran tiempo, reducen errores y ayudan al negocio a actuar con confianza.</p>
             <div class="hero-actions">
               <a class="btn btn-primary" href="mailto:jaquesada92@outlook.com?subject=Consulta%20sobre%20servicios%20de%20datos">Hablemos de tu proyecto</a>
               <a class="btn btn-secondary" href="https://www.linkedin.com/in/jquesada92/" target="_blank" rel="noopener noreferrer">Ver LinkedIn</a>
+              <a class="btn btn-secondary" href="cv.html">Ver CV</a>
             </div>
           </div>
         </div>
@@ -963,13 +983,14 @@
       <section class="hero">
         <div class="container hero-grid">
           <div class="hero-copy">
-            <div class="eyebrow"><span class="dot"></span> Data engineering, analytics and system integration</div>
+<div class="eyebrow"><span class="dot"></span> Data engineering, analytics and system integration</div>
             <h1>I build reliable data platforms for teams that need <span class="gradient-text">clarity, automation and better decisions</span>.</h1>
             <p class="lead">I’m José Quesada Ortiz, an industrial engineer turned Data & Analytics Engineer. My approach combines process thinking, data engineering and applied analytics.</p>
             <p class="hero-footnote"><strong>What drives me:</strong> understanding how an operation really works and turning scattered data into solutions that save time, reduce errors and help the business act with confidence.</p>
             <div class="hero-actions">
               <a class="btn btn-primary" href="mailto:jaquesada92@outlook.com?subject=Data%20services%20inquiry">Let’s discuss your project</a>
               <a class="btn btn-secondary" href="https://www.linkedin.com/in/jquesada92/" target="_blank" rel="noopener noreferrer">View LinkedIn</a>
+              <a class="btn btn-secondary" href="cv.html">View CV</a>
             </div>
           </div>
         </div>

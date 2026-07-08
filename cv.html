@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>José Quesada Ortiz | CV</title>
+  <meta name="description" content="CV bilingüe de José Quesada Ortiz: experiencia laboral, estudios, certificaciones y herramientas en data engineering, analytics, BI, supply chain e integración de sistemas." />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <style>
+    :root {
+      --bg: #07111f;
+      --paper: #ffffff;
+      --ink: #172033;
+      --muted: #5f6b7f;
+      --line: #d9dee8;
+      --accent: #0ea5c6;
+      --soft: #f4f7fb;
+      --max: 980px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.5;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .topbar {
+      background: #07111f;
+      color: #f5f8ff;
+      border-bottom: 1px solid rgba(255,255,255,.12);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .topbar-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 14px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand img {
+      width: 150px;
+      height: auto;
+      max-height: 34px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    button, .nav-btn {
+      border: 1px solid rgba(255,255,255,.22);
+      background: rgba(255,255,255,.08);
+      color: #f5f8ff;
+      border-radius: 999px;
+      padding: 9px 13px;
+      font-weight: 750;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    button.active {
+      background: #52d5ff;
+      color: #06101e;
+      border-color: #52d5ff;
+    }
+
+    .page {
+      max-width: var(--max);
+      margin: 36px auto;
+      padding: 0 24px;
+    }
+
+    .paper {
+      background: var(--paper);
+      border-radius: 12px;
+      box-shadow: 0 24px 80px rgba(0,0,0,.24);
+      padding: 44px;
+    }
+
+    .cv-header {
+      border-bottom: 2px solid var(--line);
+      padding-bottom: 22px;
+      margin-bottom: 26px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 20px;
+      align-items: start;
+    }
+
+    h1 {
+      margin: 0 0 6px;
+      font-size: 34px;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+    }
+
+    .headline {
+      margin: 0 0 12px;
+      color: var(--accent);
+      font-weight: 750;
+      font-size: 17px;
+    }
+
+    .summary {
+      margin: 0;
+      color: var(--muted);
+      max-width: 720px;
+    }
+
+    .contact {
+      text-align: right;
+      font-size: 14px;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .contact a {
+      color: var(--ink);
+      font-weight: 650;
+    }
+
+    section {
+      margin-top: 25px;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 15px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--accent);
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 8px;
+    }
+
+    h3 {
+      margin: 0 0 4px;
+      font-size: 16.5px;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+    }
+
+    .role {
+      margin-bottom: 18px;
+      break-inside: avoid;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    ul {
+      margin: 8px 0 0;
+      padding-left: 20px;
+    }
+
+    li {
+      margin: 4px 0;
+    }
+
+    .skill-grid {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 8px 18px;
+      margin-top: 8px;
+    }
+
+    .skill-label {
+      font-weight: 750;
+      color: var(--ink);
+    }
+
+    .skill-value {
+      color: var(--muted);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px 28px;
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .pill-list li {
+      margin: 0;
+      background: var(--soft);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 13px;
+      color: #243047;
+    }
+
+    .lang-content { display: none; }
+    .lang-content.active { display: block; }
+
+    .refs {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .ref-card {
+      background: var(--soft);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 12px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .ref-card strong {
+      display: block;
+      color: var(--ink);
+      font-size: 14px;
+      margin-bottom: 3px;
+    }
+
+    @media (max-width: 780px) {
+      .topbar-inner { align-items: flex-start; flex-direction: column; }
+      .actions { justify-content: flex-start; }
+      .paper { padding: 28px; }
+      .cv-header { grid-template-columns: 1fr; }
+      .contact { text-align: left; white-space: normal; }
+      .grid, .refs { grid-template-columns: 1fr; }
+      .skill-grid { grid-template-columns: 1fr; }
+      h1 { font-size: 29px; }
+    }
+
+    @media print {
+      body { background: #fff; }
+      .topbar { display: none; }
+      .page { max-width: 100%; margin: 0; padding: 0; }
+      .paper {
+        box-shadow: none;
+        border-radius: 0;
+        padding: 22px 28px;
+      }
+      section { margin-top: 18px; }
+      h1 { font-size: 28px; }
+      h2 { font-size: 12.5px; margin-bottom: 8px; }
+      h3 { font-size: 14.5px; }
+      .summary, body { font-size: 12px; }
+      .meta, .contact, .pill-list li, .ref-card { font-size: 11px; }
+      .pill-list li { padding: 3px 7px; }
+      .role { margin-bottom: 11px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html" aria-label="Back to landing page">
+        <img src="assets/jq-logo-header.svg" alt="Jose Quesada logo" />
+      </a>
+      <div class="actions">
+        <a class="nav-btn" href="index.html">Landing</a>
+        <button type="button" class="active" data-lang="es">ES</button>
+        <button type="button" data-lang="en">EN</button>
+        <button type="button" onclick="window.print()">Exportar PDF</button>
+      </div>
+    </div>
+  </div>
+
+  <main class="page">
+    <article class="paper">
+
+      <div class="lang-content active" data-lang-content="es">
+        <header class="cv-header">
+          <div>
+            <h1>José Quesada Ortiz</h1>
+            <p class="headline">Data & Analytics Professional | Data Engineering | BI | Supply Chain Analytics</p>
+            <p class="summary">Ingeniero Industrial y profesional de datos/analítica enfocado en usar datos para resolver problemas de negocio, mejorar la toma de decisiones y generar impacto operativo medible. Mi experiencia combina supply chain management, pricing, inventario, facturación y analítica de productos, conectando contexto de negocio con ejecución técnica y analítica.</p>
+          </div>
+          <div class="contact">
+            <div>Panama City, Panama</div>
+            <div>+507 6780-6830</div>
+            <div><a href="mailto:jaquesada92@outlook.com">jaquesada92@outlook.com</a></div>
+            <div><a href="https://www.linkedin.com/in/jquesada92/">LinkedIn</a> · <a href="https://github.com/jquesada92">GitHub</a></div>
+          </div>
+        </header>
+
+        <section>
+          <h2>Habilidades técnicas</h2>
+          <div class="skill-grid">
+            <div class="skill-label">Analytics & Coding</div>
+            <div class="skill-value">Python, Pandas, SQL, PySpark, R, tidyverse, Excel</div>
+            <div class="skill-label">Data Platforms</div>
+            <div class="skill-value">Databricks, Microsoft Fabric, Azure Data Factory, BigQuery, AWS Athena, AWS Glue</div>
+            <div class="skill-label">BI & Visualization</div>
+            <div class="skill-value">Power BI, Tableau, Plotly</div>
+          </div>
+        </section>
+
+        <section>
+          <h2>Certificaciones</h2>
+          <ul>
+            <li>Databricks Certified Data Engineer Associate</li>
+            <li>Databricks Certified Associate Developer for Apache Spark</li>
+            <li>Microsoft Certified: Fabric Analytics Engineer Associate (DP-600)</li>
+            <li>Microsoft Certified: Azure Data Fundamentals</li>
+            <li>IBM Data Engineering Professional Certificate</li>
+            <li>Data Science Professional Certificate</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Experiencia profesional</h2>
+
+          <div class="role">
+            <h3>Consultant | Data Engineer — CGI</h3>
+            <div class="meta">January 2023 – Present | Remote / Panama</div>
+            <ul>
+              <li>Construcción y mantenimiento de productos de datos analíticos para pricing, inventario, facturación, supply chain y product planning usando Databricks, PySpark, SQL, Delta Lake, Azure Data Factory y Azure SQL.</li>
+              <li>Traducción de reglas complejas de ERP/WMS/e-commerce en datasets reutilizables para reporting, analítica y casos de uso downstream.</li>
+              <li>Desarrollo y estandarización de transformaciones SQL/PySpark para listas de precios, descuentos, VAT/tax treatment, gross/net values, cantidades válidas y métricas de líneas de factura/orden.</li>
+              <li>Reconciliación de datos entre Infor M3, Compass, Azure SQL, Databricks y Power BI para investigar discrepancias, validar conteos y mejorar la confianza en reportes.</li>
+              <li>Colaboración con stakeholders de planning, finance, merchandising, BI, data engineering y AI para definir métricas, resolver issues de datos y comunicar causas raíz.</li>
+            </ul>
+          </div>
+
+          <div class="role">
+            <h3>Associate Consultant | Data Analyst — CGI</h3>
+            <div class="meta">January 2022 – January 2023 | Remote / Panama</div>
+            <ul>
+              <li>Soporte a flujos de analítica y reporting usando SQL, Python y herramientas BI, convirtiendo preguntas operativas en datasets estructurados, métricas y dashboards.</li>
+              <li>Preparación de validaciones de datos, reportes y análisis para usuarios de negocio, combinando ejecución técnica con comunicación hacia stakeholders.</li>
+            </ul>
+          </div>
+
+          <div class="role">
+            <h3>Continuous Improvement Coordinator | Data Analysis & Process Automation — J. Cain & Co.</h3>
+            <div class="meta">October 2019 – October 2021 | Panama</div>
+            <ul>
+              <li>Trabajo con datos de productos farmacéuticos, facturación y logística; extracción, limpieza, validación y estandarización desde emails/PDFs de facturas, formularios Excel y fuentes operativas.</li>
+              <li>Construcción de automatizaciones, dashboards y reportes recurrentes con Python/Pandas/SQL, integrando bases de datos, CSV/Excel y fuentes operativas.</li>
+              <li>Implementación de controles de calidad para campos faltantes, inconsistencias de formato, duplicados y errores de captura.</li>
+              <li>Presentación de hallazgos y recomendaciones de mejora a líderes operativos, conectando calidad de datos, productividad y oportunidades de ahorro con planes prácticos.</li>
+            </ul>
+          </div>
+
+          <div class="role">
+            <h3>Lead Consultant — J. Cain Logistics / Bringmedata Consulting</h3>
+            <div class="meta">July 2018 – October 2019 | Panama</div>
+            <ul>
+              <li>Liderazgo de iniciativas de consultoría analítica con datos de productos farmacéuticos, inventario, compras y distribución para mejorar visibilidad de stock y desempeño operativo.</li>
+              <li>Desarrollo de análisis de forecasting de demanda con Python y modelos de machine learning, contribuyendo a una reducción de 60% en overstock y soportando el resultado con dashboards en Tableau.</li>
+              <li>Construcción de workflow de tracking de envíos leyendo guías desde CSV, consultando APIs de DHL, almacenando JSON en Google Cloud Storage, actualizando BigQuery y alimentando vistas en Tableau.</li>
+            </ul>
+          </div>
+
+          <div class="role">
+            <h3>Process Engineer — J. Cain & Co. / Logistics Services Panama</h3>
+            <div class="meta">May 2016 – July 2018 | Colon, Panama</div>
+            <ul>
+              <li>Análisis de productividad logística, throughput y datos de procesos para identificar restricciones de capacidad, recursos subutilizados y oportunidades de mejora.</li>
+              <li>Creación de reportes y análisis operativos para apoyar la gestión de productividad e iniciativas de mejora continua en operaciones de warehouse/logística.</li>
+            </ul>
+          </div>
+
+          <div class="role">
+            <h3>Price Analyst — Viveres Unidos S.A.</h3>
+            <div class="meta">July 2015 – May 2016 | Panama</div>
+            <ul>
+              <li>Análisis de pricing, costos, márgenes, rentabilidad, inventario y producción para materias primas, productos terminados, lanzamientos y promociones.</li>
+              <li>Soporte a decisiones de precios y reportes de costos mediante validación de datos fuente y preparación de análisis para stakeholders.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <h2>Educación</h2>
+          <div class="grid">
+            <div>
+              <h3>Universidad Latina de Panamá</h3>
+              <div class="meta">Master’s degree, Logistics, Materials, and Supply Chain Management | 2014 – 2015</div>
+            </div>
+            <div>
+              <h3>Universidad Católica Santa María La Antigua</h3>
+              <div class="meta">Engineer’s degree, Engineering / Industrial Management | 2009 – 2014</div>
+            </div>
+            <div>
+              <h3>Quality Leadership University</h3>
+              <div class="meta">Diploma of Education, Big Data & Analytics | 2018</div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2>Referencias profesionales</h2>
+          <div class="refs">
+            <div class="ref-card"><strong>Aldo Cano</strong>CGI Senior Consultant<br>cel: +507 6420-5133<br>email: aldo.cano29@gmail.com</div>
+            <div class="ref-card"><strong>Armando de Icaza</strong>J. Cain Logistics VP Opex<br>cel: +507 6450-1588<br>email: adeicaza@jcain.com</div>
+          </div>
+        </section>
+      </div>
+
+      <div class="lang-content" data-lang-content="en">
+        <header class="cv-header">
+          <div>
+            <h1>José Quesada Ortiz</h1>
+            <p class="headline">Data & Analytics Professional | Data Engineering | BI | Supply Chain Analytics</p>
+            <p class="summary">Industrial Engineer and data/analytics professional focused on using data to solve business problems, improve decision-making and support measurable operational impact. My experience combines supply chain management, pricing, inventory, invoice and product analytics, allowing me to connect business context with strong analytical execution.</p>
+          </div>
+          <div class="contact">
+            <div>Panama City, Panama</div>
+            <div>+507 6780-6830</div>
+            <div><a href="mailto:jaquesada92@outlook.com">jaquesada92@outlook.com</a></div>
+            <div><a href="https://www.linkedin.com/in/jquesada92/">LinkedIn</a> · <a href="https://github.com/jquesada92">GitHub</a></div>
+          </div>
+        </header>
+
+        <section>
+          <h2>Technical skills</h2>
+          <div class="skill-grid">
+            <div class="skill-label">Analytics & Coding</div>
+            <div class="skill-value">Python, Pandas, SQL, PySpark, R, tidyverse, Excel</div>
+            <div class="skill-label">Data Platforms</div>
+            <div class="skill-value">Databricks, Microsoft Fabric, Azure Data Factory, BigQuery, AWS Athena, AWS Glue</div>
+            <div class="skill-label">BI & Visualization</div>
+            <div class="skill-value">Power BI, Tableau, Plotly</div>
+          </div>
+        </section>
+
+        <section>
+          <h2>Certifications</h2>
+          <ul>
+            <li>Databricks Certified Data Engineer Associate</li>
+            <li>Databricks Certified Associate Developer for Apache Spark</li>
+            <li>Microsoft Certified: Fabric Analytics Engineer Associate (DP-600)</li>
+            <li>Microsoft Certified: Azure Data Fundamentals</li>
+            <li>IBM Data Engineering Professional Certificate</li>
+            <li>Data Science Professional Certificate</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Professional experience</h2>
+
+          <div class="role">
+            <h3>Consultant | Data Engineer — CGI</h3>
+            <div class="meta">January 2023 – Present | Remote / Panama</div>
+            <ul>
+              <li>Build and maintain analytical data products for pricing, inventory, invoices, supply chain and product planning using Databricks, PySpark, SQL, Delta Lake, Azure Data Factory and Azure SQL.</li>
+              <li>Translate complex ERP/WMS/e-commerce business rules into reusable datasets for reporting, analytics and downstream business use cases.</li>
+              <li>Develop and standardize SQL/PySpark transformations for price lists, discounts, VAT/tax treatment, gross/net values, valid quantities and invoice/order line metrics.</li>
+              <li>Reconcile data across Infor M3, Compass, Azure SQL, Databricks and Power BI to investigate discrepancies, validate counts and improve trust in reporting outputs.</li>
+              <li>Collaborate with planning, finance, merchandising, BI, data engineering and AI-related stakeholders to define metrics, troubleshoot data issues and communicate root causes.</li>
+            </ul>
+          </div>
+
+          <div class="role">
+            <h3>Associate Consultant | Data Analyst — CGI</h3>
+            <div class="meta">January 2022 – January 2023 | Remote / Panama</div>
+            <ul>
+              <li>Supported analytics and reporting workflows using SQL, Python and BI tooling, turning operational questions into structured datasets, metrics and dashboards.</li>
+              <li>Prepared data validation, reporting and analysis outputs for business users, combining technical execution with stakeholder-facing communication.</li>
+            </ul>
+          </div>
+
+          <div class="role">
+            <h3>Continuous Improvement Coordinator | Data Analysis & Process Automation — J. Cain & Co.</h3>
+            <div class="meta">October 2019 – October 2021 | Panama</div>
+            <ul>
+              <li>Worked with pharmaceutical product, invoice and logistics data; extracted, cleaned, validated and standardized information from email/PDF invoice documents, Excel forms and operational sources.</li>
+              <li>Built Python/Pandas/SQL automations, dashboards and recurring reports integrating databases, CSV/Excel files and operational data sources.</li>
+              <li>Implemented quality checks for missing fields, formatting inconsistencies, duplicate records and data-entry issues, improving reporting reliability.</li>
+              <li>Presented findings and process-improvement recommendations to operational leaders, connecting data quality, productivity and cost-saving opportunities with practical execution plans.</li>
+            </ul>
+          </div>
+
+          <div class="role">
+            <h3>Lead Consultant — J. Cain Logistics / Bringmedata Consulting</h3>
+            <div class="meta">July 2018 – October 2019 | Panama</div>
+            <ul>
+              <li>Led analytics consulting initiatives involving pharmaceutical product, inventory, purchasing and distribution data, helping improve stock visibility and operational performance.</li>
+              <li>Developed demand forecasting analysis using Python and machine learning models, contributing to a 60% reduction in overstock and supporting the result with Tableau dashboards.</li>
+              <li>Built a shipment tracking workflow that read guide data from CSV files, queried DHL APIs, stored JSON results in Google Cloud Storage, updated BigQuery tables and powered Tableau views.</li>
+            </ul>
+          </div>
+
+          <div class="role">
+            <h3>Process Engineer — J. Cain & Co. / Logistics Services Panama</h3>
+            <div class="meta">May 2016 – July 2018 | Colon, Panama</div>
+            <ul>
+              <li>Analyzed logistics productivity, throughput and process data to identify capacity constraints, underused resources and workflow-improvement opportunities.</li>
+              <li>Created operational reports and analyses to support productivity management and continuous-improvement initiatives in warehouse/logistics operations.</li>
+            </ul>
+          </div>
+
+          <div class="role">
+            <h3>Price Analyst — Viveres Unidos S.A.</h3>
+            <div class="meta">July 2015 – May 2016 | Panama</div>
+            <ul>
+              <li>Analyzed pricing, cost, margin, profitability, inventory and production data for raw materials, finished products, new product launches and promotions.</li>
+              <li>Supported pricing decisions and cost reporting by validating source data and preparing business analysis for stakeholders.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <h2>Education</h2>
+          <div class="grid">
+            <div>
+              <h3>Universidad Latina de Panamá</h3>
+              <div class="meta">Master’s degree, Logistics, Materials, and Supply Chain Management | 2014 – 2015</div>
+            </div>
+            <div>
+              <h3>Universidad Católica Santa María La Antigua</h3>
+              <div class="meta">Engineer’s degree, Engineering / Industrial Management | 2009 – 2014</div>
+            </div>
+            <div>
+              <h3>Quality Leadership University</h3>
+              <div class="meta">Diploma of Education, Big Data & Analytics | 2018</div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2>Professional references</h2>
+          <div class="refs">
+            <div class="ref-card"><strong>Aldo Cano</strong>CGI Senior Consultant<br>cel: +507 6420-5133<br>email: aldo.cano29@gmail.com</div>
+            <div class="ref-card"><strong>Armando de Icaza</strong>J. Cain Logistics VP Opex<br>cel: +507 6450-1588<br>email: adeicaza@jcain.com</div>
+          </div>
+        </section>
+      </div>
+
+    </article>
+  </main>
+
+  <script>
+    const buttons = document.querySelectorAll("[data-lang]");
+    const contents = document.querySelectorAll("[data-lang-content]");
+
+    function setLang(lang) {
+      buttons.forEach(btn => btn.classList.toggle("active", btn.dataset.lang === lang));
+      contents.forEach(section => section.classList.toggle("active", section.dataset.langContent === lang));
+      document.documentElement.lang = lang;
+    }
+
+    buttons.forEach(button => {
+      button.addEventListener("click", () => setLang(button.dataset.lang));
+    });
+  </script>
+</body>
+</html>
