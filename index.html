@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>José Quesada Ortiz | Data Engineering & Analytics Services</title>
+  <meta name="description" content="Bilingual landing page for José Quesada Ortiz. Data architecture consulting, data ingestion and integration, ETL/ELT pipelines, SQL, pandas, Polars, medallion architecture, data warehouse implementation, data analysis, analytics engineering, dashboards, Databricks, Azure, Microsoft Fabric, Power BI, Power Automate, WMS, ERP, web scraping, spreadsheets, forms, APIs, curated GitHub projects, embedded analytics dashboards and a professional data platform modernization success case." />
+  <meta name="author" content="José Quesada Ortiz" />
+  <style>
+    :root {
+      --bg: #07111f;
+      --bg-soft: #0d1b2f;
+      --bg-softer: #102039;
+      --card: rgba(255,255,255,0.075);
+      --card-strong: rgba(255,255,255,0.115);
+      --text: #f5f8ff;
+      --muted: #b5c2d6;
+      --line: rgba(255,255,255,0.14);
+      --accent: #52d5ff;
+      --accent-2: #8b7dff;
+      --accent-3: #6fffc3;
+      --shadow: 0 24px 70px rgba(0,0,0,.35);
+      --radius: 24px;
+      --max: 1160px;
+      --section-y: 72px;
+      --gap: 22px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(82,213,255,.22), transparent 32rem),
+        radial-gradient(circle at 80% 10%, rgba(139,125,255,.23), transparent 30rem),
+        radial-gradient(circle at 50% 100%, rgba(111,255,195,.12), transparent 35rem),
+        var(--bg);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    .container {
+      width: min(var(--max), calc(100% - 48px));
+      margin-inline: auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(7, 17, 31, .82);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      min-height: 72px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 850;
+      letter-spacing: -0.02em;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      flex: 0 0 40px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #06101e;
+      font-weight: 950;
+      box-shadow: 0 12px 30px rgba(82,213,255,.18);
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 18px;
+      flex: 0 0 auto;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    .lang-switch {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.06);
+      border-radius: 999px;
+    }
+
+    .lang-switch button {
+      border: 0;
+      border-radius: 999px;
+      padding: 8px 10px;
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+      font-weight: 800;
+      letter-spacing: .02em;
+    }
+
+    .lang-switch button.active {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #06101e;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 46px;
+      border: 1px solid var(--line);
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-weight: 780;
+      transition: transform .2s ease, border-color .2s ease, background .2s ease;
+      white-space: nowrap;
+    }
+
+    .btn:hover { transform: translateY(-2px); border-color: rgba(255,255,255,.34); }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #06101e;
+      border-color: transparent;
+      box-shadow: 0 16px 36px rgba(82,213,255,.18);
+    }
+    .btn-secondary { background: rgba(255,255,255,.06); color: var(--text); }
+
+    .hero { padding: 78px 0 54px; }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 22px;
+      align-items: start;
+      max-width: 980px;
+    }
+
+    .hero-copy {
+      max-width: 960px;
+    }
+
+    .hero-footnote {
+      margin: -12px 0 28px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.65;
+      max-width: 760px;
+    }
+
+    .hero-footnote strong {
+      color: var(--text);
+      font-weight: 850;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      min-height: 40px;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      background: rgba(255,255,255,.05);
+      font-size: 14px;
+      margin-bottom: 22px;
+    }
+
+    .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--accent-3);
+      box-shadow: 0 0 18px var(--accent-3);
+      flex: 0 0 auto;
+    }
+
+    h1, h2, h3 { line-height: 1.08; margin: 0; letter-spacing: -.045em; }
+    h1 { font-size: clamp(40px, 6.7vw, 76px); max-width: 950px; }
+    h2 { font-size: clamp(30px, 4vw, 48px); margin-bottom: 16px; }
+    h3 { font-size: 21px; margin-bottom: 10px; }
+
+    .gradient-text {
+      background: linear-gradient(135deg, var(--accent), var(--accent-3));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .lead {
+      color: var(--muted);
+      font-size: clamp(18px, 2vw, 22px);
+      max-width: 820px;
+      margin: 24px 0 30px;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .hero-card {
+      position: relative;
+      min-height: 100%;
+      padding: 28px;
+      background: linear-gradient(180deg, var(--card-strong), rgba(255,255,255,.045));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      background: radial-gradient(circle at top right, rgba(82,213,255,.18), transparent 16rem);
+      pointer-events: none;
+    }
+
+    .profile-title { position: relative; margin-bottom: 22px; }
+    .profile-name { font-size: 24px; font-weight: 900; margin-bottom: 6px; }
+    .profile-role { color: var(--muted); }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      position: relative;
+    }
+
+    .stat {
+      min-height: 130px;
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,.07);
+      border: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+    .stat strong { display:block; font-size: 24px; color: var(--accent); line-height: 1.05; margin-bottom: 8px; }
+    .stat span { color: var(--muted); font-size: 13px; line-height: 1.45; }
+
+    section { padding: var(--section-y) 0; }
+    section + section { border-top: 1px solid rgba(255,255,255,.045); }
+
+    .section-head {
+      width: 100%;
+      max-width: 860px;
+      margin-bottom: 32px;
+      display: block;
+    }
+    .section-head p {
+      color: var(--muted);
+      max-width: 760px;
+      margin: 0;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: var(--gap);
+      align-items: stretch;
+    }
+
+    .card {
+      width: 100%;
+      min-height: 100%;
+      padding: 24px;
+      border-radius: var(--radius);
+      background: var(--card);
+      border: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .cards > .card { min-height: 270px; }
+    .card p, .muted { color: var(--muted); margin: 0; }
+    .card h3 { min-height: 48px; }
+
+    .icon {
+      width: 42px;
+      height: 42px;
+      flex: 0 0 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      margin-bottom: 16px;
+      background: rgba(82,213,255,.12);
+      border: 1px solid rgba(82,213,255,.24);
+      color: var(--accent);
+      font-weight: 950;
+      line-height: 1;
+    }
+
+
+
+    /* Services cards without numeric badges */
+    #services .cards > .card,
+    #services-en .cards > .card {
+      min-height: 230px;
+      justify-content: flex-start;
+    }
+
+    #services .card h3,
+    #services-en .card h3 {
+      margin-top: 0;
+    }
+
+    #education .cards > .card,
+    #education-en .cards > .card {
+      min-height: 230px;
+      padding-top: 26px;
+    }
+
+    #education .card h3,
+    #education-en .card h3 {
+      min-height: auto;
+      margin-top: 0;
+      margin-bottom: 22px;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: minmax(0, .98fr) minmax(0, 1.02fr);
+      gap: var(--gap);
+      align-items: stretch;
+    }
+
+    .panel {
+      min-height: 100%;
+      padding: 30px;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.09), rgba(255,255,255,.045));
+      box-shadow: var(--shadow);
+    }
+
+    .panel h2, .highlight h2 { max-width: 700px; }
+
+    .list {
+      display: grid;
+      gap: 12px;
+      margin: 22px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+    .list li {
+      display: grid;
+      grid-template-columns: 26px minmax(0, 1fr);
+      gap: 10px;
+      color: var(--muted);
+      align-items: start;
+    }
+    .check {
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      color: #07111f;
+      background: var(--accent-3);
+      font-size: 13px;
+      font-weight: 950;
+      margin-top: 2px;
+    }
+
+    .timeline {
+      min-height: 100%;
+      display: grid;
+      grid-template-rows: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 112px minmax(0, 1fr);
+      gap: 18px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: rgba(255,255,255,.055);
+      align-items: start;
+    }
+
+    .timeline-date {
+      color: var(--accent);
+      font-weight: 850;
+      font-size: 14px;
+      line-height: 1.2;
+    }
+
+    .timeline-item h3 { min-height: auto; }
+    .timeline-item p { margin: 6px 0 0; color: var(--muted); }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+      align-items: center;
+    }
+    .chip {
+      padding: 8px 11px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      background: rgba(255,255,255,.055);
+      font-size: 14px;
+      line-height: 1.2;
+    }
+
+    .highlight {
+      min-height: 100%;
+      border-radius: var(--radius);
+      padding: 30px;
+      border: 1px solid rgba(111,255,195,.20);
+      background:
+        radial-gradient(circle at top left, rgba(111,255,195,.13), transparent 18rem),
+        rgba(255,255,255,.06);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .service-fit {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      align-items: stretch;
+    }
+
+    .service-fit .card {
+      min-height: 185px;
+      justify-content: flex-start;
+    }
+    .service-fit .card h3 { min-height: 46px; }
+
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--gap);
+      align-items: stretch;
+    }
+
+    .project-card {
+      min-height: 100%;
+      padding: 24px;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.085), rgba(255,255,255,.045));
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .project-card.featured {
+      grid-column: span 2;
+      display: grid;
+      grid-template-columns: 1fr;
+      align-items: start;
+      gap: 22px;
+      min-height: auto;
+    }
+
+    .project-card.featured .project-top {
+      max-width: 920px;
+    }
+
+    .project-card.featured .project-actions {
+      margin-top: 8px;
+    }
+
+    .project-card.dashboard-project {
+      padding: 28px;
+      background:
+        radial-gradient(circle at top right, rgba(82,213,255,.13), transparent 24rem),
+        linear-gradient(180deg, rgba(255,255,255,.095), rgba(255,255,255,.045));
+    }
+
+    .project-card.dashboard-project .project-top {
+      max-width: 980px;
+    }
+
+    .project-top {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .project-meta {
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 850;
+      letter-spacing: .03em;
+      text-transform: uppercase;
+    }
+
+    .project-card p { color: var(--muted); margin: 0; }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 4px;
+    }
+
+    .project-tags span {
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.15;
+    }
+
+
+
+    .success-case {
+      grid-column: span 2;
+      background:
+        radial-gradient(circle at top left, rgba(111,255,195,.14), transparent 28rem),
+        radial-gradient(circle at bottom right, rgba(82,213,255,.12), transparent 26rem),
+        linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.045));
+    }
+
+    .case-metrics {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin: 6px 0 4px;
+    }
+
+    .case-metric {
+      padding: 16px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.13);
+      background: rgba(255,255,255,.055);
+    }
+
+    .case-metric strong {
+      display: block;
+      color: var(--accent-3);
+      font-size: clamp(24px, 3vw, 34px);
+      line-height: 1;
+      letter-spacing: -0.04em;
+      margin-bottom: 8px;
+    }
+
+    .case-metric span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
+    .case-columns {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 4px;
+    }
+
+    .case-column {
+      padding: 18px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(7,17,31,.30);
+    }
+
+    .case-column h4 {
+      margin: 0 0 10px;
+      color: var(--text);
+      font-size: 15px;
+      letter-spacing: -0.02em;
+    }
+
+    .case-column ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .case-column li + li { margin-top: 6px; }
+
+    .project-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: auto;
+    }
+
+    .project-actions .btn {
+      min-height: 40px;
+      padding: 9px 14px;
+      font-size: 14px;
+    }
+
+    .embed-shell {
+      width: 100%;
+      max-width: 1060px;
+      height: 720px;
+      min-height: 0;
+      margin: 2px auto 0;
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(0,0,0,.22);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.04);
+    }
+
+    .embed-shell iframe {
+      width: 100%;
+      height: 720px;
+      min-height: 0;
+      border: 0;
+      display: block;
+      background: #08111f;
+    }
+
+    .cta {
+      text-align: center;
+      padding: 48px;
+      border-radius: 32px;
+      border: 1px solid var(--line);
+      background:
+        linear-gradient(135deg, rgba(82,213,255,.16), rgba(139,125,255,.12)),
+        rgba(255,255,255,.055);
+      box-shadow: var(--shadow);
+    }
+    .cta p { color: var(--muted); max-width: 740px; margin: 18px auto 28px; }
+    .cta .hero-actions { justify-content: center; }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 28px 0;
+      color: var(--muted);
+    }
+
+    .footer-grid {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .footer-links { display: flex; gap: 16px; flex-wrap: wrap; }
+    .footer-links a:hover { color: var(--text); }
+
+    [data-lang-content] { display: none; }
+    [data-lang-content].active { display: block; }
+
+    @media (max-width: 1060px) {
+      .hero-grid { grid-template-columns: 1fr; align-items: start; }
+      .hero-card { max-width: 760px; }
+  
+
+    /* Services cards without numeric badges */
+    #services .cards > .card,
+    #services-en .cards > .card {
+      min-height: 230px;
+      justify-content: flex-start;
+    }
+
+    #services .card h3,
+    #services-en .card h3 {
+      margin-top: 0;
+    }
+
+    #education .cards > .card,
+    #education-en .cards > .card {
+      min-height: 230px;
+      padding-top: 26px;
+    }
+
+    #education .card h3,
+    #education-en .card h3 {
+      min-height: auto;
+      margin-top: 0;
+      margin-bottom: 22px;
+    }
+
+    .split { grid-template-columns: 1fr; }
+      .timeline { grid-template-rows: none; }
+      .project-card.featured { grid-template-columns: 1fr; min-height: auto; }
+      .embed-shell, .embed-shell iframe { height: 680px; min-height: 0; }
+    }
+
+    @media (max-width: 960px) {
+      :root { --section-y: 60px; }
+      .cards, .portfolio-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .nav-links { display: none; }
+      .hero { padding-top: 58px; }
+      .cards > .card { min-height: 250px; }
+    }
+
+    @media (max-width: 640px) {
+      :root { --section-y: 48px; --gap: 16px; }
+      .container { width: min(100% - 28px, var(--max)); }
+      .nav { min-height: 66px; }
+      .cards, .service-fit, .stat-grid, .portfolio-grid { grid-template-columns: 1fr; }
+
+      .case-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .case-columns { grid-template-columns: 1fr; }
+
+      .cards > .card, .service-fit .card, .stat, .project-card, .project-card.featured, .success-case { min-height: auto; grid-column: span 1; }
+      .card h3, .service-fit .card h3 { min-height: auto; }
+      .timeline-item { grid-template-columns: 1fr; gap: 8px; }
+      .embed-shell, .embed-shell iframe { height: 560px; min-height: 0; }
+      .cta { padding: 30px 20px; }
+      .btn { width: 100%; }
+      .hero-actions { width: 100%; }
+      .nav-right { gap: 10px; }
+      .brand span:last-child { display: none; }
+    }
+
+    @media print {
+      header, .lang-switch, .hero-actions, .cta .btn { display: none; }
+      body { background: #fff; color: #111; }
+      section + section { border-top: 1px solid #eee; }
+      .card, .panel, .hero-card, .highlight, .cta { border: 1px solid #ddd; background: #fff; box-shadow: none; }
+      .muted, .card p, .lead, .section-head p, .profile-role, .timeline-item p, .list li, .chip, footer { color: #333; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Go to top">
+        <span class="brand-mark">JQ</span>
+        <span>José Quesada Ortiz</span>
+      </a>
+      <div class="nav-right">
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a href="#services" data-i18n="navServices">Servicios</a>
+          <a href="#education" data-i18n="navEducation">Estudios</a>
+          <a href="#portfolio" data-i18n="navPortfolio">Portafolio</a>
+          <a href="#contact" data-i18n="navContact">Contacto</a>
+        </nav>
+        <div class="lang-switch" aria-label="Language selector">
+          <button type="button" class="active" data-lang="es">ES</button>
+          <button type="button" data-lang="en">EN</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <div data-lang-content="es" class="active">
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <div class="eyebrow"><span class="dot"></span> Ingeniería de datos, analítica e integración de sistemas</div>
+            <h1>Construyo plataformas de datos confiables para equipos que necesitan <span class="gradient-text">claridad, automatización y mejores decisiones</span>.</h1>
+            <p class="lead">Soy José Quesada Ortiz, ingeniero industrial convertido en Data & Analytics Engineer. Mi enfoque combina pensamiento de procesos, ingeniería de datos y analítica aplicada.</p>
+            <p class="hero-footnote"><strong>Lo que me motiva:</strong> entender cómo trabaja realmente una operación y transformar datos dispersos en soluciones que ahorran tiempo, reducen errores y ayudan al negocio a actuar con confianza.</p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="mailto:jaquesada92@outlook.com?subject=Consulta%20sobre%20servicios%20de%20datos">Hablemos de tu proyecto</a>
+              <a class="btn btn-secondary" href="https://www.linkedin.com/in/jquesada92/" target="_blank" rel="noopener noreferrer">Ver LinkedIn</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services">
+        <div class="container split">
+          <div class="panel">
+            <div class="section-head compact-head">
+              <div>
+                <h2>Consultoría de datos aplicada</h2>
+                <p>Integro arquitectura, ingeniería y analítica para convertir datos dispersos en plataformas confiables, procesos automatizados y decisiones mejor informadas.</p>
+              </div>
+            </div>
+            <h3>Servicios principales</h3>
+            <p class="muted">Mi enfoque parte del problema de negocio: entender las fuentes, ordenar el flujo de datos, construir modelos reutilizables y llevar la información hasta dashboards, KPIs o productos analíticos accionables.</p>
+            <ul class="list">
+              <li><span class="check">✓</span><span>Consultoría y diseño de arquitecturas de datos, lakehouse y data warehouse.</span></li>
+              <li><span class="check">✓</span><span>Ingesta e integración desde sistemas, WMS, ERP, e-commerce, APIs, formularios, hojas de cálculo y web scraping.</span></li>
+              <li><span class="check">✓</span><span>Desarrollo de procesos ETL/ELT batch o streaming, eligiendo el enfoque adecuado según el caso: SQL, pandas, Polars, PySpark u otras opciones.</span></li>
+              <li><span class="check">✓</span><span>Implementación de arquitectura medallion con capas Bronze, Silver y Gold combinadas con modelos de data warehouse.</span></li>
+              <li><span class="check">✓</span><span>Análisis de datos, definición de KPIs, reconciliación, calidad de datos y datasets confiables.</span></li>
+              <li><span class="check">✓</span><span>Desarrollo de dashboards, modelos BI e ingeniería analítica para equipos de negocio.</span></li>
+            </ul>
+          </div>
+          <div class="timeline service-timeline">
+            <div class="timeline-item"><div class="timeline-date">Arquitectura</div><div><h3>Plataformas gobernadas</h3><p>Diseño de capas, dominios, flujos de datos, modelos analíticos y fuentes únicas de verdad para reducir deuda técnica y facilitar el consumo.</p></div></div>
+            <div class="timeline-item"><div class="timeline-date">Integración</div><div><h3>Datos desde múltiples fuentes</h3><p>Conexión de sistemas operativos, archivos, formularios, APIs y automatizaciones para centralizar datos y eliminar trabajo manual.</p></div></div>
+            <div class="timeline-item"><div class="timeline-date">ETL/ELT</div><div><h3>Pipelines flexibles y sostenibles</h3><p>Construcción y optimización de procesos batch o streaming, seleccionando la solución más simple y mantenible según volumen, frecuencia y complejidad.</p></div></div>
+            <div class="timeline-item"><div class="timeline-date">Medallion + DW</div><div><h3>De datos crudos a modelos de negocio</h3><p>Implementación de Bronze/Silver/Gold y modelos dimensionales para reporting, reconciliación, analítica avanzada y escalabilidad.</p></div></div>
+            <div class="timeline-item"><div class="timeline-date">Analytics & BI</div><div><h3>Decisiones basadas en datos</h3><p>Análisis, KPIs, dashboards, Power BI y modelos de consumo para que los equipos entiendan qué ocurre y actúen con confianza.</p></div></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="education">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <h2>Estudios y certificaciones</h2>
+              <p>Mi formación combina ingeniería, supply chain, analítica y especialización técnica en plataformas modernas de datos.</p>
+            </div>
+          </div>
+          <div class="cards">
+            <article class="card"><h3>Formación académica</h3><p>Industrial Engineer con Master’s in Supply Chain Management. Esta base me permite analizar procesos end-to-end, conectar operaciones con tecnología y convertir problemas de negocio en soluciones analíticas.</p></article>
+            <article class="card"><h3>Databricks & Spark</h3><p>Databricks Certified Data Engineer Associate y Databricks Certified Associate Developer for Apache Spark. Experiencia práctica con PySpark, Delta Lake, Unity Catalog y lakehouse.</p></article>
+            <article class="card"><h3>Microsoft Data Platform</h3><p>Microsoft Certified: Fabric Analytics Engineer Associate, conocimiento en Azure Data Factory, Azure SQL, Power BI, Power Automate, Microsoft Fabric y preparación para Fabric Data Engineer Associate.</p></article>
+          </div>
+          <div class="chips" aria-label="Technology stack">
+            <span class="chip">Databricks</span><span class="chip">PySpark</span><span class="chip">SQL</span><span class="chip">Delta Lake</span><span class="chip">Unity Catalog</span><span class="chip">Azure Data Factory</span><span class="chip">Azure SQL</span><span class="chip">Microsoft Fabric</span><span class="chip">Power BI</span><span class="chip">Power Automate</span><span class="chip">Python</span><span class="chip">Data Quality</span><span class="chip">Lakehouse</span><span class="chip">APIs</span><span class="chip">WMS</span><span class="chip">ERP</span><span class="chip">Web Scraping</span><span class="chip">Forms</span>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container split">
+          <div class="highlight">
+            <h2>¿Cuándo puedo ayudarte?</h2>
+            <p class="muted">Soy una buena opción cuando tu empresa necesita ordenar su operación analítica, mejorar procesos operativos, automatizar tareas manuales, integrar sistemas, modernizar pipelines, mejorar reportes o preparar datos para IA sin perder de vista el impacto de negocio.</p>
+          </div>
+          <div class="service-fit">
+            <div class="card"><h3>Procesos manuales y datos dispersos</h3><p>Cuando la operación depende de WMS, ERP, Excel/spreadsheets, formularios, APIs, web scraping, bases de datos o sistemas externos y necesitas integrar datos, automatizar tareas con Power Automate, medir KPIs y mejorar el flujo de trabajo.</p></div>
+            <div class="card"><h3>Dashboards lentos o inconsistentes</h3><p>Cuando Power BI o los reportes tienen demasiada lógica, bajo performance o diferencias entre áreas.</p></div>
+            <div class="card"><h3>Pipelines difíciles de mantener</h3><p>Cuando los procesos no tienen trazabilidad, validaciones, capas claras o estándares de desarrollo.</p></div>
+            <div class="card"><h3>Datos para IA y forecasting</h3><p>Cuando quieres crear bases confiables para machine learning, automatización, planning o decisiones predictivas.</p></div>
+          </div>
+        </div>
+      </section>
+
+
+      <section id="portfolio">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <h2>Proyectos y dashboards</h2>
+              <p>Casos y proyectos seleccionados que muestran modernización de plataformas de datos, arquitectura Lakehouse, integración, analítica aplicada, dashboards y procesamiento batch/streaming.</p>
+            </div>
+          </div>
+          <div class="portfolio-grid">
+            <article class="project-card featured success-case">
+              <div class="project-top">
+                <div class="project-meta">Caso de éxito · Modernización de plataforma de datos</div>
+                <h3>From Data Chaos to an AI-Ready Lakehouse</h3>
+                <p>Modernización de una plataforma de datos en retail / supply chain alrededor de Infor M3. El proyecto transformó un ecosistema fragmentado, con alta dependencia de Azure SQL y procesos aislados, en una base Lakehouse gobernada con Databricks, Delta Lake, Unity Catalog, capas Bronze/Silver, reconciliación automática, backfill y data products por dominio.</p>
+              </div>
+              <div class="case-metrics">
+                <div class="case-metric"><strong>80+</strong><span>tablas procesadas con un framework dinámico basado en configuración.</span></div>
+                <div class="case-metric"><strong>75%–98%</strong><span>reducción del tiempo de procesamiento por tabla: de 2–4 horas a 5–30 minutos, según volumen de archivos.</span></div>
+                <div class="case-metric"><strong>80%+</strong><span>reducción de costo al reemplazar Dataflows por Copy Activities sobre Delta.</span></div>
+                <div class="case-metric"><strong>100%</strong><span>reconciliación Bronze vs Infor Compass para entidades validadas.</span></div>
+              </div>
+              <div class="case-columns">
+                <div class="case-column"><h4>Reto</h4><ul><li>Procesos tabla por tabla difíciles de mantener.</li><li>Dependencia fuerte de Azure SQL y vistas complejas.</li><li>Falta de snapshots históricos, trazabilidad y recuperación.</li></ul></div>
+                <div class="case-column"><h4>Solución</h4><ul><li>Arquitectura medallion con Bronze append-only y Silver deduplicado.</li><li>Framework reusable de ingesta, deduplicación y backfill.</li><li>Lakeflow pipelines y data products por dominio para operación y analítica.</li></ul></div>
+                <div class="case-column"><h4>Impacto</h4><ul><li>Menor costo e infraestructura más eficiente.</li><li>Mayor confianza con reconciliación y controles de calidad.</li><li>Base gobernada y preparada para analítica avanzada e IA.</li></ul></div>
+              </div>
+              <div class="project-tags">
+                <span>Databricks</span><span>Delta Lake</span><span>Unity Catalog</span><span>Lakeflow</span><span>Medallion Architecture</span><span>Data Quality</span><span>Backfill</span><span>Cost Optimization</span><span>Data Products</span>
+              </div>
+              <div class="project-actions">
+                <a class="btn btn-secondary" href="#contact">Conversar sobre este caso</a>
+              </div>
+            </article>
+
+            <article class="project-card featured dashboard-project">
+              <div class="project-top">
+                <div class="project-meta">Proyecto end-to-end · Databricks Lakehouse + Power BI</div>
+                <h3>databricks-lakeflow-gov-panama</h3>
+                <p>Proyecto lakehouse que integra datos públicos de planilla del Gobierno Central de Panamá: extrae datos desde una API pública, guarda archivos en staging, procesa con Databricks Lakeflow / Spark Declarative Pipelines y organiza capas Bronze y Silver con historial SCD Type 2, auditoría y controles de calidad. El dashboard embebido de Power BI es la capa analítica final del mismo proyecto.</p>
+                <div class="project-tags">
+                  <span>Databricks</span><span>Lakeflow</span><span>PySpark</span><span>Delta Lake</span><span>SCD Type 2</span><span>Data Quality</span><span>Power BI</span><span>Public Data</span><span>Dashboard</span>
+                </div>
+                <div class="project-actions">
+                  <a class="btn btn-secondary" href="https://github.com/jquesada92/databricks-lakeflow-gov-panama" target="_blank" rel="noopener noreferrer">Ver repo</a>
+                  <a class="btn btn-secondary" href="https://app.powerbi.com/view?r=eyJrIjoiOGUxOTk0ZWEtODg2NC00NDEzLTllMWYtOTdkMjkxMWE3ZWU3IiwidCI6IjBhNzk5NDU0LTM1NTAtNGZiNi1iNGMzLWY5ZWIzMmVhOWU2NCJ9" target="_blank" rel="noopener noreferrer">Abrir dashboard</a>
+                </div>
+              </div>
+              <div class="embed-shell" aria-label="Power BI dashboard: Planilla Gobierno Central">
+                <iframe title="Planilla Gobierno Central" width="600" height="636" src="https://app.powerbi.com/view?r=eyJrIjoiOGUxOTk0ZWEtODg2NC00NDEzLTllMWYtOTdkMjkxMWE3ZWU3IiwidCI6IjBhNzk5NDU0LTM1NTAtNGZiNi1iNGMzLWY5ZWIzMmVhOWU2NCJ9" frameborder="0" allowFullScreen="true" loading="lazy"></iframe>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-top">
+                <div class="project-meta">Data Science · R</div>
+                <h3>House-Pricing-R-Data-Science</h3>
+                <p>Proyecto de análisis y modelado en R para explorar datos de precios de viviendas. Refuerza mi base analítica, estadística y de comunicación técnica mediante scripts, R Markdown y entregables reproducibles.</p>
+                <div class="project-tags">
+                  <span>R</span><span>R Markdown</span><span>Data Science</span><span>EDA</span><span>Statistical Modeling</span>
+                </div>
+              </div>
+              <div class="project-actions">
+                <a class="btn btn-secondary" href="https://github.com/jquesada92/House-Pricing-R-Data-Science" target="_blank" rel="noopener noreferrer">Ver repo</a>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-top">
+                <div class="project-meta">Streaming · Observabilidad local</div>
+                <h3>pyspark-strctured-streaming</h3>
+                <p>Proyecto local de streaming para capturar pruebas de velocidad de internet, ingerir JSON con PySpark Structured Streaming, escribir tablas Apache Iceberg usando PostgreSQL como catálogo y visualizar resultados casi en tiempo real con Dash.</p>
+                <div class="project-tags">
+                  <span>PySpark</span><span>Structured Streaming</span><span>Apache Iceberg</span><span>PostgreSQL</span><span>Docker</span><span>Dash</span>
+                </div>
+              </div>
+              <div class="project-actions">
+                <a class="btn btn-secondary" href="https://github.com/jquesada92/pyspark-strctured-streaming" target="_blank" rel="noopener noreferrer">Ver repo</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="container">
+          <div class="cta">
+            <h2>¿Tienes un proyecto de datos?</h2>
+            <p>Hablemos si necesitas mejorar procesos operativos, integrar sistemas, automatizar flujos con Power Automate, construir pipelines, limpiar datos, mejorar dashboards, diseñar una arquitectura lakehouse o convertir trabajo manual en soluciones analíticas confiables.</p>
+            <div class="hero-actions" style="justify-content:center">
+              <a class="btn btn-primary" href="mailto:jaquesada92@outlook.com?subject=Consulta%20sobre%20servicios%20de%20datos">Enviar correo</a>
+              <a class="btn btn-secondary" href="https://www.linkedin.com/in/jquesada92/" target="_blank" rel="noopener noreferrer">Conectar en LinkedIn</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div data-lang-content="en">
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <div class="eyebrow"><span class="dot"></span> Data engineering, analytics and system integration</div>
+            <h1>I build reliable data platforms for teams that need <span class="gradient-text">clarity, automation and better decisions</span>.</h1>
+            <p class="lead">I’m José Quesada Ortiz, an industrial engineer turned Data & Analytics Engineer. My approach combines process thinking, data engineering and applied analytics.</p>
+            <p class="hero-footnote"><strong>What drives me:</strong> understanding how an operation really works and turning scattered data into solutions that save time, reduce errors and help the business act with confidence.</p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="mailto:jaquesada92@outlook.com?subject=Data%20services%20inquiry">Let’s discuss your project</a>
+              <a class="btn btn-secondary" href="https://www.linkedin.com/in/jquesada92/" target="_blank" rel="noopener noreferrer">View LinkedIn</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services-en">
+        <div class="container split">
+          <div class="panel">
+            <div class="section-head compact-head">
+              <div>
+                <h2>Applied data consulting</h2>
+                <p>I combine architecture, engineering and analytics to turn scattered data into reliable platforms, automated processes and better-informed decisions.</p>
+              </div>
+            </div>
+            <h3>Core services</h3>
+            <p class="muted">My approach starts with the business problem: understanding the sources, organizing the data flow, building reusable models and delivering information through dashboards, KPIs or actionable analytics products.</p>
+            <ul class="list">
+              <li><span class="check">✓</span><span>Consulting and design for data architecture, lakehouse and data warehouse solutions.</span></li>
+              <li><span class="check">✓</span><span>Data ingestion and integration from systems, WMS, ERP, e-commerce, APIs, forms, spreadsheets and web scraping.</span></li>
+              <li><span class="check">✓</span><span>Batch or streaming ETL/ELT development, choosing the right approach for each case: SQL, pandas, Polars, PySpark or other fit-for-purpose options.</span></li>
+              <li><span class="check">✓</span><span>Medallion architecture implementation with Bronze, Silver and Gold layers combined with data warehouse models.</span></li>
+              <li><span class="check">✓</span><span>Data analysis, KPI definition, reconciliation, data quality and reliable datasets.</span></li>
+              <li><span class="check">✓</span><span>Dashboard development, BI models and analytics engineering for business teams.</span></li>
+            </ul>
+          </div>
+          <div class="timeline service-timeline">
+            <div class="timeline-item"><div class="timeline-date">Architecture</div><div><h3>Governed platforms</h3><p>Design of layers, domains, data flows, analytical models and single sources of truth to reduce technical debt and simplify consumption.</p></div></div>
+            <div class="timeline-item"><div class="timeline-date">Integration</div><div><h3>Data from multiple sources</h3><p>Connection of operational systems, files, forms, APIs and automation flows to centralize data and reduce manual work.</p></div></div>
+            <div class="timeline-item"><div class="timeline-date">ETL/ELT</div><div><h3>Flexible and maintainable pipelines</h3><p>Development and optimization of batch or streaming processes, selecting the simplest sustainable approach based on volume, frequency and complexity.</p></div></div>
+            <div class="timeline-item"><div class="timeline-date">Medallion + DW</div><div><h3>From raw data to business models</h3><p>Implementation of Bronze/Silver/Gold layers and dimensional models for reporting, reconciliation, advanced analytics and scalability.</p></div></div>
+            <div class="timeline-item"><div class="timeline-date">Analytics & BI</div><div><h3>Data-driven decisions</h3><p>Analysis, KPIs, dashboards, Power BI and consumption models that help teams understand what is happening and act with confidence.</p></div></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="education-en">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <h2>Education and certifications</h2>
+              <p>My education combines engineering, supply chain, analytics and technical specialization in modern data platforms.</p>
+            </div>
+          </div>
+          <div class="cards">
+            <article class="card"><h3>Academic background</h3><p>Industrial Engineer with a Master’s in Supply Chain Management. This background helps me analyze end-to-end processes, connect operations with technology and translate business problems into analytics solutions.</p></article>
+            <article class="card"><h3>Databricks & Spark</h3><p>Databricks Certified Data Engineer Associate and Databricks Certified Associate Developer for Apache Spark. Hands-on experience with PySpark, Delta Lake, Unity Catalog and lakehouse platforms.</p></article>
+            <article class="card"><h3>Microsoft Data Platform</h3><p>Microsoft Certified: Fabric Analytics Engineer Associate, experience with Azure Data Factory, Azure SQL, Power BI, Power Automate, Microsoft Fabric and preparation for Fabric Data Engineer Associate.</p></article>
+          </div>
+          <div class="chips" aria-label="Technology stack">
+            <span class="chip">Databricks</span><span class="chip">PySpark</span><span class="chip">SQL</span><span class="chip">Delta Lake</span><span class="chip">Unity Catalog</span><span class="chip">Azure Data Factory</span><span class="chip">Azure SQL</span><span class="chip">Microsoft Fabric</span><span class="chip">Power BI</span><span class="chip">Power Automate</span><span class="chip">Python</span><span class="chip">Data Quality</span><span class="chip">Lakehouse</span><span class="chip">APIs</span><span class="chip">WMS</span><span class="chip">ERP</span><span class="chip">Web Scraping</span><span class="chip">Forms</span>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container split">
+          <div class="highlight">
+            <h2>When can I help?</h2>
+            <p class="muted">I am a strong fit when your company needs to organize its analytics operation, improve operational processes, automate manual tasks, integrate systems, modernize pipelines, improve reporting or prepare data for AI while staying focused on business impact.</p>
+          </div>
+          <div class="service-fit">
+            <div class="card"><h3>Manual processes and scattered data</h3><p>When operations depend on WMS, ERP, Excel/spreadsheets, forms, APIs, web scraping, databases or external systems and you need to integrate data, automate tasks with Power Automate, measure KPIs and improve workflows.</p></div>
+            <div class="card"><h3>Slow or inconsistent dashboards</h3><p>When Power BI or reports carry too much logic, perform poorly or show differences across departments.</p></div>
+            <div class="card"><h3>Hard-to-maintain pipelines</h3><p>When processes lack traceability, validation rules, clear layers or development standards.</p></div>
+            <div class="card"><h3>Data for AI and forecasting</h3><p>When you want reliable foundations for machine learning, automation, planning or predictive decisions.</p></div>
+          </div>
+        </div>
+      </section>
+
+
+      <section id="portfolio-en">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <h2>Projects and dashboards</h2>
+              <p>Selected cases and projects showing data platform modernization, Lakehouse architecture, integration, applied analytics, dashboards and batch/streaming processing.</p>
+            </div>
+          </div>
+          <div class="portfolio-grid">
+            <article class="project-card featured success-case">
+              <div class="project-top">
+                <div class="project-meta">Success story · Data platform modernization</div>
+                <h3>From Data Chaos to an AI-Ready Lakehouse</h3>
+                <p>Retail / supply chain data platform modernization around Infor M3. The project transformed a fragmented, Azure SQL-heavy estate with isolated processes into a governed Lakehouse foundation using Databricks, Delta Lake, Unity Catalog, Bronze/Silver layers, automated reconciliation, backfill capabilities and domain-oriented data products.</p>
+              </div>
+              <div class="case-metrics">
+                <div class="case-metric"><strong>80+</strong><span>tables processed through a dynamic configuration-driven framework.</span></div>
+                <div class="case-metric"><strong>75%–98%</strong><span>reduction in processing time per table: from 2–4 hours to 5–30 minutes, depending on file volume.</span></div>
+                <div class="case-metric"><strong>80%+</strong><span>cost reduction by replacing Dataflows with Copy Activities over Delta.</span></div>
+                <div class="case-metric"><strong>100%</strong><span>Bronze vs Infor Compass reconciliation for validated entities.</span></div>
+              </div>
+              <div class="case-columns">
+                <div class="case-column"><h4>Challenge</h4><ul><li>Table-by-table processes that were hard to maintain.</li><li>Heavy Azure SQL dependency and complex views.</li><li>No reliable historical snapshots, traceability or recovery path.</li></ul></div>
+                <div class="case-column"><h4>Solution</h4><ul><li>Medallion architecture with append-only Bronze and deduplicated Silver.</li><li>Reusable ingestion, deduplication and backfill framework.</li><li>Lakeflow pipelines and domain data products for operations and analytics.</li></ul></div>
+                <div class="case-column"><h4>Impact</h4><ul><li>Lower cost and more efficient infrastructure.</li><li>Higher trust through reconciliation and data quality controls.</li><li>Governed foundation ready for advanced analytics and AI.</li></ul></div>
+              </div>
+              <div class="project-tags">
+                <span>Databricks</span><span>Delta Lake</span><span>Unity Catalog</span><span>Lakeflow</span><span>Medallion Architecture</span><span>Data Quality</span><span>Backfill</span><span>Cost Optimization</span><span>Data Products</span>
+              </div>
+              <div class="project-actions">
+                <a class="btn btn-secondary" href="#contact-en">Discuss this case</a>
+              </div>
+            </article>
+
+            <article class="project-card featured dashboard-project">
+              <div class="project-top">
+                <div class="project-meta">End-to-end project · Databricks Lakehouse + Power BI</div>
+                <h3>databricks-lakeflow-gov-panama</h3>
+                <p>Lakehouse project that integrates Panama Central Government payroll public data: it extracts data from a public API, lands files into staging, processes them with Databricks Lakeflow / Spark Declarative Pipelines and organizes Bronze and Silver layers with SCD Type 2 history, auditability and data quality controls. The embedded Power BI dashboard is the final analytics layer of the same project.</p>
+                <div class="project-tags">
+                  <span>Databricks</span><span>Lakeflow</span><span>PySpark</span><span>Delta Lake</span><span>SCD Type 2</span><span>Data Quality</span><span>Power BI</span><span>Public Data</span><span>Dashboard</span>
+                </div>
+                <div class="project-actions">
+                  <a class="btn btn-secondary" href="https://github.com/jquesada92/databricks-lakeflow-gov-panama" target="_blank" rel="noopener noreferrer">View repo</a>
+                  <a class="btn btn-secondary" href="https://app.powerbi.com/view?r=eyJrIjoiOGUxOTk0ZWEtODg2NC00NDEzLTllMWYtOTdkMjkxMWE3ZWU3IiwidCI6IjBhNzk5NDU0LTM1NTAtNGZiNi1iNGMzLWY5ZWIzMmVhOWU2NCJ9" target="_blank" rel="noopener noreferrer">Open dashboard</a>
+                </div>
+              </div>
+              <div class="embed-shell" aria-label="Power BI dashboard: Central Government Payroll">
+                <iframe title="Planilla Gobierno Central" width="600" height="636" src="https://app.powerbi.com/view?r=eyJrIjoiOGUxOTk0ZWEtODg2NC00NDEzLTllMWYtOTdkMjkxMWE3ZWU3IiwidCI6IjBhNzk5NDU0LTM1NTAtNGZiNi1iNGMzLWY5ZWIzMmVhOWU2NCJ9" frameborder="0" allowFullScreen="true" loading="lazy"></iframe>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-top">
+                <div class="project-meta">Data Science · R</div>
+                <h3>House-Pricing-R-Data-Science</h3>
+                <p>R-based analytics and modeling project for exploring housing price data. It reinforces analytical, statistical and technical communication foundations through scripts, R Markdown and reproducible deliverables.</p>
+                <div class="project-tags">
+                  <span>R</span><span>R Markdown</span><span>Data Science</span><span>EDA</span><span>Statistical Modeling</span>
+                </div>
+              </div>
+              <div class="project-actions">
+                <a class="btn btn-secondary" href="https://github.com/jquesada92/House-Pricing-R-Data-Science" target="_blank" rel="noopener noreferrer">View repo</a>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-top">
+                <div class="project-meta">Streaming · Local observability</div>
+                <h3>pyspark-strctured-streaming</h3>
+                <p>Local streaming project for capturing internet speed test events, ingesting JSON with PySpark Structured Streaming, writing Apache Iceberg tables with PostgreSQL as the catalog and visualizing near-real-time results with Dash.</p>
+                <div class="project-tags">
+                  <span>PySpark</span><span>Structured Streaming</span><span>Apache Iceberg</span><span>PostgreSQL</span><span>Docker</span><span>Dash</span>
+                </div>
+              </div>
+              <div class="project-actions">
+                <a class="btn btn-secondary" href="https://github.com/jquesada92/pyspark-strctured-streaming" target="_blank" rel="noopener noreferrer">View repo</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact-en">
+        <div class="container">
+          <div class="cta">
+            <h2>Do you have a data project?</h2>
+            <p>Let’s talk if you need to improve operational processes, integrate systems, automate workflows with Power Automate, build pipelines, clean data, improve dashboards, design a lakehouse architecture or turn manual work into trusted analytics solutions.</p>
+            <div class="hero-actions" style="justify-content:center">
+              <a class="btn btn-primary" href="mailto:jaquesada92@outlook.com?subject=Data%20services%20inquiry">Send email</a>
+              <a class="btn btn-secondary" href="https://www.linkedin.com/in/jquesada92/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>© <span id="year"></span> José Quesada Ortiz. Data Engineering & Analytics Services.</div>
+      <div class="footer-links">
+        <a href="mailto:jaquesada92@outlook.com">Email</a>
+        <a href="https://www.linkedin.com/in/jquesada92/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/jquesada92" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const translations = {
+      es: {
+        navServices: 'Servicios',
+        navEducation: 'Estudios',
+        navPortfolio: 'Portafolio',
+        navContact: 'Contacto',
+        anchors: ['#services', '#education', '#portfolio', '#contact']
+      },
+      en: {
+        navServices: 'Services',
+        navEducation: 'Education',
+        navPortfolio: 'Portfolio',
+        navContact: 'Contact',
+        anchors: ['#services-en', '#education-en', '#portfolio-en', '#contact-en']
+      }
+    };
+
+    const buttons = document.querySelectorAll('[data-lang]');
+    const blocks = document.querySelectorAll('[data-lang-content]');
+    const navItems = document.querySelectorAll('[data-i18n]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    function setLanguage(lang) {
+      document.documentElement.lang = lang;
+      blocks.forEach(block => block.classList.toggle('active', block.dataset.langContent === lang));
+      buttons.forEach(button => button.classList.toggle('active', button.dataset.lang === lang));
+      navItems.forEach(item => item.textContent = translations[lang][item.dataset.i18n]);
+      navLinks.forEach((link, index) => link.setAttribute('href', translations[lang].anchors[index]));
+      localStorage.setItem('preferredLanguage', lang);
+    }
+
+    buttons.forEach(button => button.addEventListener('click', () => setLanguage(button.dataset.lang)));
+    const savedLang = localStorage.getItem('preferredLanguage');
+    if (savedLang === 'en' || savedLang === 'es') setLanguage(savedLang);
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
