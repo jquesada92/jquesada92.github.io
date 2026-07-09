@@ -5,8 +5,16 @@ Ready for GitHub Pages.
 ## Files
 
 - `index.html`: main landing page
-- `cv.html`: bilingual CV updated with stronger CGI experience, selected projects and DP-600
-- `assets/`: logo and favicon
+- `cv.html`: bilingual CV
+- `assets/`: transparent logo and favicon
+
+## Updates included
+
+- More readable transparent header logo.
+- Landing-to-CV links preserve language:
+  - Spanish landing opens `cv.html?lang=es`
+  - English landing opens `cv.html?lang=en`
+- CV also supports language switching and returns to the landing with the selected language.
 
 ## Publish
 

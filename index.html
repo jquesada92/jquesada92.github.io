@@ -213,7 +213,7 @@
       flex: 0 0 auto;
     }
 
-    h1, h2, h3 { line-height: 1.08; margin: 0; letter-spacing: -.045em; }
+    h1, h2, h3 { line-height: 1.08; margin: 0; letter-spacing: -.045em; overflow: visible; }
     h1 { font-size: clamp(40px, 6.7vw, 76px); max-width: 950px; }
     h2 { font-size: clamp(30px, 4vw, 48px); margin-bottom: 16px; }
     h3 { font-size: 21px; margin-bottom: 10px; }
@@ -223,6 +223,9 @@
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
+      padding-right: 0.08em;
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
     }
 
     .lead {
@@ -788,7 +791,7 @@
           <a href="#services" data-i18n="navServices">Servicios</a>
           <a href="#education" data-i18n="navEducation">Estudios</a>
           <a href="#portfolio" data-i18n="navPortfolio">Portafolio</a>
-          <a href="cv.html" data-i18n="navCV">CV</a>
+          <a href="cv.html?lang=es" data-i18n="navCV" data-cv-link>CV</a>
           <a href="#contact" data-i18n="navContact">Contacto</a>
         </nav>
         <div class="lang-switch" aria-label="Language selector">
@@ -805,13 +808,13 @@
         <div class="container hero-grid">
           <div class="hero-copy">
 <div class="eyebrow"><span class="dot"></span> Ingeniería de datos, analítica e integración de sistemas</div>
-            <h1>Construyo plataformas de datos confiables para equipos que necesitan <span class="gradient-text">claridad, automatización y mejores decisiones</span>.</h1>
+            <h1>Construyo plataformas de datos confiables para equipos que necesitan <span class="gradient-text">claridad, automatización y mejores decisiones.</span></h1>
             <p class="lead">Soy José Quesada Ortiz, ingeniero industrial convertido en Data & Analytics Engineer. Mi enfoque combina pensamiento de procesos, ingeniería de datos y analítica aplicada.</p>
             <p class="hero-footnote"><strong>Lo que me motiva:</strong> entender cómo trabaja realmente una operación y transformar datos dispersos en soluciones que ahorran tiempo, reducen errores y ayudan al negocio a actuar con confianza.</p>
             <div class="hero-actions">
               <a class="btn btn-primary" href="mailto:jaquesada92@outlook.com?subject=Consulta%20sobre%20servicios%20de%20datos">Hablemos de tu proyecto</a>
               <a class="btn btn-secondary" href="https://www.linkedin.com/in/jquesada92/" target="_blank" rel="noopener noreferrer">Ver LinkedIn</a>
-              <a class="btn btn-secondary" href="cv.html">Ver CV</a>
+              <a class="btn btn-secondary" href="cv.html?lang=es" data-cv-link>Ver CV</a>
             </div>
           </div>
         </div>
@@ -984,13 +987,13 @@
         <div class="container hero-grid">
           <div class="hero-copy">
 <div class="eyebrow"><span class="dot"></span> Data engineering, analytics and system integration</div>
-            <h1>I build reliable data platforms for teams that need <span class="gradient-text">clarity, automation and better decisions</span>.</h1>
+            <h1>I build reliable data platforms for teams that need <span class="gradient-text">clarity, automation and better decisions.</span></h1>
             <p class="lead">I’m José Quesada Ortiz, an industrial engineer turned Data & Analytics Engineer. My approach combines process thinking, data engineering and applied analytics.</p>
             <p class="hero-footnote"><strong>What drives me:</strong> understanding how an operation really works and turning scattered data into solutions that save time, reduce errors and help the business act with confidence.</p>
             <div class="hero-actions">
               <a class="btn btn-primary" href="mailto:jaquesada92@outlook.com?subject=Data%20services%20inquiry">Let’s discuss your project</a>
               <a class="btn btn-secondary" href="https://www.linkedin.com/in/jquesada92/" target="_blank" rel="noopener noreferrer">View LinkedIn</a>
-              <a class="btn btn-secondary" href="cv.html">View CV</a>
+              <a class="btn btn-secondary" href="cv.html?lang=en" data-cv-link>View CV</a>
             </div>
           </div>
         </div>
@@ -1195,6 +1198,8 @@
 
     function setLanguage(lang) {
       document.documentElement.lang = lang;
+      updateCvLinks(lang);
+      try { localStorage.setItem('siteLang', lang); } catch (e) {}
       blocks.forEach(block => block.classList.toggle('active', block.dataset.langContent === lang));
       buttons.forEach(button => button.classList.toggle('active', button.dataset.lang === lang));
       navItems.forEach(item => item.textContent = translations[lang][item.dataset.i18n]);

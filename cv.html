@@ -57,9 +57,9 @@
     }
 
     .brand img {
-      width: 172px;
+      width: 188px;
       height: auto;
-      max-height: 42px;
+      max-height: 44px;
       object-fit: contain;
       display: block;
     }
@@ -168,26 +168,6 @@
     .role {
       margin-bottom: 18px;
       break-inside: avoid;
-    }
-
-    h4 {
-      margin: 12px 0 4px;
-      font-size: 14px;
-      color: var(--ink);
-      letter-spacing: -0.01em;
-    }
-
-    .project-note {
-      margin: 12px 0 0;
-      padding: 12px 14px;
-      background: var(--soft);
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      break-inside: avoid;
-    }
-
-    .project-note ul {
-      margin-top: 6px;
     }
 
 
@@ -306,11 +286,11 @@
 <body>
   <div class="topbar">
     <div class="topbar-inner">
-      <a class="brand" href="index.html" aria-label="Back to landing page">
+      <a class="brand" href="index.html" data-home-link aria-label="Back to landing page">
         <img src="assets/jq-logo-header.svg" alt="Jose Quesada logo" />
       </a>
       <div class="actions">
-        <a class="nav-btn" href="index.html">Landing</a>
+        <a class="nav-btn" href="index.html" data-home-link>Landing</a>
         <button type="button" class="active" data-lang="es">ES</button>
         <button type="button" data-lang="en">EN</button>
         <button type="button" onclick="window.print()">Exportar PDF</button>
@@ -344,7 +324,7 @@
             <div class="skill-label">Data Engineering</div>
             <div class="skill-value">Databricks, Delta Lake, Unity Catalog, Lakeflow / DLT, CDC, medallion architecture, data quality, reconciliation</div>
             <div class="skill-label">Cloud & Integration</div>
-            <div class="skill-value">Azure Data Factory, Azure Data Lake / Blob Storage, Azure SQL, Event Hubs, Azure Functions, APIs, S3, Google Cloud Storage, BigQuery, AWS Athena, AWS Glue</div>
+            <div class="skill-value">Azure Data Factory, Azure Data Lake / Blob Storage, Azure SQL, Event Hubs, Azure Functions, APIs, S3, Google Cloud Storage, BigQuery, AWS Athena, AWS Glue, AWS Lambda, API Gateway</div>
             <div class="skill-label">BI & Visualization</div>
             <div class="skill-value">Power BI, Tableau, Plotly, Matplotlib, Seaborn, dashboarding and data storytelling</div>
           </div>
@@ -370,30 +350,26 @@
             <div class="meta">January 2023 – Present | Remote / Panama</div>
             <ul>
               <li>Liderazgo de iniciativas de modernización de plataformas de datos para clientes de retail, wholesale y supply chain, diseñando pipelines escalables, frameworks PySpark reutilizables y productos de datos analíticos.</li>
+              <li>Modernización de plataforma Infor M3 implementando arquitectura lakehouse en Databricks para separar historia raw, capas confiables de procesamiento y datos listos para analítica.</li>
               <li>Implementación de arquitecturas medallion en Databricks con Bronze histórico, patrones Silver confiables, capas Gold de consumo, Delta Lake, Unity Catalog, linaje y gobierno de datos.</li>
+              <li>Construcción de componentes reutilizables en Python/PySpark para centralizar lógica de regeneración de reportes, pricing, costos, reglas de negocio, reconciliación y backfill.</li>
               <li>Diseño de pipelines parametrizados con Azure Data Factory e integraciones batch/streaming para fuentes ERP, WMS, e-commerce, APIs y datos operativos.</li>
-              <li>Desarrollo de data products para demand planning, reconciliación de inventario, pricing, cost enrichment, invoice analysis, supply chain reporting y regeneración histórica de reportes.</li>
+              <li>Desarrollo de data products para demand planning, reconciliación de inventario, pricing, cost enrichment, invoice analysis, supply chain reporting y regeneración histórica de reportes por fecha.</li>
+              <li>Implementación de Bronze histórico para soportar análisis de incidentes, escenarios de rollback, trazabilidad operativa y recuperación ante errores de usuario en sistemas fuente.</li>
               <li>Mejora de performance de data warehouse en 99%, reducción de costos de procesamiento en 75%+ y reducción de costos de infraestructura seleccionada en ~90% mediante optimización en Databricks y job compute.</li>
             </ul>
+</div>
 
-            <div class="project-note">
-              <h4>Proyecto destacado: Data Platform Modernization — Retail / Wholesale / Supply Chain</h4>
-              <ul>
-                <li>Modernización de plataforma Infor M3 implementando arquitectura lakehouse en Databricks para separar historia raw, capas confiables de procesamiento y datos listos para analítica.</li>
-                <li>Construcción de componentes reutilizables en Python/PySpark para centralizar lógica de regeneración de reportes, pricing, costos, reglas de negocio, reconciliación y backfill.</li>
-                <li>Implementación de Bronze histórico para soportar regeneración de reportes por fecha, análisis de incidentes, escenarios de rollback y trazabilidad operativa.</li>
-              </ul>
-            </div>
-
-            <div class="project-note">
-              <h4>Proyecto destacado: AS Applied — Bayer Crop Science</h4>
-              <ul>
-                <li>Análisis de datos globales de aplicaciones de agroquímicos en granjas de Estados Unidos, Canadá, Brasil y Rusia para apoyar iniciativas de crop science y analítica predictiva.</li>
-                <li>Desarrollo de un framework de feature engineering sobre PySpark usando clases reutilizables en Python para transformar datos generados por sensores en datasets analíticos.</li>
-                <li>Estandarización y traducción de nombres de agroquímicos, limpieza de datos y creación de lógica para identificar aplicaciones parciales vs. completas y estadísticas de aplicación.</li>
-                <li>Uso de Domino, S3, Python, PySpark, Pandas, Matplotlib, Seaborn y Plotly para análisis exploratorio, validación de tendencias y soporte al equipo de data science.</li>
-              </ul>
-            </div>
+          <div class="role">
+            <h3>Associate Consultant — CGI</h3>
+            <div class="meta">November 2021 – January 2022 | Remote / Panama</div>
+            <ul>
+              <li>Soporte a un proyecto interno de data engineering y automatización sobre una aplicación AWS diseñada para conectar empleados aleatoriamente en coffee chats y fomentar colaboración entre equipos.</li>
+              <li>Auditoría de la base de datos de la aplicación, corrección de problemas de calidad de datos y mejora de tablas y procesos para habilitar reportes confiables de participación.</li>
+              <li>Desarrollo de una función AWS Lambda con Python para consultar la base de datos y generar estadísticas de engagement, actividad de matching y participación de usuarios.</li>
+              <li>Exposición de la función Lambda mediante AWS API Gateway, permitiendo que la aplicación web activara el servicio de reporting a través de un endpoint HTTP.</li>
+              <li>Mejora de la visibilidad para stakeholders internos sobre registros de usuarios, actividad de matching y tendencias de participación.</li>
+            </ul>
           </div>
 
           <div class="role">
@@ -401,6 +377,10 @@
             <div class="meta">January 2022 – January 2023 | Remote / Panama</div>
             <ul>
               <li>Soporte a flujos de analítica y reporting usando SQL, Python y herramientas BI, convirtiendo preguntas operativas en datasets estructurados, métricas y dashboards.</li>
+              <li>Análisis de datos globales de aplicaciones de agroquímicos en granjas de Estados Unidos, Canadá, Brasil y Rusia para apoyar iniciativas de crop science y analítica predictiva.</li>
+              <li>Desarrollo de un framework de feature engineering sobre PySpark usando clases reutilizables en Python para transformar datos generados por sensores en datasets analíticos.</li>
+              <li>Estandarización y traducción de nombres de agroquímicos, limpieza de datos y creación de lógica para identificar aplicaciones parciales vs. completas y estadísticas de aplicación.</li>
+              <li>Uso de Domino, S3, Python, PySpark, Pandas, Matplotlib, Seaborn y Plotly para análisis exploratorio, validación de tendencias y soporte al equipo de data science.</li>
               <li>Preparación de validaciones de datos, reportes y análisis para usuarios de negocio, combinando ejecución técnica con comunicación hacia stakeholders.</li>
             </ul>
           </div>
@@ -495,7 +475,7 @@
             <div class="skill-label">Data Engineering</div>
             <div class="skill-value">Databricks, Delta Lake, Unity Catalog, Lakeflow / DLT, CDC, medallion architecture, data quality, reconciliation</div>
             <div class="skill-label">Cloud & Integration</div>
-            <div class="skill-value">Azure Data Factory, Azure Data Lake / Blob Storage, Azure SQL, Event Hubs, Azure Functions, APIs, S3, Google Cloud Storage, BigQuery, AWS Athena, AWS Glue</div>
+            <div class="skill-value">Azure Data Factory, Azure Data Lake / Blob Storage, Azure SQL, Event Hubs, Azure Functions, APIs, S3, Google Cloud Storage, BigQuery, AWS Athena, AWS Glue, AWS Lambda, API Gateway</div>
             <div class="skill-label">BI & Visualization</div>
             <div class="skill-value">Power BI, Tableau, Plotly, Matplotlib, Seaborn, dashboarding and data storytelling</div>
           </div>
@@ -521,30 +501,26 @@
             <div class="meta">January 2023 – Present | Remote / Panama</div>
             <ul>
               <li>Led data platform modernization initiatives for retail, wholesale and supply chain clients, designing scalable pipelines, reusable PySpark frameworks and analytics-ready data products.</li>
+              <li>Modernized an Infor M3 data platform by implementing a Databricks Lakehouse architecture to separate raw history, reliable processing layers and analytics-ready serving data.</li>
               <li>Implemented Databricks medallion architectures with historical Bronze layers, reliable Silver patterns, Gold serving layers, Delta Lake, Unity Catalog, lineage and data governance.</li>
+              <li>Built reusable Python/PySpark components to centralize report regeneration, pricing, cost, business-rule logic, reconciliation and backfill workflows.</li>
               <li>Designed parameterized Azure Data Factory pipelines and batch/streaming integrations for ERP, WMS, e-commerce, APIs and operational data sources.</li>
-              <li>Delivered data products for demand planning, inventory reconciliation, pricing, cost enrichment, invoice analysis, supply chain reporting and historical report regeneration.</li>
+              <li>Delivered data products for demand planning, inventory reconciliation, pricing, cost enrichment, invoice analysis, supply chain reporting and historical report regeneration by date.</li>
+              <li>Implemented historical Bronze storage to support incident analysis, rollback scenarios, operational traceability and recovery from source-system user errors.</li>
               <li>Improved data warehouse response times by 99%, reduced processing costs by 75%+ and cut selected infrastructure costs by ~90% through optimized Databricks processing and job compute patterns.</li>
             </ul>
+</div>
 
-            <div class="project-note">
-              <h4>Selected project: Data Platform Modernization — Retail / Wholesale / Supply Chain</h4>
-              <ul>
-                <li>Modernized an Infor M3 data platform by implementing a Databricks Lakehouse architecture to separate raw history, reliable processing layers and analytics-ready serving data.</li>
-                <li>Built reusable Python/PySpark components to centralize report regeneration, pricing, cost, business-rule logic, reconciliation and backfill workflows.</li>
-                <li>Implemented Bronze historical storage to support report regeneration by date, incident analysis, rollback scenarios and operational traceability.</li>
-              </ul>
-            </div>
-
-            <div class="project-note">
-              <h4>Selected project: AS Applied — Bayer Crop Science</h4>
-              <ul>
-                <li>Analyzed global agrochemical application data from farms across the United States, Canada, Brazil and Russia to support crop science and predictive analytics initiatives.</li>
-                <li>Built a PySpark-based feature engineering framework using reusable Python classes to transform sensor-generated application data into analytics-ready datasets.</li>
-                <li>Standardized and translated agrochemical product names, cleaned source data and developed logic to identify partial vs. complete applications and application-level statistics.</li>
-                <li>Used Domino, S3, Python, PySpark, Pandas, Matplotlib, Seaborn and Plotly for exploratory analysis, trend validation and data science support workflows.</li>
-              </ul>
-            </div>
+          <div class="role">
+            <h3>Associate Consultant — CGI</h3>
+            <div class="meta">November 2021 – January 2022 | Remote / Panama</div>
+            <ul>
+              <li>Supported an internal data engineering and automation project for an AWS-based application designed to randomly match employees for coffee chats and encourage cross-team collaboration.</li>
+              <li>Audited the application database, corrected data quality issues and improved tables and processes to enable reliable participation reporting.</li>
+              <li>Developed an AWS Lambda function with Python to query the database and generate user engagement, matching activity and participation statistics.</li>
+              <li>Exposed the Lambda function through AWS API Gateway, allowing the web application to trigger the reporting service through an HTTP endpoint.</li>
+              <li>Improved visibility for internal stakeholders into user registration, matching activity and participation trends.</li>
+            </ul>
           </div>
 
           <div class="role">
@@ -552,6 +528,10 @@
             <div class="meta">January 2022 – January 2023 | Remote / Panama</div>
             <ul>
               <li>Supported analytics and reporting workflows using SQL, Python and BI tooling, turning operational questions into structured datasets, metrics and dashboards.</li>
+              <li>Analyzed global agrochemical application data from farms across the United States, Canada, Brazil and Russia to support crop science and predictive analytics initiatives.</li>
+              <li>Built a PySpark-based feature engineering framework using reusable Python classes to transform sensor-generated application data into analytics-ready datasets.</li>
+              <li>Standardized and translated agrochemical product names, cleaned source data and developed logic to identify partial vs. complete applications and application-level statistics.</li>
+              <li>Used Domino, S3, Python, PySpark, Pandas, Matplotlib, Seaborn and Plotly for exploratory analysis, trend validation and data science support workflows.</li>
               <li>Prepared data validation, reporting and analysis outputs for business users, combining technical execution with stakeholder-facing communication.</li>
             </ul>
           </div>
@@ -636,9 +616,34 @@
       document.documentElement.lang = lang;
     }
 
+    function updateHomeLinks(lang) {
+      document.querySelectorAll('[data-home-link]').forEach(link => {
+        link.setAttribute('href', `index.html?lang=${lang}`);
+      });
+    }
+
+    function getInitialLang() {
+      const params = new URLSearchParams(window.location.search);
+      const paramLang = params.get('lang');
+      if (paramLang === 'es' || paramLang === 'en') return paramLang;
+      try {
+        const savedLang = localStorage.getItem('siteLang');
+        if (savedLang === 'es' || savedLang === 'en') return savedLang;
+      } catch (e) {}
+      return 'es';
+    }
+
     buttons.forEach(button => {
-      button.addEventListener("click", () => setLang(button.dataset.lang));
+      button.addEventListener("click", () => {
+        setLang(button.dataset.lang);
+        updateHomeLinks(button.dataset.lang);
+        try { localStorage.setItem('siteLang', button.dataset.lang); } catch (e) {}
+      });
     });
+
+    const initialLang = getInitialLang();
+    setLang(initialLang);
+    updateHomeLinks(initialLang);
   </script>
 </body>
 </html>
