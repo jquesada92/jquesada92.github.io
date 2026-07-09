@@ -5,7 +5,7 @@ Ready for GitHub Pages.
 ## Files
 
 - `index.html`: main landing page
-- `cv.html`: bilingual CV based on the current CV PDF, updated with DP-600
+- `cv.html`: bilingual CV updated with stronger CGI experience, selected projects and DP-600
 - `assets/`: logo and favicon
 
 ## Publish
@@ -21,5 +21,3 @@ Then open:
 The CV is available at:
 
 `https://jquesada92.github.io/cv.html`
-
-Important: upload `index.html`, `cv.html`, and the full `assets/` folder to the same root folder.

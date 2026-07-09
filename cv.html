@@ -57,9 +57,9 @@
     }
 
     .brand img {
-      width: 150px;
+      width: 172px;
       height: auto;
-      max-height: 34px;
+      max-height: 42px;
       object-fit: contain;
       display: block;
     }
@@ -169,6 +169,27 @@
       margin-bottom: 18px;
       break-inside: avoid;
     }
+
+    h4 {
+      margin: 12px 0 4px;
+      font-size: 14px;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+    }
+
+    .project-note {
+      margin: 12px 0 0;
+      padding: 12px 14px;
+      background: var(--soft);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      break-inside: avoid;
+    }
+
+    .project-note ul {
+      margin-top: 6px;
+    }
+
 
     .meta {
       color: var(--muted);
@@ -319,11 +340,13 @@
           <h2>Habilidades técnicas</h2>
           <div class="skill-grid">
             <div class="skill-label">Analytics & Coding</div>
-            <div class="skill-value">Python, Pandas, SQL, PySpark, R, tidyverse, Excel</div>
-            <div class="skill-label">Data Platforms</div>
-            <div class="skill-value">Databricks, Microsoft Fabric, Azure Data Factory, BigQuery, AWS Athena, AWS Glue</div>
+            <div class="skill-value">Python, Pandas, Polars, SQL, PySpark, R, tidyverse, Excel</div>
+            <div class="skill-label">Data Engineering</div>
+            <div class="skill-value">Databricks, Delta Lake, Unity Catalog, Lakeflow / DLT, CDC, medallion architecture, data quality, reconciliation</div>
+            <div class="skill-label">Cloud & Integration</div>
+            <div class="skill-value">Azure Data Factory, Azure Data Lake / Blob Storage, Azure SQL, Event Hubs, Azure Functions, APIs, S3, Google Cloud Storage, BigQuery, AWS Athena, AWS Glue</div>
             <div class="skill-label">BI & Visualization</div>
-            <div class="skill-value">Power BI, Tableau, Plotly</div>
+            <div class="skill-value">Power BI, Tableau, Plotly, Matplotlib, Seaborn, dashboarding and data storytelling</div>
           </div>
         </section>
 
@@ -343,15 +366,34 @@
           <h2>Experiencia profesional</h2>
 
           <div class="role">
-            <h3>Consultant | Data Engineer — CGI</h3>
+            <h3>Consultant | Data Engineer / Analytics Engineer — CGI</h3>
             <div class="meta">January 2023 – Present | Remote / Panama</div>
             <ul>
-              <li>Construcción y mantenimiento de productos de datos analíticos para pricing, inventario, facturación, supply chain y product planning usando Databricks, PySpark, SQL, Delta Lake, Azure Data Factory y Azure SQL.</li>
-              <li>Traducción de reglas complejas de ERP/WMS/e-commerce en datasets reutilizables para reporting, analítica y casos de uso downstream.</li>
-              <li>Desarrollo y estandarización de transformaciones SQL/PySpark para listas de precios, descuentos, VAT/tax treatment, gross/net values, cantidades válidas y métricas de líneas de factura/orden.</li>
-              <li>Reconciliación de datos entre Infor M3, Compass, Azure SQL, Databricks y Power BI para investigar discrepancias, validar conteos y mejorar la confianza en reportes.</li>
-              <li>Colaboración con stakeholders de planning, finance, merchandising, BI, data engineering y AI para definir métricas, resolver issues de datos y comunicar causas raíz.</li>
+              <li>Liderazgo de iniciativas de modernización de plataformas de datos para clientes de retail, wholesale y supply chain, diseñando pipelines escalables, frameworks PySpark reutilizables y productos de datos analíticos.</li>
+              <li>Implementación de arquitecturas medallion en Databricks con Bronze histórico, patrones Silver confiables, capas Gold de consumo, Delta Lake, Unity Catalog, linaje y gobierno de datos.</li>
+              <li>Diseño de pipelines parametrizados con Azure Data Factory e integraciones batch/streaming para fuentes ERP, WMS, e-commerce, APIs y datos operativos.</li>
+              <li>Desarrollo de data products para demand planning, reconciliación de inventario, pricing, cost enrichment, invoice analysis, supply chain reporting y regeneración histórica de reportes.</li>
+              <li>Mejora de performance de data warehouse en 99%, reducción de costos de procesamiento en 75%+ y reducción de costos de infraestructura seleccionada en ~90% mediante optimización en Databricks y job compute.</li>
             </ul>
+
+            <div class="project-note">
+              <h4>Proyecto destacado: Data Platform Modernization — Retail / Wholesale / Supply Chain</h4>
+              <ul>
+                <li>Modernización de plataforma Infor M3 implementando arquitectura lakehouse en Databricks para separar historia raw, capas confiables de procesamiento y datos listos para analítica.</li>
+                <li>Construcción de componentes reutilizables en Python/PySpark para centralizar lógica de regeneración de reportes, pricing, costos, reglas de negocio, reconciliación y backfill.</li>
+                <li>Implementación de Bronze histórico para soportar regeneración de reportes por fecha, análisis de incidentes, escenarios de rollback y trazabilidad operativa.</li>
+              </ul>
+            </div>
+
+            <div class="project-note">
+              <h4>Proyecto destacado: AS Applied — Bayer Crop Science</h4>
+              <ul>
+                <li>Análisis de datos globales de aplicaciones de agroquímicos en granjas de Estados Unidos, Canadá, Brasil y Rusia para apoyar iniciativas de crop science y analítica predictiva.</li>
+                <li>Desarrollo de un framework de feature engineering sobre PySpark usando clases reutilizables en Python para transformar datos generados por sensores en datasets analíticos.</li>
+                <li>Estandarización y traducción de nombres de agroquímicos, limpieza de datos y creación de lógica para identificar aplicaciones parciales vs. completas y estadísticas de aplicación.</li>
+                <li>Uso de Domino, S3, Python, PySpark, Pandas, Matplotlib, Seaborn y Plotly para análisis exploratorio, validación de tendencias y soporte al equipo de data science.</li>
+              </ul>
+            </div>
           </div>
 
           <div class="role">
@@ -449,11 +491,13 @@
           <h2>Technical skills</h2>
           <div class="skill-grid">
             <div class="skill-label">Analytics & Coding</div>
-            <div class="skill-value">Python, Pandas, SQL, PySpark, R, tidyverse, Excel</div>
-            <div class="skill-label">Data Platforms</div>
-            <div class="skill-value">Databricks, Microsoft Fabric, Azure Data Factory, BigQuery, AWS Athena, AWS Glue</div>
+            <div class="skill-value">Python, Pandas, Polars, SQL, PySpark, R, tidyverse, Excel</div>
+            <div class="skill-label">Data Engineering</div>
+            <div class="skill-value">Databricks, Delta Lake, Unity Catalog, Lakeflow / DLT, CDC, medallion architecture, data quality, reconciliation</div>
+            <div class="skill-label">Cloud & Integration</div>
+            <div class="skill-value">Azure Data Factory, Azure Data Lake / Blob Storage, Azure SQL, Event Hubs, Azure Functions, APIs, S3, Google Cloud Storage, BigQuery, AWS Athena, AWS Glue</div>
             <div class="skill-label">BI & Visualization</div>
-            <div class="skill-value">Power BI, Tableau, Plotly</div>
+            <div class="skill-value">Power BI, Tableau, Plotly, Matplotlib, Seaborn, dashboarding and data storytelling</div>
           </div>
         </section>
 
@@ -473,15 +517,34 @@
           <h2>Professional experience</h2>
 
           <div class="role">
-            <h3>Consultant | Data Engineer — CGI</h3>
+            <h3>Consultant | Data Engineer / Analytics Engineer — CGI</h3>
             <div class="meta">January 2023 – Present | Remote / Panama</div>
             <ul>
-              <li>Build and maintain analytical data products for pricing, inventory, invoices, supply chain and product planning using Databricks, PySpark, SQL, Delta Lake, Azure Data Factory and Azure SQL.</li>
-              <li>Translate complex ERP/WMS/e-commerce business rules into reusable datasets for reporting, analytics and downstream business use cases.</li>
-              <li>Develop and standardize SQL/PySpark transformations for price lists, discounts, VAT/tax treatment, gross/net values, valid quantities and invoice/order line metrics.</li>
-              <li>Reconcile data across Infor M3, Compass, Azure SQL, Databricks and Power BI to investigate discrepancies, validate counts and improve trust in reporting outputs.</li>
-              <li>Collaborate with planning, finance, merchandising, BI, data engineering and AI-related stakeholders to define metrics, troubleshoot data issues and communicate root causes.</li>
+              <li>Led data platform modernization initiatives for retail, wholesale and supply chain clients, designing scalable pipelines, reusable PySpark frameworks and analytics-ready data products.</li>
+              <li>Implemented Databricks medallion architectures with historical Bronze layers, reliable Silver patterns, Gold serving layers, Delta Lake, Unity Catalog, lineage and data governance.</li>
+              <li>Designed parameterized Azure Data Factory pipelines and batch/streaming integrations for ERP, WMS, e-commerce, APIs and operational data sources.</li>
+              <li>Delivered data products for demand planning, inventory reconciliation, pricing, cost enrichment, invoice analysis, supply chain reporting and historical report regeneration.</li>
+              <li>Improved data warehouse response times by 99%, reduced processing costs by 75%+ and cut selected infrastructure costs by ~90% through optimized Databricks processing and job compute patterns.</li>
             </ul>
+
+            <div class="project-note">
+              <h4>Selected project: Data Platform Modernization — Retail / Wholesale / Supply Chain</h4>
+              <ul>
+                <li>Modernized an Infor M3 data platform by implementing a Databricks Lakehouse architecture to separate raw history, reliable processing layers and analytics-ready serving data.</li>
+                <li>Built reusable Python/PySpark components to centralize report regeneration, pricing, cost, business-rule logic, reconciliation and backfill workflows.</li>
+                <li>Implemented Bronze historical storage to support report regeneration by date, incident analysis, rollback scenarios and operational traceability.</li>
+              </ul>
+            </div>
+
+            <div class="project-note">
+              <h4>Selected project: AS Applied — Bayer Crop Science</h4>
+              <ul>
+                <li>Analyzed global agrochemical application data from farms across the United States, Canada, Brazil and Russia to support crop science and predictive analytics initiatives.</li>
+                <li>Built a PySpark-based feature engineering framework using reusable Python classes to transform sensor-generated application data into analytics-ready datasets.</li>
+                <li>Standardized and translated agrochemical product names, cleaned source data and developed logic to identify partial vs. complete applications and application-level statistics.</li>
+                <li>Used Domino, S3, Python, PySpark, Pandas, Matplotlib, Seaborn and Plotly for exploratory analysis, trend validation and data science support workflows.</li>
+              </ul>
+            </div>
           </div>
 
           <div class="role">
