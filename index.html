@@ -519,6 +519,97 @@
     .service-fit .card h3 { min-height: 46px; }
 
 
+
+.education-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.4fr);
+  gap: var(--gap);
+  align-items: stretch;
+}
+
+.education-panel {
+  padding: 28px;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: var(--card);
+  box-shadow: var(--shadow-soft);
+  min-height: 100%;
+}
+
+.education-panel h3 {
+  margin-bottom: 16px;
+}
+
+.education-list {
+  display: grid;
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.education-item {
+  padding: 16px 18px;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.045);
+}
+
+.education-item strong {
+  display: block;
+  color: var(--text);
+  font-size: 17px;
+  margin-bottom: 5px;
+}
+
+.education-item span {
+  display: block;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.cert-card {
+  padding: 16px 18px;
+  border-radius: 18px;
+  border: 1px solid rgba(82,213,255,.20);
+  background: rgba(82,213,255,.065);
+}
+
+.cert-card strong {
+  display: block;
+  color: var(--accent);
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.cert-card span {
+  display: block;
+  color: var(--muted);
+  line-height: 1.5;
+  font-size: 15px;
+}
+
+.tool-summary {
+  margin-top: 18px;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+@media (max-width: 980px) {
+  .education-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .cert-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
     .portfolio-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -537,6 +628,130 @@
       justify-content: space-between;
       gap: 18px;
     }
+
+
+.impact-quote {
+  margin-top: 18px;
+  padding: 18px 20px;
+  border-left: 3px solid var(--accent);
+  background: rgba(82,213,255,.08);
+  border-radius: 16px;
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.impact-quote strong {
+  color: var(--accent);
+}
+
+.compact-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.compact-metric {
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(255,255,255,.055);
+}
+
+.compact-metric strong {
+  display: block;
+  color: var(--accent);
+  font-size: 22px;
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+
+.compact-metric span {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+@media (max-width: 760px) {
+  .compact-metrics {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+.case-wide-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 22px;
+  align-items: stretch;
+}
+
+.case-wide-card {
+  padding: 22px;
+  border-radius: 20px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.055);
+  min-height: 100%;
+}
+
+.case-wide-card h4 {
+  margin: 0 0 12px;
+  color: var(--text);
+  font-size: 18px;
+}
+
+.case-wide-card p {
+  margin: 0 0 12px;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.case-wide-card ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.case-wide-card li {
+  margin: 8px 0;
+}
+
+.mini-metrics {
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.mini-metric {
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(82,213,255,.22);
+  background: rgba(82,213,255,.07);
+}
+
+.mini-metric strong {
+  display: block;
+  color: var(--accent);
+  font-size: 20px;
+  line-height: 1.15;
+  margin-bottom: 4px;
+}
+
+.mini-metric span {
+  display: block;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+@media (max-width: 1080px) {
+  .case-wide-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
     .project-card.featured {
       grid-column: span 2;
@@ -920,24 +1135,64 @@
         </div>
       </section>
 
-      <section id="education">
-        <div class="container">
-          <div class="section-head">
-            <div>
-              <h2>Estudios y certificaciones</h2>
-              <p>Mi formación combina ingeniería, supply chain, analítica y especialización técnica en plataformas modernas de datos.</p>
-            </div>
+<section id="education">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2>Estudios y certificaciones</h2>
+        <p>Formación en ingeniería, supply chain, analítica y plataformas modernas de datos, complementada con certificaciones prácticas en Databricks, Spark y Microsoft Fabric.</p>
+      </div>
+    </div>
+
+    <div class="education-layout">
+      <div class="education-panel">
+        <h3>Formación académica</h3>
+        <p>Mi base en ingeniería industrial y supply chain me permite conectar procesos operativos, tecnología y analítica para convertir problemas de negocio en soluciones de datos.</p>
+
+        <div class="education-list">
+          <div class="education-item">
+            <strong>Ingeniería Industrial</strong>
+            <span>Formación en procesos, operaciones, mejora continua, análisis cuantitativo y gestión industrial.</span>
           </div>
-          <div class="cards">
-            <article class="card"><h3>Formación académica</h3><p>Industrial Engineer con Master’s in Supply Chain Management. Esta base me permite analizar procesos end-to-end, conectar operaciones con tecnología y convertir problemas de negocio en soluciones analíticas.</p></article>
-            <article class="card"><h3>Databricks & Spark</h3><p>Databricks Certified Data Engineer Associate y Databricks Certified Associate Developer for Apache Spark. Experiencia práctica con PySpark, Delta Lake, Unity Catalog y lakehouse.</p></article>
-            <article class="card"><h3>Microsoft Data Platform</h3><p>Microsoft Certified: Fabric Analytics Engineer Associate, conocimiento en Azure Data Factory, Azure SQL, Power BI, Power Automate, Microsoft Fabric y preparación para Fabric Data Engineer Associate.</p></article>
+          <div class="education-item">
+            <strong>Maestría en Supply Chain Management</strong>
+            <span>Especialización en logística, planificación, inventario, materiales y procesos end-to-end.</span>
           </div>
-          <div class="chips" aria-label="Technology stack">
-            <span class="chip">Databricks</span><span class="chip">PySpark</span><span class="chip">SQL</span><span class="chip">Delta Lake</span><span class="chip">Unity Catalog</span><span class="chip">Azure Data Factory</span><span class="chip">Azure SQL</span><span class="chip">Microsoft Fabric</span><span class="chip">Power BI</span><span class="chip">Power Automate</span><span class="chip">Python</span><span class="chip">Data Quality</span><span class="chip">Lakehouse</span><span class="chip">APIs</span><span class="chip">WMS</span><span class="chip">ERP</span><span class="chip">Web Scraping</span><span class="chip">Forms</span>
+          <div class="education-item">
+            <strong>Big Data & Analytics</strong>
+            <span>Formación complementaria orientada a analítica, datos y aplicaciones empresariales.</span>
           </div>
         </div>
-      </section>
+      </div>
+
+      <div class="education-panel">
+        <h3>Certificaciones y plataformas</h3>
+        <p>Certificaciones enfocadas en ingeniería de datos, procesamiento distribuido, lakehouse, analítica y soluciones modernas sobre cloud.</p>
+
+        <div class="cert-grid">
+          <div class="cert-card">
+            <strong>Databricks Data Engineer Associate</strong>
+            <span>Lakehouse, pipelines, Delta Lake, data engineering y buenas prácticas en Databricks.</span>
+          </div>
+          <div class="cert-card">
+            <strong>Databricks Apache Spark Developer</strong>
+            <span>Procesamiento distribuido con Spark, PySpark, optimización y transformación de datos.</span>
+          </div>
+          <div class="cert-card">
+            <strong>Microsoft Fabric Analytics Engineer Associate</strong>
+            <span>Modelos semánticos, Power BI, lakehouse, warehouse y analítica empresarial en Fabric.</span>
+          </div>
+          <div class="cert-card">
+            <strong>Azure Data Fundamentals</strong>
+            <span>Fundamentos de datos, servicios cloud, almacenamiento, procesamiento y analítica en Azure.</span>
+          </div>
+        </div>
+
+        <p class="tool-summary"><strong>Stack relacionado:</strong> Databricks, PySpark, Delta Lake, Unity Catalog, Azure Data Factory, Microsoft Fabric, Azure SQL, Power BI, Tableau, Looker, Power Automate y APIs.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
       <section>
         <div class="container split">
@@ -968,7 +1223,7 @@
               <div class="project-top">
                 <div class="project-meta">Caso de éxito · Modernización de plataforma de datos</div>
                 <h3>From Data Chaos to an AI-Ready Lakehouse</h3>
-                <p>Modernización de una plataforma de datos en retail / supply chain alrededor de Infor M3. El proyecto transformó un ecosistema fragmentado, con alta dependencia de Azure SQL y procesos aislados, en una base Lakehouse gobernada con Databricks, Delta Lake, Unity Catalog, capas Bronze/Silver, reconciliación automática, backfill y data products por dominio.</p>
+                <p>Modernización de una plataforma de datos en retail / supply chain alrededor de Infor M3. El proyecto transformó un ecosistema fragmentado, con alta dependencia de Azure SQL y procesos aislados, en una base Lakehouse gobernada con Databricks, Delta Lake, Unity Catalog, capas Bronze/Silver, reconciliación automática, backfill y data products por dominio. La solución también implementó CDC y propagación incremental de cambios hacia el Data Warehouse como capa Gold/serving para consumo analítico.</p>
               </div>
               <div class="case-metrics">
                 <div class="case-metric"><strong>80+</strong><span>tablas procesadas con un framework dinámico basado en configuración.</span></div>
@@ -982,12 +1237,65 @@
                 <div class="case-column"><h4>Impacto</h4><ul><li>Menor costo e infraestructura más eficiente.</li><li>Mayor confianza con reconciliación y controles de calidad.</li><li>Base gobernada y preparada para analítica avanzada e IA.</li></ul></div>
               </div>
               <div class="project-tags">
-                <span>Databricks</span><span>Delta Lake</span><span>Unity Catalog</span><span>Lakeflow</span><span>Medallion Architecture</span><span>Data Quality</span><span>Backfill</span><span>Cost Optimization</span><span>Data Products</span>
+                <span>Databricks</span><span>Delta Lake</span><span>Unity Catalog</span><span>Lakeflow</span><span>CDC</span><span>Medallion Architecture</span><span>Data Quality</span><span>Incremental Gold</span><span>Backfill</span><span>Cost Optimization</span><span>Data Products</span>
               </div>
               <div class="project-actions">
                 <a class="btn btn-secondary" href="#contact">Conversar sobre este caso</a>
               </div>
             </article>
+
+
+<article class="project-card featured success-case">
+  <div class="project-top">
+    <div class="project-meta">Caso de éxito · Data Engineering para Data Science</div>
+    <h3>AS Applied Data Science Support</h3>
+    <p>Proyecto global con Bayer Crop Science enfocado en analizar, limpiar y habilitar datos de aplicaciones de agroquímicos provenientes de granjas en Estados Unidos, Canadá, Brasil y Rusia. El trabajo permitió recuperar y hacer utilizable aproximadamente el 80% de un universo de 350M records, transformando datos generados por sensores y polígonos de granjas en datasets listos para análisis agronómico, feature engineering y soporte a modelos predictivos relacionados con riesgo de enfermedades y hongos en cultivos.</p>
+  </div>
+
+
+<div class="case-wide-grid">
+  <div class="case-wide-card">
+    <h4>Data challenge</h4>
+    <p>El proyecto trabajó con datos globales de aplicaciones de agroquímicos generados por sensores y polígonos de granjas en Estados Unidos, Canadá, Brasil y Rusia.</p>
+    <div class="mini-metrics">
+      <div class="mini-metric"><strong>350M records</strong><span>Data analizada, limpiada y preparada para consumo analítico.</span></div>
+      <div class="mini-metric"><strong>80% enabled</strong><span>Porción aproximada habilitada para análisis, feature engineering y modelado.</span></div>
+    </div>
+  </div>
+
+  <div class="case-wide-card">
+    <h4>Technical solution</h4>
+    <ul>
+      <li>Clase reusable en Python sobre PySpark para retrieval, transformación y feature engineering.</li>
+      <li>Estandarización y traducción de nombres de agroquímicos entre países y sistemas fuente.</li>
+      <li>Validación de polígonos de granjas para clasificar asignaciones correctas vs. incorrectas.</li>
+      <li>Lógica para identificar aplicaciones parciales vs. completas y generar estadísticas por aplicación.</li>
+    </ul>
+  </div>
+
+  <div class="case-wide-card">
+    <h4>Impact</h4>
+    <ul>
+      <li>Reducción de código duplicado entre notebooks y miembros del equipo.</li>
+      <li>Centralización de lógica crítica del pipeline en una clase reutilizable.</li>
+      <li>Datasets más limpios, consistentes y listos para modelos predictivos.</li>
+      <li>Adopción interna por múltiples miembros del equipo.</li>
+    </ul>
+    <div class="mini-metrics">
+      <div class="mini-metric"><strong>PySpark class</strong><span>Componente reusable para transformar datos as-applied.</span></div>
+      <div class="mini-metric"><strong>Team adoption</strong><span>La clase fue usada por múltiples miembros del equipo y luego centralizada.</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="impact-quote">
+    <strong>Señal de impacto:</strong> el feedback interno destacó que la clase cubría tantas partes del pipeline que gran parte del equipo empezó a usarla, impulsando la necesidad de centralizarla para evitar múltiples versiones.
+  </div>
+
+  <div class="chips" aria-label="AS Applied stack">
+    <span class="chip">Python</span><span class="chip">PySpark</span><span class="chip">Pandas</span><span class="chip">S3</span><span class="chip">Domino</span><span class="chip">Matplotlib</span><span class="chip">Seaborn</span><span class="chip">Plotly</span><span class="chip">Feature Engineering</span><span class="chip">Sensor Data</span><span class="chip">Polygon Validation</span><span class="chip">Geospatial QA</span><span class="chip">Data Cleaning</span>
+  </div>
+</article>
 
             <article class="project-card featured dashboard-project">
               <div class="project-top">
@@ -1099,24 +1407,64 @@
         </div>
       </section>
 
-      <section id="education-en">
-        <div class="container">
-          <div class="section-head">
-            <div>
-              <h2>Education and certifications</h2>
-              <p>My education combines engineering, supply chain, analytics and technical specialization in modern data platforms.</p>
-            </div>
+<section id="education-en">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2>Education and certifications</h2>
+        <p>Education in engineering, supply chain, analytics and modern data platforms, complemented by practical certifications in Databricks, Spark and Microsoft Fabric.</p>
+      </div>
+    </div>
+
+    <div class="education-layout">
+      <div class="education-panel">
+        <h3>Academic background</h3>
+        <p>My foundation in industrial engineering and supply chain helps me connect operations, technology and analytics to turn business problems into data solutions.</p>
+
+        <div class="education-list">
+          <div class="education-item">
+            <strong>Industrial Engineering</strong>
+            <span>Background in processes, operations, continuous improvement, quantitative analysis and industrial management.</span>
           </div>
-          <div class="cards">
-            <article class="card"><h3>Academic background</h3><p>Industrial Engineer with a Master’s in Supply Chain Management. This background helps me analyze end-to-end processes, connect operations with technology and translate business problems into analytics solutions.</p></article>
-            <article class="card"><h3>Databricks & Spark</h3><p>Databricks Certified Data Engineer Associate and Databricks Certified Associate Developer for Apache Spark. Hands-on experience with PySpark, Delta Lake, Unity Catalog and lakehouse platforms.</p></article>
-            <article class="card"><h3>Microsoft Data Platform</h3><p>Microsoft Certified: Fabric Analytics Engineer Associate, experience with Azure Data Factory, Azure SQL, Power BI, Power Automate, Microsoft Fabric and preparation for Fabric Data Engineer Associate.</p></article>
+          <div class="education-item">
+            <strong>Master’s in Supply Chain Management</strong>
+            <span>Specialization in logistics, planning, inventory, materials and end-to-end operational processes.</span>
           </div>
-          <div class="chips" aria-label="Technology stack">
-            <span class="chip">Databricks</span><span class="chip">PySpark</span><span class="chip">SQL</span><span class="chip">Delta Lake</span><span class="chip">Unity Catalog</span><span class="chip">Azure Data Factory</span><span class="chip">Azure SQL</span><span class="chip">Microsoft Fabric</span><span class="chip">Power BI</span><span class="chip">Power Automate</span><span class="chip">Python</span><span class="chip">Data Quality</span><span class="chip">Lakehouse</span><span class="chip">APIs</span><span class="chip">WMS</span><span class="chip">ERP</span><span class="chip">Web Scraping</span><span class="chip">Forms</span>
+          <div class="education-item">
+            <strong>Big Data & Analytics</strong>
+            <span>Complementary education focused on analytics, data and business applications.</span>
           </div>
         </div>
-      </section>
+      </div>
+
+      <div class="education-panel">
+        <h3>Certifications and platforms</h3>
+        <p>Certifications focused on data engineering, distributed processing, lakehouse, analytics and modern cloud data solutions.</p>
+
+        <div class="cert-grid">
+          <div class="cert-card">
+            <strong>Databricks Data Engineer Associate</strong>
+            <span>Lakehouse, pipelines, Delta Lake, data engineering and Databricks best practices.</span>
+          </div>
+          <div class="cert-card">
+            <strong>Databricks Apache Spark Developer</strong>
+            <span>Distributed processing with Spark, PySpark, optimization and data transformations.</span>
+          </div>
+          <div class="cert-card">
+            <strong>Microsoft Fabric Analytics Engineer Associate</strong>
+            <span>Semantic models, Power BI, lakehouse, warehouse and enterprise analytics in Fabric.</span>
+          </div>
+          <div class="cert-card">
+            <strong>Azure Data Fundamentals</strong>
+            <span>Data fundamentals, cloud services, storage, processing and analytics in Azure.</span>
+          </div>
+        </div>
+
+        <p class="tool-summary"><strong>Related stack:</strong> Databricks, PySpark, Delta Lake, Unity Catalog, Azure Data Factory, Microsoft Fabric, Azure SQL, Power BI, Tableau, Looker, Power Automate and APIs.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
       <section>
         <div class="container split">
@@ -1147,7 +1495,7 @@
               <div class="project-top">
                 <div class="project-meta">Success story · Data platform modernization</div>
                 <h3>From Data Chaos to an AI-Ready Lakehouse</h3>
-                <p>Retail / supply chain data platform modernization around Infor M3. The project transformed a fragmented, Azure SQL-heavy estate with isolated processes into a governed Lakehouse foundation using Databricks, Delta Lake, Unity Catalog, Bronze/Silver layers, automated reconciliation, backfill capabilities and domain-oriented data products.</p>
+                <p>Retail / supply chain data platform modernization around Infor M3. The project transformed a fragmented, Azure SQL-heavy estate with isolated processes into a governed Lakehouse foundation using Databricks, Delta Lake, Unity Catalog, Bronze/Silver layers, automated reconciliation, backfill capabilities and domain-oriented data products. The solution also implemented CDC and incremental change propagation into the Data Warehouse as the Gold/serving layer for analytical consumption.</p>
               </div>
               <div class="case-metrics">
                 <div class="case-metric"><strong>80+</strong><span>tables processed through a dynamic configuration-driven framework.</span></div>
@@ -1167,6 +1515,59 @@
                 <a class="btn btn-secondary" href="#contact-en">Discuss this case</a>
               </div>
             </article>
+
+
+<article class="project-card featured success-case">
+  <div class="project-top">
+    <div class="project-meta">Success case · Data Engineering for Data Science</div>
+    <h3>AS Applied Data Science Support</h3>
+    <p>Global Bayer Crop Science project focused on analyzing, cleaning and enabling agrochemical application data from farms across the United States, Canada, Brazil and Russia. The work helped recover and make usable approximately 80% of a 350M-record dataset, transforming sensor-generated application data and farm polygons into analytics-ready datasets for agronomic analysis, feature engineering and predictive modeling support around crop disease and fungus risk.</p>
+  </div>
+
+
+<div class="case-wide-grid">
+  <div class="case-wide-card">
+    <h4>Data challenge</h4>
+    <p>The project worked with global agrochemical application data generated by sensors and farm polygons across the United States, Canada, Brazil and Russia.</p>
+    <div class="mini-metrics">
+      <div class="mini-metric"><strong>350M records</strong><span>Data analyzed, cleaned and prepared for analytical consumption.</span></div>
+      <div class="mini-metric"><strong>80% enabled</strong><span>Approximate portion enabled for analysis, feature engineering and modeling.</span></div>
+    </div>
+  </div>
+
+  <div class="case-wide-card">
+    <h4>Technical solution</h4>
+    <ul>
+      <li>Reusable Python class on top of PySpark for retrieval, transformation and feature engineering.</li>
+      <li>Standardization and translation of agrochemical product names across countries and source systems.</li>
+      <li>Farm polygon validation to classify correct vs. incorrect assignments.</li>
+      <li>Logic to identify partial vs. complete applications and generate application-level statistics.</li>
+    </ul>
+  </div>
+
+  <div class="case-wide-card">
+    <h4>Impact</h4>
+    <ul>
+      <li>Reduced duplicated code across notebooks and team members.</li>
+      <li>Centralized critical pipeline logic into a reusable class.</li>
+      <li>Cleaner, more consistent datasets ready for predictive models.</li>
+      <li>Internal adoption by multiple team members.</li>
+    </ul>
+    <div class="mini-metrics">
+      <div class="mini-metric"><strong>PySpark class</strong><span>Reusable component for as-applied data transformation.</span></div>
+      <div class="mini-metric"><strong>Team adoption</strong><span>The class was used by multiple team members and later centralized.</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="impact-quote">
+    <strong>Impact signal:</strong> internal feedback highlighted that the class covered so much of the pipeline that much of the team started using it, creating the need to centralize the solution and avoid multiple versions.
+  </div>
+
+  <div class="chips" aria-label="AS Applied stack">
+    <span class="chip">Python</span><span class="chip">PySpark</span><span class="chip">Pandas</span><span class="chip">S3</span><span class="chip">Domino</span><span class="chip">Matplotlib</span><span class="chip">Seaborn</span><span class="chip">Plotly</span><span class="chip">Feature Engineering</span><span class="chip">Sensor Data</span><span class="chip">Polygon Validation</span><span class="chip">Geospatial QA</span><span class="chip">Data Cleaning</span>
+  </div>
+</article>
 
             <article class="project-card featured dashboard-project">
               <div class="project-top">

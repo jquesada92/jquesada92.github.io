@@ -4,12 +4,8 @@ Ready for GitHub Pages.
 
 ## Update included
 
-- Replaced the image logo in the nav with an HTML/CSS brand lockup.
-- The name "Jose Quesada" is now real text, larger, readable and integrated into the dark nav.
-- Language routing between landing and CV is preserved.
-
-## Files
-
-- `index.html`: main landing page
-- `cv.html`: bilingual CV
-- `assets/`: favicon and previous logo assets
+- AS Applied / Bayer Crop Science case redesigned into a full-width 3-column layout:
+  - Data challenge
+  - Technical solution
+  - Impact
+- Metrics are integrated inside the columns to avoid unused whitespace.
