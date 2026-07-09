@@ -58,45 +58,82 @@
     }
 
     .nav {
-      min-height: 64px;
+      min-height: 82px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 24px;
     }
 
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 14px;
-      font-weight: 850;
-      letter-spacing: -0.02em;
-      min-width: 0;
-    }
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 13px;
+  font-weight: 850;
+  letter-spacing: -0.02em;
+  min-width: 0;
+  color: var(--text);
+  flex: 0 0 auto;
+}
 
-    .brand-logo-shell {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: transparent;
-      border-radius: 0;
-      padding: 0;
-      border: 0;
-      box-shadow: none;
-      flex: 0 0 auto;
-    }
+.brand-icon {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  height: 42px;
+  min-width: 74px;
+  color: #f7fbff;
+}
 
-    .brand-logo {
-      display: block;
-      width: 188px;
-      height: auto;
-      max-height: 44px;
-      object-fit: contain;
-    }
+.brand-jq {
+  font-size: 31px;
+  line-height: 1;
+  font-weight: 950;
+  letter-spacing: -0.12em;
+  color: #f7fbff;
+}
 
-    .brand-text {
-      display: none;
-    }
+.brand-chart {
+  position: absolute;
+  width: 34px;
+  height: 18px;
+  left: 38px;
+  top: 10px;
+  overflow: visible;
+}
+
+.brand-chart polyline {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 3.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.brand-chart circle {
+  fill: var(--accent);
+}
+
+.brand-divider {
+  width: 1px;
+  height: 42px;
+  background: linear-gradient(to bottom, transparent, var(--accent), transparent);
+  flex: 0 0 auto;
+  opacity: .9;
+}
+
+.brand-name-inline {
+  display: inline-block;
+  max-width: none;
+  color: #f7fbff;
+  font-size: 23px;
+  line-height: 1;
+  font-weight: 850;
+  letter-spacing: -0.045em;
+  white-space: nowrap;
+  padding-bottom: 3px;
+  border-bottom: 2px solid var(--accent);
+}
 
     .nav-right {
       display: flex;
@@ -109,9 +146,9 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 20px;
+      gap: 26px;
       color: var(--muted);
-      font-size: 14px;
+      font-size: 16px;
     }
 
     .nav-links a:hover { color: var(--text); }
@@ -129,7 +166,7 @@
     .lang-switch button {
       border: 0;
       border-radius: 999px;
-      padding: 8px 10px;
+      padding: 10px 13px;
       background: transparent;
       color: var(--muted);
       cursor: pointer;
@@ -746,7 +783,7 @@
     @media (max-width: 640px) {
       :root { --section-y: 48px; --gap: 16px; }
       .container { width: min(100% - 28px, var(--max)); }
-      .nav { min-height: 66px; }
+      .nav { min-height: 82px; }
       .cards, .service-fit, .stat-grid, .portfolio-grid { grid-template-columns: 1fr; }
 
       .case-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -760,14 +797,36 @@
       .btn { width: 100%; }
       .hero-actions { width: 100%; }
       .nav-right { gap: 10px; }
+
+.brand {
+  gap: 9px;
+}
+
+.brand-icon {
+  height: 36px;
+  min-width: 64px;
+}
+
+.brand-jq {
+  font-size: 27px;
+}
+
+.brand-chart {
+  width: 29px;
+  height: 16px;
+  left: 33px;
+  top: 9px;
+}
+
+.brand-divider {
+  height: 34px;
+}
+
+.brand-name-inline {
+  font-size: 20px;
+}
+
       .brand-text { display: none; }
-      .brand-logo {
-      display: block;
-      width: 188px;
-      height: auto;
-      max-height: 44px;
-      object-fit: contain;
-    }
     }
 
     @media print {
@@ -782,10 +841,21 @@
 <body>
   <header>
     <div class="container nav">
-      <a class="brand" href="#top" aria-label="Go to top">
-        <span class="brand-logo-shell"><img class="brand-logo" src="assets/jq-logo-header.svg" alt="Jose Quesada Data Engineering & Analytics logo" /></span>
-        <span class="brand-text">José Quesada Ortiz</span>
-      </a>
+
+<a class="brand" href="#top" aria-label="Jose Quesada home">
+  <span class="brand-icon" aria-hidden="true">
+    <span class="brand-jq">JQ</span>
+    <svg class="brand-chart" viewBox="0 0 44 24" focusable="false" aria-hidden="true">
+      <polyline points="3,17 13,10 23,14 39,4"></polyline>
+      <circle cx="3" cy="17" r="2.4"></circle>
+      <circle cx="13" cy="10" r="2.4"></circle>
+      <circle cx="23" cy="14" r="2.4"></circle>
+      <circle cx="39" cy="4" r="2.4"></circle>
+    </svg>
+  </span>
+  <span class="brand-divider" aria-hidden="true"></span>
+  <span class="brand-name-inline">Jose Quesada</span>
+</a>
       <div class="nav-right">
         <nav class="nav-links" aria-label="Primary navigation">
           <a href="#services" data-i18n="navServices">Servicios</a>
@@ -993,7 +1063,7 @@
             <div class="hero-actions">
               <a class="btn btn-primary" href="mailto:jaquesada92@outlook.com?subject=Data%20services%20inquiry">Let’s discuss your project</a>
               <a class="btn btn-secondary" href="https://www.linkedin.com/in/jquesada92/" target="_blank" rel="noopener noreferrer">View LinkedIn</a>
-              <a class="btn btn-secondary" href="cv.html?lang=en" data-cv-link>View CV</a>
+              <a class="btn btn-secondary" href="cv.html?lang=es" data-cv-link>View CV</a>
             </div>
           </div>
         </div>
@@ -1174,43 +1244,103 @@
   </footer>
 
   <script>
+  (function () {
     const translations = {
       es: {
         navServices: 'Servicios',
         navEducation: 'Estudios',
         navPortfolio: 'Portafolio',
+        navCV: 'CV',
         navContact: 'Contacto',
-        anchors: ['#services', '#education', '#portfolio', '#contact']
+        anchors: {
+          navServices: '#services',
+          navEducation: '#education',
+          navPortfolio: '#portfolio',
+          navContact: '#contact'
+        }
       },
       en: {
         navServices: 'Services',
         navEducation: 'Education',
         navPortfolio: 'Portfolio',
+        navCV: 'CV',
         navContact: 'Contact',
-        anchors: ['#services-en', '#education-en', '#portfolio-en', '#contact-en']
+        anchors: {
+          navServices: '#services-en',
+          navEducation: '#education-en',
+          navPortfolio: '#portfolio-en',
+          navContact: '#contact-en'
+        }
       }
     };
 
-    const buttons = document.querySelectorAll('[data-lang]');
-    const blocks = document.querySelectorAll('[data-lang-content]');
+    const langButtons = document.querySelectorAll('[data-lang]');
+    const langBlocks = document.querySelectorAll('[data-lang-content]');
     const navItems = document.querySelectorAll('[data-i18n]');
-    const navLinks = document.querySelectorAll('.nav-links a');
 
-    function setLanguage(lang) {
-      document.documentElement.lang = lang;
-      updateCvLinks(lang);
-      try { localStorage.setItem('siteLang', lang); } catch (e) {}
-      blocks.forEach(block => block.classList.toggle('active', block.dataset.langContent === lang));
-      buttons.forEach(button => button.classList.toggle('active', button.dataset.lang === lang));
-      navItems.forEach(item => item.textContent = translations[lang][item.dataset.i18n]);
-      navLinks.forEach((link, index) => link.setAttribute('href', translations[lang].anchors[index]));
-      localStorage.setItem('preferredLanguage', lang);
+    function normalizeLang(lang) {
+      return lang === 'en' ? 'en' : 'es';
     }
 
-    buttons.forEach(button => button.addEventListener('click', () => setLanguage(button.dataset.lang)));
-    const savedLang = localStorage.getItem('preferredLanguage');
-    if (savedLang === 'en' || savedLang === 'es') setLanguage(savedLang);
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+    function setLanguage(lang) {
+      lang = normalizeLang(lang);
+      document.documentElement.lang = lang;
+
+      langBlocks.forEach(block => {
+        block.classList.toggle('active', block.getAttribute('data-lang-content') === lang);
+      });
+
+      langButtons.forEach(button => {
+        button.classList.toggle('active', button.getAttribute('data-lang') === lang);
+      });
+
+      navItems.forEach(item => {
+        const key = item.getAttribute('data-i18n');
+        if (translations[lang][key]) {
+          item.textContent = translations[lang][key];
+        }
+
+        if (key === 'navCV' || item.hasAttribute('data-cv-link')) {
+          item.setAttribute('href', 'cv.html?lang=' + lang);
+          item.setAttribute('data-cv-link', '');
+        } else if (translations[lang].anchors[key]) {
+          item.setAttribute('href', translations[lang].anchors[key]);
+        }
+      });
+
+      document.querySelectorAll('[data-cv-link]').forEach(link => {
+        link.setAttribute('href', 'cv.html?lang=' + lang);
+      });
+
+      try {
+        localStorage.setItem('preferredLanguage', lang);
+      } catch (e) {}
+    }
+
+    function initialLanguage() {
+      const params = new URLSearchParams(window.location.search);
+      const urlLang = params.get('lang');
+      if (urlLang === 'en' || urlLang === 'es') return urlLang;
+
+      try {
+        const saved = localStorage.getItem('preferredLanguage');
+        if (saved === 'en' || saved === 'es') return saved;
+      } catch (e) {}
+
+      return 'es';
+    }
+
+    langButtons.forEach(button => {
+      button.addEventListener('click', function () {
+        setLanguage(button.getAttribute('data-lang'));
+      });
+    });
+
+    setLanguage(initialLanguage());
+
+    const year = document.getElementById('year');
+    if (year) year.textContent = new Date().getFullYear();
+  })();
+</script>
 </body>
 </html>

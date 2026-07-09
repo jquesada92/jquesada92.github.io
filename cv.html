@@ -42,27 +42,82 @@
     .topbar-inner {
       max-width: var(--max);
       margin: 0 auto;
-      padding: 14px 24px;
+      padding: 18px 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 16px;
     }
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      min-width: 0;
-    }
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 13px;
+  font-weight: 850;
+  letter-spacing: -0.02em;
+  min-width: 0;
+  color: #f5f8ff;
+  flex: 0 0 auto;
+}
 
-    .brand img {
-      width: 188px;
-      height: auto;
-      max-height: 44px;
-      object-fit: contain;
-      display: block;
-    }
+.brand-icon {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  height: 42px;
+  min-width: 74px;
+  color: #f7fbff;
+}
+
+.brand-jq {
+  font-size: 31px;
+  line-height: 1;
+  font-weight: 950;
+  letter-spacing: -0.12em;
+  color: #f7fbff;
+}
+
+.brand-chart {
+  position: absolute;
+  width: 34px;
+  height: 18px;
+  left: 38px;
+  top: 10px;
+  overflow: visible;
+}
+
+.brand-chart polyline {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 3.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.brand-chart circle {
+  fill: var(--accent);
+}
+
+.brand-divider {
+  width: 1px;
+  height: 42px;
+  background: linear-gradient(to bottom, transparent, var(--accent), transparent);
+  flex: 0 0 auto;
+  opacity: .9;
+}
+
+.brand-name-inline {
+  display: inline-block;
+  max-width: none;
+  color: #f7fbff;
+  font-size: 23px;
+  line-height: 1;
+  font-weight: 850;
+  letter-spacing: -0.045em;
+  white-space: nowrap;
+  padding-bottom: 3px;
+  border-bottom: 2px solid var(--accent);
+}
 
     .actions {
       display: flex;
@@ -80,7 +135,7 @@
       padding: 9px 13px;
       font-weight: 750;
       cursor: pointer;
-      font-size: 14px;
+      font-size: 15px;
     }
 
     button.active {
@@ -255,6 +310,35 @@
     @media (max-width: 780px) {
       .topbar-inner { align-items: flex-start; flex-direction: column; }
       .actions { justify-content: flex-start; }
+
+.brand {
+  gap: 9px;
+}
+
+.brand-icon {
+  height: 36px;
+  min-width: 64px;
+}
+
+.brand-jq {
+  font-size: 27px;
+}
+
+.brand-chart {
+  width: 29px;
+  height: 16px;
+  left: 33px;
+  top: 9px;
+}
+
+.brand-divider {
+  height: 34px;
+}
+
+.brand-name-inline {
+  font-size: 20px;
+}
+
       .paper { padding: 28px; }
       .cv-header { grid-template-columns: 1fr; }
       .contact { text-align: left; white-space: normal; }
@@ -286,9 +370,21 @@
 <body>
   <div class="topbar">
     <div class="topbar-inner">
-      <a class="brand" href="index.html" data-home-link aria-label="Back to landing page">
-        <img src="assets/jq-logo-header.svg" alt="Jose Quesada logo" />
-      </a>
+
+<a class="brand" href="index.html?lang=es" aria-label="Jose Quesada home" data-home-link>
+  <span class="brand-icon" aria-hidden="true">
+    <span class="brand-jq">JQ</span>
+    <svg class="brand-chart" viewBox="0 0 44 24" focusable="false" aria-hidden="true">
+      <polyline points="3,17 13,10 23,14 39,4"></polyline>
+      <circle cx="3" cy="17" r="2.4"></circle>
+      <circle cx="13" cy="10" r="2.4"></circle>
+      <circle cx="23" cy="14" r="2.4"></circle>
+      <circle cx="39" cy="4" r="2.4"></circle>
+    </svg>
+  </span>
+  <span class="brand-divider" aria-hidden="true"></span>
+  <span class="brand-name-inline">Jose Quesada</span>
+</a>
       <div class="actions">
         <a class="nav-btn" href="index.html" data-home-link>Landing</a>
         <button type="button" class="active" data-lang="es">ES</button>
@@ -306,7 +402,7 @@
           <div>
             <h1>José Quesada Ortiz</h1>
             <p class="headline">Data & Analytics Professional | Data Engineering | BI | Supply Chain Analytics</p>
-            <p class="summary">Ingeniero Industrial y profesional de datos/analítica enfocado en usar datos para resolver problemas de negocio, mejorar la toma de decisiones y generar impacto operativo medible. Mi experiencia combina supply chain management, pricing, inventario, facturación y analítica de productos, conectando contexto de negocio con ejecución técnica y analítica.</p>
+            <p class="summary">Ingeniero Industrial y profesional de datos/analítica enfocado en resolver problemas de negocio, mejorar decisiones y generar impacto operativo medible. Mi experiencia combina supply chain, pricing, inventario, facturación y analítica de productos, conectando contexto de negocio con ejecución técnica.</p>
           </div>
           <div class="contact">
             <div>Panama City, Panama</div>
@@ -341,89 +437,83 @@
             <li>Data Science Professional Certificate</li>
           </ul>
         </section>
-
         <section>
-          <h2>Experiencia profesional</h2>
+  <h2>Experiencia profesional</h2>
 
-          <div class="role">
-            <h3>Consultant | Data Engineer / Analytics Engineer — CGI</h3>
-            <div class="meta">January 2023 – Present | Remote / Panama</div>
-            <ul>
-              <li>Liderazgo de iniciativas de modernización de plataformas de datos para clientes de retail, wholesale y supply chain, diseñando pipelines escalables, frameworks PySpark reutilizables y productos de datos analíticos.</li>
-              <li>Modernización de plataforma Infor M3 implementando arquitectura lakehouse en Databricks para separar historia raw, capas confiables de procesamiento y datos listos para analítica.</li>
-              <li>Implementación de arquitecturas medallion en Databricks con Bronze histórico, patrones Silver confiables, capas Gold de consumo, Delta Lake, Unity Catalog, linaje y gobierno de datos.</li>
-              <li>Construcción de componentes reutilizables en Python/PySpark para centralizar lógica de regeneración de reportes, pricing, costos, reglas de negocio, reconciliación y backfill.</li>
-              <li>Diseño de pipelines parametrizados con Azure Data Factory e integraciones batch/streaming para fuentes ERP, WMS, e-commerce, APIs y datos operativos.</li>
-              <li>Desarrollo de data products para demand planning, reconciliación de inventario, pricing, cost enrichment, invoice analysis, supply chain reporting y regeneración histórica de reportes por fecha.</li>
-              <li>Implementación de Bronze histórico para soportar análisis de incidentes, escenarios de rollback, trazabilidad operativa y recuperación ante errores de usuario en sistemas fuente.</li>
-              <li>Mejora de performance de data warehouse en 99%, reducción de costos de procesamiento en 75%+ y reducción de costos de infraestructura seleccionada en ~90% mediante optimización en Databricks y job compute.</li>
-            </ul>
-</div>
+  <div class="role">
+    <h3>Consultant | Data Engineer / Analytics Engineer — CGI</h3>
+    <div class="meta">January 2023 – Present | Remote / Panama</div>
+    <ul>
+      <li>Modernicé una plataforma de datos Infor M3 hacia una arquitectura lakehouse en Databricks, separando historia raw, procesamiento confiable y datos listos para analítica.</li>
+      <li>Implementé capas Bronze, Silver y Gold con Delta Lake, Unity Catalog, linaje y patrones de gobierno para mejorar trazabilidad, calidad y reutilización de datos.</li>
+      <li>Construí pipelines parametrizados y componentes reutilizables en Python/PySpark para ingesta, deduplicación, pricing, costos, reglas de negocio, reconciliación y backfill.</li>
+      <li>Desarrollé datasets de negocio para demand planning, inventario, pricing, facturación y supply chain, habilitando análisis histórico y regeneración de reportes por fecha.</li>
+      <li>Integré fuentes ERP, WMS, e-commerce, APIs y flujos batch/streaming usando Azure Data Factory, Event Hubs, Azure Functions, Databricks y Azure SQL.</li>
+      <li>Mejoré tiempos de respuesta de data warehouse en 99%, reduje costos de procesamiento en 75%+ y disminuí costos de infraestructura seleccionada en ~90% mediante optimización en Databricks y job compute.</li>
+    </ul>
+  </div>
 
-          <div class="role">
-            <h3>Associate Consultant — CGI</h3>
-            <div class="meta">November 2021 – January 2022 | Remote / Panama</div>
-            <ul>
-              <li>Soporte a un proyecto interno de data engineering y automatización sobre una aplicación AWS diseñada para conectar empleados aleatoriamente en coffee chats y fomentar colaboración entre equipos.</li>
-              <li>Auditoría de la base de datos de la aplicación, corrección de problemas de calidad de datos y mejora de tablas y procesos para habilitar reportes confiables de participación.</li>
-              <li>Desarrollo de una función AWS Lambda con Python para consultar la base de datos y generar estadísticas de engagement, actividad de matching y participación de usuarios.</li>
-              <li>Exposición de la función Lambda mediante AWS API Gateway, permitiendo que la aplicación web activara el servicio de reporting a través de un endpoint HTTP.</li>
-              <li>Mejora de la visibilidad para stakeholders internos sobre registros de usuarios, actividad de matching y tendencias de participación.</li>
-            </ul>
-          </div>
+  <div class="role">
+    <h3>Associate Consultant | Data Analyst — CGI</h3>
+    <div class="meta">January 2022 – January 2023 | Remote / Panama</div>
+    <ul>
+      <li>Analicé datos globales de aplicaciones de agroquímicos en granjas de Estados Unidos, Canadá, Brasil y Rusia para apoyar iniciativas de crop science y analítica predictiva.</li>
+      <li>Construí un framework de feature engineering en PySpark con clases reutilizables en Python para transformar datos de sensores en datasets analíticos.</li>
+      <li>Estandaricé y traduje nombres de agroquímicos entre países y fuentes, mejorando consistencia, limpieza de datos y preparación para modelos.</li>
+      <li>Desarrollé lógica para identificar aplicaciones parciales vs. completas y generar estadísticas de aplicación para análisis downstream.</li>
+      <li>Realicé análisis exploratorio y visualizaciones con Domino, S3, Python, PySpark, Pandas, Matplotlib, Seaborn y Plotly para validar tendencias, outliers y comportamiento regional.</li>
+    </ul>
+  </div>
 
-          <div class="role">
-            <h3>Associate Consultant | Data Analyst — CGI</h3>
-            <div class="meta">January 2022 – January 2023 | Remote / Panama</div>
-            <ul>
-              <li>Soporte a flujos de analítica y reporting usando SQL, Python y herramientas BI, convirtiendo preguntas operativas en datasets estructurados, métricas y dashboards.</li>
-              <li>Análisis de datos globales de aplicaciones de agroquímicos en granjas de Estados Unidos, Canadá, Brasil y Rusia para apoyar iniciativas de crop science y analítica predictiva.</li>
-              <li>Desarrollo de un framework de feature engineering sobre PySpark usando clases reutilizables en Python para transformar datos generados por sensores en datasets analíticos.</li>
-              <li>Estandarización y traducción de nombres de agroquímicos, limpieza de datos y creación de lógica para identificar aplicaciones parciales vs. completas y estadísticas de aplicación.</li>
-              <li>Uso de Domino, S3, Python, PySpark, Pandas, Matplotlib, Seaborn y Plotly para análisis exploratorio, validación de tendencias y soporte al equipo de data science.</li>
-              <li>Preparación de validaciones de datos, reportes y análisis para usuarios de negocio, combinando ejecución técnica con comunicación hacia stakeholders.</li>
-            </ul>
-          </div>
+  <div class="role">
+    <h3>Associate Consultant — CGI</h3>
+    <div class="meta">November 2021 – January 2022 | Remote / Panama</div>
+    <ul>
+      <li>Soporté una aplicación interna en AWS para conectar empleados en coffee chats y medir participación entre equipos.</li>
+      <li>Audité la base de datos, corregí problemas de calidad de datos y mejoré tablas para reportes confiables de participación.</li>
+      <li>Desarrollé una función AWS Lambda con Python, expuesta mediante API Gateway, para generar estadísticas de engagement, matching y registros de usuarios.</li>
+    </ul>
+  </div>
 
-          <div class="role">
-            <h3>Continuous Improvement Coordinator | Data Analysis & Process Automation — J. Cain & Co.</h3>
-            <div class="meta">October 2019 – October 2021 | Panama</div>
-            <ul>
-              <li>Trabajo con datos de productos farmacéuticos, facturación y logística; extracción, limpieza, validación y estandarización desde emails/PDFs de facturas, formularios Excel y fuentes operativas.</li>
-              <li>Construcción de automatizaciones, dashboards y reportes recurrentes con Python/Pandas/SQL, integrando bases de datos, CSV/Excel y fuentes operativas.</li>
-              <li>Implementación de controles de calidad para campos faltantes, inconsistencias de formato, duplicados y errores de captura.</li>
-              <li>Presentación de hallazgos y recomendaciones de mejora a líderes operativos, conectando calidad de datos, productividad y oportunidades de ahorro con planes prácticos.</li>
-            </ul>
-          </div>
+  <div class="role">
+    <h3>Continuous Improvement Coordinator | Data Analysis & Process Automation — J. Cain & Co.</h3>
+    <div class="meta">October 2019 – October 2021 | Panama</div>
+    <ul>
+      <li>Trabajé con datos de productos farmacéuticos, facturación y logística, extrayendo y estandarizando información desde emails, PDFs, formularios Excel y fuentes operativas.</li>
+      <li>Construí automatizaciones, dashboards y reportes recurrentes con Python, Pandas y SQL, integrando bases de datos, archivos CSV/Excel y fuentes operativas.</li>
+      <li>Implementé controles de calidad para campos faltantes, inconsistencias, duplicados y errores de captura, mejorando la confiabilidad de reportes operativos.</li>
+      <li>Presenté hallazgos y recomendaciones de mejora a líderes operativos, conectando productividad, calidad de datos y oportunidades de ahorro.</li>
+    </ul>
+  </div>
 
-          <div class="role">
-            <h3>Lead Consultant — J. Cain Logistics / Bringmedata Consulting</h3>
-            <div class="meta">July 2018 – October 2019 | Panama</div>
-            <ul>
-              <li>Liderazgo de iniciativas de consultoría analítica con datos de productos farmacéuticos, inventario, compras y distribución para mejorar visibilidad de stock y desempeño operativo.</li>
-              <li>Desarrollo de análisis de forecasting de demanda con Python y modelos de machine learning, contribuyendo a una reducción de 60% en overstock y soportando el resultado con dashboards en Tableau.</li>
-              <li>Construcción de workflow de tracking de envíos leyendo guías desde CSV, consultando APIs de DHL, almacenando JSON en Google Cloud Storage, actualizando BigQuery y alimentando vistas en Tableau.</li>
-            </ul>
-          </div>
+  <div class="role">
+    <h3>Lead Consultant — J. Cain Logistics / Bringmedata Consulting</h3>
+    <div class="meta">July 2018 – October 2019 | Panama</div>
+    <ul>
+      <li>Lideré iniciativas de consultoría analítica con datos de productos farmacéuticos, inventario, compras y distribución para mejorar visibilidad de stock y desempeño operativo.</li>
+      <li>Desarrollé análisis de forecasting de demanda con Python y modelos de machine learning, contribuyendo a una reducción de 60% en overstock y soportando el resultado con dashboards en Tableau.</li>
+      <li>Construí un workflow de tracking de envíos con archivos CSV, APIs de DHL, Google Cloud Storage, BigQuery y Tableau para seguimiento de órdenes desde warehouse hasta destino final.</li>
+    </ul>
+  </div>
 
-          <div class="role">
-            <h3>Process Engineer — J. Cain & Co. / Logistics Services Panama</h3>
-            <div class="meta">May 2016 – July 2018 | Colon, Panama</div>
-            <ul>
-              <li>Análisis de productividad logística, throughput y datos de procesos para identificar restricciones de capacidad, recursos subutilizados y oportunidades de mejora.</li>
-              <li>Creación de reportes y análisis operativos para apoyar la gestión de productividad e iniciativas de mejora continua en operaciones de warehouse/logística.</li>
-            </ul>
-          </div>
+  <div class="role">
+    <h3>Process Engineer — J. Cain & Co. / Logistics Services Panama</h3>
+    <div class="meta">May 2016 – July 2018 | Colon, Panama</div>
+    <ul>
+      <li>Analicé productividad logística, throughput y datos de procesos para identificar restricciones de capacidad, recursos subutilizados y oportunidades de mejora.</li>
+      <li>Creé reportes operativos para apoyar la gestión de productividad y mejora continua en operaciones de warehouse y logística.</li>
+    </ul>
+  </div>
 
-          <div class="role">
-            <h3>Price Analyst — Viveres Unidos S.A.</h3>
-            <div class="meta">July 2015 – May 2016 | Panama</div>
-            <ul>
-              <li>Análisis de pricing, costos, márgenes, rentabilidad, inventario y producción para materias primas, productos terminados, lanzamientos y promociones.</li>
-              <li>Soporte a decisiones de precios y reportes de costos mediante validación de datos fuente y preparación de análisis para stakeholders.</li>
-            </ul>
-          </div>
-        </section>
+  <div class="role">
+    <h3>Price Analyst — Viveres Unidos S.A.</h3>
+    <div class="meta">July 2015 – May 2016 | Panama</div>
+    <ul>
+      <li>Analicé pricing, costos, márgenes, rentabilidad, inventario y producción para materias primas, productos terminados, lanzamientos y promociones.</li>
+      <li>Apoyé decisiones de precios y reportes de costos mediante validación de datos fuente y preparación de análisis para stakeholders.</li>
+    </ul>
+  </div>
+</section>
 
         <section>
           <h2>Educación</h2>
@@ -457,7 +547,7 @@
           <div>
             <h1>José Quesada Ortiz</h1>
             <p class="headline">Data & Analytics Professional | Data Engineering | BI | Supply Chain Analytics</p>
-            <p class="summary">Industrial Engineer and data/analytics professional focused on using data to solve business problems, improve decision-making and support measurable operational impact. My experience combines supply chain management, pricing, inventory, invoice and product analytics, allowing me to connect business context with strong analytical execution.</p>
+            <p class="summary">Industrial Engineer and data/analytics professional focused on solving business problems, improving decisions and supporting measurable operational impact. My experience combines supply chain, pricing, inventory, invoice and product analytics, connecting business context with strong technical execution.</p>
           </div>
           <div class="contact">
             <div>Panama City, Panama</div>
@@ -492,89 +582,83 @@
             <li>Data Science Professional Certificate</li>
           </ul>
         </section>
-
         <section>
-          <h2>Professional experience</h2>
+  <h2>Professional experience</h2>
 
-          <div class="role">
-            <h3>Consultant | Data Engineer / Analytics Engineer — CGI</h3>
-            <div class="meta">January 2023 – Present | Remote / Panama</div>
-            <ul>
-              <li>Led data platform modernization initiatives for retail, wholesale and supply chain clients, designing scalable pipelines, reusable PySpark frameworks and analytics-ready data products.</li>
-              <li>Modernized an Infor M3 data platform by implementing a Databricks Lakehouse architecture to separate raw history, reliable processing layers and analytics-ready serving data.</li>
-              <li>Implemented Databricks medallion architectures with historical Bronze layers, reliable Silver patterns, Gold serving layers, Delta Lake, Unity Catalog, lineage and data governance.</li>
-              <li>Built reusable Python/PySpark components to centralize report regeneration, pricing, cost, business-rule logic, reconciliation and backfill workflows.</li>
-              <li>Designed parameterized Azure Data Factory pipelines and batch/streaming integrations for ERP, WMS, e-commerce, APIs and operational data sources.</li>
-              <li>Delivered data products for demand planning, inventory reconciliation, pricing, cost enrichment, invoice analysis, supply chain reporting and historical report regeneration by date.</li>
-              <li>Implemented historical Bronze storage to support incident analysis, rollback scenarios, operational traceability and recovery from source-system user errors.</li>
-              <li>Improved data warehouse response times by 99%, reduced processing costs by 75%+ and cut selected infrastructure costs by ~90% through optimized Databricks processing and job compute patterns.</li>
-            </ul>
-</div>
+  <div class="role">
+    <h3>Consultant | Data Engineer / Analytics Engineer — CGI</h3>
+    <div class="meta">January 2023 – Present | Remote / Panama</div>
+    <ul>
+      <li>Modernized an Infor M3 data platform into a Databricks Lakehouse architecture, separating raw history, reliable processing layers and analytics-ready serving data.</li>
+      <li>Implemented Bronze, Silver and Gold layers with Delta Lake, Unity Catalog, lineage and governance patterns to improve traceability, quality and reuse.</li>
+      <li>Built parameterized pipelines and reusable Python/PySpark components for ingestion, deduplication, pricing, cost, business rules, reconciliation and backfill workflows.</li>
+      <li>Delivered business datasets for demand planning, inventory, pricing, invoicing and supply chain, enabling historical analysis and report regeneration by date.</li>
+      <li>Integrated ERP, WMS, e-commerce, APIs and batch/streaming sources using Azure Data Factory, Event Hubs, Azure Functions, Databricks and Azure SQL.</li>
+      <li>Improved data warehouse response times by 99%, reduced processing costs by 75%+ and cut selected infrastructure costs by ~90% through Databricks optimization and job compute patterns.</li>
+    </ul>
+  </div>
 
-          <div class="role">
-            <h3>Associate Consultant — CGI</h3>
-            <div class="meta">November 2021 – January 2022 | Remote / Panama</div>
-            <ul>
-              <li>Supported an internal data engineering and automation project for an AWS-based application designed to randomly match employees for coffee chats and encourage cross-team collaboration.</li>
-              <li>Audited the application database, corrected data quality issues and improved tables and processes to enable reliable participation reporting.</li>
-              <li>Developed an AWS Lambda function with Python to query the database and generate user engagement, matching activity and participation statistics.</li>
-              <li>Exposed the Lambda function through AWS API Gateway, allowing the web application to trigger the reporting service through an HTTP endpoint.</li>
-              <li>Improved visibility for internal stakeholders into user registration, matching activity and participation trends.</li>
-            </ul>
-          </div>
+  <div class="role">
+    <h3>Associate Consultant | Data Analyst — CGI</h3>
+    <div class="meta">January 2022 – January 2023 | Remote / Panama</div>
+    <ul>
+      <li>Analyzed global agrochemical application data from farms across the United States, Canada, Brazil and Russia to support crop science and predictive analytics initiatives.</li>
+      <li>Built a PySpark feature engineering framework with reusable Python classes to transform sensor data into analytics-ready datasets.</li>
+      <li>Standardized and translated agrochemical product names across countries and sources, improving consistency, data cleaning and model readiness.</li>
+      <li>Developed logic to identify partial vs. complete applications and generate application-level statistics for downstream analysis.</li>
+      <li>Created exploratory analysis and visualizations with Domino, S3, Python, PySpark, Pandas, Matplotlib, Seaborn and Plotly to validate trends, outliers and regional behavior.</li>
+    </ul>
+  </div>
 
-          <div class="role">
-            <h3>Associate Consultant | Data Analyst — CGI</h3>
-            <div class="meta">January 2022 – January 2023 | Remote / Panama</div>
-            <ul>
-              <li>Supported analytics and reporting workflows using SQL, Python and BI tooling, turning operational questions into structured datasets, metrics and dashboards.</li>
-              <li>Analyzed global agrochemical application data from farms across the United States, Canada, Brazil and Russia to support crop science and predictive analytics initiatives.</li>
-              <li>Built a PySpark-based feature engineering framework using reusable Python classes to transform sensor-generated application data into analytics-ready datasets.</li>
-              <li>Standardized and translated agrochemical product names, cleaned source data and developed logic to identify partial vs. complete applications and application-level statistics.</li>
-              <li>Used Domino, S3, Python, PySpark, Pandas, Matplotlib, Seaborn and Plotly for exploratory analysis, trend validation and data science support workflows.</li>
-              <li>Prepared data validation, reporting and analysis outputs for business users, combining technical execution with stakeholder-facing communication.</li>
-            </ul>
-          </div>
+  <div class="role">
+    <h3>Associate Consultant — CGI</h3>
+    <div class="meta">November 2021 – January 2022 | Remote / Panama</div>
+    <ul>
+      <li>Supported an internal AWS application used to match employees for coffee chats and measure cross-team participation.</li>
+      <li>Audited the database, corrected data quality issues and improved tables for reliable participation reporting.</li>
+      <li>Developed a Python AWS Lambda function, exposed through API Gateway, to generate engagement, matching and user registration statistics.</li>
+    </ul>
+  </div>
 
-          <div class="role">
-            <h3>Continuous Improvement Coordinator | Data Analysis & Process Automation — J. Cain & Co.</h3>
-            <div class="meta">October 2019 – October 2021 | Panama</div>
-            <ul>
-              <li>Worked with pharmaceutical product, invoice and logistics data; extracted, cleaned, validated and standardized information from email/PDF invoice documents, Excel forms and operational sources.</li>
-              <li>Built Python/Pandas/SQL automations, dashboards and recurring reports integrating databases, CSV/Excel files and operational data sources.</li>
-              <li>Implemented quality checks for missing fields, formatting inconsistencies, duplicate records and data-entry issues, improving reporting reliability.</li>
-              <li>Presented findings and process-improvement recommendations to operational leaders, connecting data quality, productivity and cost-saving opportunities with practical execution plans.</li>
-            </ul>
-          </div>
+  <div class="role">
+    <h3>Continuous Improvement Coordinator | Data Analysis & Process Automation — J. Cain & Co.</h3>
+    <div class="meta">October 2019 – October 2021 | Panama</div>
+    <ul>
+      <li>Worked with pharmaceutical product, invoice and logistics data, extracting and standardizing information from emails, PDFs, Excel forms and operational sources.</li>
+      <li>Built automations, dashboards and recurring reports with Python, Pandas and SQL, integrating databases, CSV/Excel files and operational sources.</li>
+      <li>Implemented quality checks for missing fields, inconsistencies, duplicates and data-entry issues, improving operational reporting reliability.</li>
+      <li>Presented findings and improvement recommendations to operational leaders, connecting productivity, data quality and cost-saving opportunities.</li>
+    </ul>
+  </div>
 
-          <div class="role">
-            <h3>Lead Consultant — J. Cain Logistics / Bringmedata Consulting</h3>
-            <div class="meta">July 2018 – October 2019 | Panama</div>
-            <ul>
-              <li>Led analytics consulting initiatives involving pharmaceutical product, inventory, purchasing and distribution data, helping improve stock visibility and operational performance.</li>
-              <li>Developed demand forecasting analysis using Python and machine learning models, contributing to a 60% reduction in overstock and supporting the result with Tableau dashboards.</li>
-              <li>Built a shipment tracking workflow that read guide data from CSV files, queried DHL APIs, stored JSON results in Google Cloud Storage, updated BigQuery tables and powered Tableau views.</li>
-            </ul>
-          </div>
+  <div class="role">
+    <h3>Lead Consultant — J. Cain Logistics / Bringmedata Consulting</h3>
+    <div class="meta">July 2018 – October 2019 | Panama</div>
+    <ul>
+      <li>Led analytics consulting initiatives using pharmaceutical product, inventory, purchasing and distribution data to improve stock visibility and operational performance.</li>
+      <li>Developed demand forecasting analysis with Python and machine learning models, contributing to a 60% reduction in overstock and supporting the result with Tableau dashboards.</li>
+      <li>Built a shipment tracking workflow using CSV files, DHL APIs, Google Cloud Storage, BigQuery and Tableau to follow orders from warehouse to final destination.</li>
+    </ul>
+  </div>
 
-          <div class="role">
-            <h3>Process Engineer — J. Cain & Co. / Logistics Services Panama</h3>
-            <div class="meta">May 2016 – July 2018 | Colon, Panama</div>
-            <ul>
-              <li>Analyzed logistics productivity, throughput and process data to identify capacity constraints, underused resources and workflow-improvement opportunities.</li>
-              <li>Created operational reports and analyses to support productivity management and continuous-improvement initiatives in warehouse/logistics operations.</li>
-            </ul>
-          </div>
+  <div class="role">
+    <h3>Process Engineer — J. Cain & Co. / Logistics Services Panama</h3>
+    <div class="meta">May 2016 – July 2018 | Colon, Panama</div>
+    <ul>
+      <li>Analyzed logistics productivity, throughput and process data to identify capacity constraints, underused resources and workflow-improvement opportunities.</li>
+      <li>Created operational reports to support productivity management and continuous-improvement initiatives in warehouse and logistics operations.</li>
+    </ul>
+  </div>
 
-          <div class="role">
-            <h3>Price Analyst — Viveres Unidos S.A.</h3>
-            <div class="meta">July 2015 – May 2016 | Panama</div>
-            <ul>
-              <li>Analyzed pricing, cost, margin, profitability, inventory and production data for raw materials, finished products, new product launches and promotions.</li>
-              <li>Supported pricing decisions and cost reporting by validating source data and preparing business analysis for stakeholders.</li>
-            </ul>
-          </div>
-        </section>
+  <div class="role">
+    <h3>Price Analyst — Viveres Unidos S.A.</h3>
+    <div class="meta">July 2015 – May 2016 | Panama</div>
+    <ul>
+      <li>Analyzed pricing, cost, margin, profitability, inventory and production data for raw materials, finished products, new product launches and promotions.</li>
+      <li>Supported pricing decisions and cost reporting by validating source data and preparing business analysis for stakeholders.</li>
+    </ul>
+  </div>
+</section>
 
         <section>
           <h2>Education</h2>
@@ -607,43 +691,49 @@
   </main>
 
   <script>
-    const buttons = document.querySelectorAll("[data-lang]");
-    const contents = document.querySelectorAll("[data-lang-content]");
+  (function () {
+    const buttons = document.querySelectorAll('[data-lang]');
+    const contents = document.querySelectorAll('[data-lang-content]');
+
+    function normalizeLang(lang) {
+      return lang === 'en' ? 'en' : 'es';
+    }
 
     function setLang(lang) {
-      buttons.forEach(btn => btn.classList.toggle("active", btn.dataset.lang === lang));
-      contents.forEach(section => section.classList.toggle("active", section.dataset.langContent === lang));
+      lang = normalizeLang(lang);
+
+      buttons.forEach(btn => btn.classList.toggle('active', btn.getAttribute('data-lang') === lang));
+      contents.forEach(section => section.classList.toggle('active', section.getAttribute('data-lang-content') === lang));
       document.documentElement.lang = lang;
-    }
 
-    function updateHomeLinks(lang) {
-      document.querySelectorAll('[data-home-link]').forEach(link => {
-        link.setAttribute('href', `index.html?lang=${lang}`);
+      document.querySelectorAll('a[data-home-link], a[href^="index.html"]').forEach(link => {
+        link.setAttribute('href', 'index.html?lang=' + lang);
       });
+
+      try {
+        localStorage.setItem('preferredLanguage', lang);
+      } catch (e) {}
     }
 
-    function getInitialLang() {
+    function initialLanguage() {
       const params = new URLSearchParams(window.location.search);
-      const paramLang = params.get('lang');
-      if (paramLang === 'es' || paramLang === 'en') return paramLang;
+      const urlLang = params.get('lang');
+      if (urlLang === 'en' || urlLang === 'es') return urlLang;
+
       try {
-        const savedLang = localStorage.getItem('siteLang');
-        if (savedLang === 'es' || savedLang === 'en') return savedLang;
+        const saved = localStorage.getItem('preferredLanguage');
+        if (saved === 'en' || saved === 'es') return saved;
       } catch (e) {}
+
       return 'es';
     }
 
     buttons.forEach(button => {
-      button.addEventListener("click", () => {
-        setLang(button.dataset.lang);
-        updateHomeLinks(button.dataset.lang);
-        try { localStorage.setItem('siteLang', button.dataset.lang); } catch (e) {}
-      });
+      button.addEventListener('click', () => setLang(button.getAttribute('data-lang')));
     });
 
-    const initialLang = getInitialLang();
-    setLang(initialLang);
-    updateHomeLinks(initialLang);
-  </script>
+    setLang(initialLanguage());
+  })();
+</script>
 </body>
 </html>

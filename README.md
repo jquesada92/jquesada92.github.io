@@ -2,30 +2,14 @@
 
 Ready for GitHub Pages.
 
+## Update included
+
+- Replaced the image logo in the nav with an HTML/CSS brand lockup.
+- The name "Jose Quesada" is now real text, larger, readable and integrated into the dark nav.
+- Language routing between landing and CV is preserved.
+
 ## Files
 
 - `index.html`: main landing page
 - `cv.html`: bilingual CV
-- `assets/`: transparent logo and favicon
-
-## Updates included
-
-- More readable transparent header logo.
-- Landing-to-CV links preserve language:
-  - Spanish landing opens `cv.html?lang=es`
-  - English landing opens `cv.html?lang=en`
-- CV also supports language switching and returns to the landing with the selected language.
-
-## Publish
-
-Upload the full contents of this folder to the root of your GitHub Pages repository, for example:
-
-`jquesada92.github.io`
-
-Then open:
-
-`https://jquesada92.github.io`
-
-The CV is available at:
-
-`https://jquesada92.github.io/cv.html`
+- `assets/`: favicon and previous logo assets

@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 132" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 140" role="img" aria-labelledby="title desc">
   <title id="title">Jose Quesada</title>
-  <desc id="desc">Minimal transparent logo for Jose Quesada</desc>
+  <desc id="desc">Readable transparent logo for Jose Quesada</desc>
   <defs>
     <style>
       .primary{fill:#f7fbff}
@@ -10,17 +10,17 @@
     </style>
   </defs>
 
-  <g transform="translate(8 14)">
+  <g transform="translate(10 17)">
     <text x="0" y="86" class="primary" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="88" font-weight="850" letter-spacing="-8">JQ</text>
-    <polyline class="line" points="108,68 122,56 140,62 158,46"/>
+    <polyline class="line" points="108,68 123,56 141,62 160,46"/>
     <circle cx="108" cy="68" r="5.6" class="accent"/>
-    <circle cx="122" cy="56" r="5.6" class="accent"/>
-    <circle cx="140" cy="62" r="5.6" class="accent"/>
-    <circle cx="158" cy="46" r="5.6" class="accent"/>
+    <circle cx="123" cy="56" r="5.6" class="accent"/>
+    <circle cx="141" cy="62" r="5.6" class="accent"/>
+    <circle cx="160" cy="46" r="5.6" class="accent"/>
   </g>
 
-  <line x1="214" y1="28" x2="214" y2="112" class="divider"/>
+  <line x1="220" y1="28" x2="220" y2="112" class="divider"/>
 
-  <text x="242" y="78" class="primary" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="54" font-weight="820" letter-spacing="-1.5">Jose Quesada</text>
-  <rect x="244" y="94" width="88" height="4" rx="2" class="accent" opacity=".95"/>
+  <text x="252" y="82" class="primary" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="58" font-weight="820" letter-spacing="-1.5">Jose Quesada</text>
+  <rect x="255" y="101" width="96" height="5" rx="2.5" class="accent" opacity=".95"/>
 </svg>
