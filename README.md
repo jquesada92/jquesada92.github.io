@@ -1,20 +1,11 @@
 # Jose Quesada Professional Site
 
-Restored from the last stable version and updated safely.
+Ready for GitHub Pages.
 
-## Safe update included
+## Update included
 
-- Existing portfolio section title changed to:
-  - ES: Proyectos de clientes
-  - EN: Client projects
-- Existing personal portfolio subsection title changed to:
+- Portfolio page keeps the main hero title as "Portfolio".
+- The second section title was updated:
   - ES: Proyectos personales
   - EN: Personal projects
-- No DOM restructuring was applied.
-- Language routing and CV links were preserved.
-
-## Files
-
-- index.html
-- cv.html
-- assets/
+- Added a confidentiality note explaining that this section contains only personal project code, public data, simulated datasets or open sources.

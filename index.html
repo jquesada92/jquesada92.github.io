@@ -1,13 +1,14 @@
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>José Quesada Ortiz | Data Engineering & Analytics Services</title>
-  <meta name="description" content="Bilingual landing page for José Quesada Ortiz. Data architecture consulting, data ingestion and integration, ETL/ELT pipelines, SQL, pandas, Polars, medallion architecture, data warehouse implementation, data analysis, analytics engineering, dashboards, Databricks, Azure, Microsoft Fabric, Power BI, Power Automate, WMS, ERP, web scraping, spreadsheets, forms, APIs, curated GitHub projects, embedded analytics dashboards and a professional data platform modernization success case." />
-  <meta name="author" content="José Quesada Ortiz" />
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>José Quesada Ortiz | Data Engineering &amp; Analytics Services</title>
+<meta content="Bilingual landing page for José Quesada Ortiz. Data architecture consulting, data ingestion and integration, ETL/ELT pipelines, SQL, pandas, Polars, medallion architecture, data warehouse implementation, data analysis, analytics engineering, dashboards, Databricks, Azure, Microsoft Fabric, Power BI, Power Automate, WMS, ERP, web scraping, spreadsheets, forms, APIs, curated GitHub projects, embedded analytics dashboards and a professional data platform modernization success case." name="description"/>
+<meta content="José Quesada Ortiz" name="author"/>
+<link href="assets/favicon.svg" rel="icon" type="image/svg+xml"/>
+<style>
     :root {
       --bg: #07111f;
       --bg-soft: #0d1b2f;
@@ -609,7 +610,13 @@
     grid-template-columns: 1fr;
   }
 }
-
+.weather-dashboard-toolbar {
+    align-items: stretch;
+  }
+  .weather-dashboard-toolbar select {
+    width: 100%;
+  }
+}
 
     .personal-portfolio {
       margin-top: 34px;
@@ -1146,821 +1153,623 @@
       .card, .panel, .hero-card, .highlight, .cta { border: 1px solid #ddd; background: #fff; box-shadow: none; }
       .muted, .card p, .lead, .section-head p, .profile-role, .timeline-item p, .list li, .chip, footer { color: #333; }
     }
-  </style>
+  
+
+.client-success-grid {
+  grid-template-columns: 1fr !important;
+}
+
+.personal-projects-section {
+  padding-top: 36px;
+}
+
+.personal-dashboard-card {
+  margin-top: 24px;
+}
+
+.personal-dashboard-card .project-frame,
+.personal-dashboard-card iframe {
+  width: 100%;
+}
+
+.repo-section-title {
+  margin: 34px 0 14px;
+  font-size: 24px;
+  letter-spacing: -0.03em;
+}
+
+/* Keep repo action buttons pinned to the bottom-left of each repository card */
+.repo-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.repo-card .project-tags {
+  margin-bottom: 18px;
+}
+
+.repo-card .project-actions {
+  margin-top: auto;
+  align-self: flex-start;
+  padding-top: 18px;
+}
+
+
+/* Gradient text for all technology tags/chips */
+.project-tags span,
+.chips .chip,
+.chip,
+.repo-card .project-tags span,
+.project-card .project-tags span,
+.service-card .chip,
+.case-tags span,
+.tech-tags span {
+  background-image: linear-gradient(90deg, #38bdf8, #22c55e, #facc15, #fb7185, #a78bfa);
+  background-size: 220% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+
+.project-tags span:hover,
+.chips .chip:hover,
+.chip:hover {
+  background-position: 100% center;
+  transition: background-position .45s ease;
+}
+
+</style>
 </head>
 <body>
-  <header>
-    <div class="container nav">
-
-<a class="brand" href="#top" aria-label="Jose Quesada home">
-  <span class="brand-icon" aria-hidden="true">
-    <span class="brand-jq">JQ</span>
-    <svg class="brand-chart" viewBox="0 0 44 24" focusable="false" aria-hidden="true">
-      <polyline points="3,17 13,10 23,14 39,4"></polyline>
-      <circle cx="3" cy="17" r="2.4"></circle>
-      <circle cx="13" cy="10" r="2.4"></circle>
-      <circle cx="23" cy="14" r="2.4"></circle>
-      <circle cx="39" cy="4" r="2.4"></circle>
-    </svg>
-  </span>
-  <span class="brand-divider" aria-hidden="true"></span>
-  <span class="brand-name-inline">Jose Quesada</span>
+<header>
+<div class="container nav">
+<a aria-label="Jose Quesada home" class="brand" href="#top">
+<span aria-hidden="true" class="brand-icon">
+<span class="brand-jq">JQ</span>
+<svg aria-hidden="true" class="brand-chart" focusable="false" viewbox="0 0 44 24">
+<polyline points="3,17 13,10 23,14 39,4"></polyline>
+<circle cx="3" cy="17" r="2.4"></circle>
+<circle cx="13" cy="10" r="2.4"></circle>
+<circle cx="23" cy="14" r="2.4"></circle>
+<circle cx="39" cy="4" r="2.4"></circle>
+</svg>
+</span>
+<span aria-hidden="true" class="brand-divider"></span>
+<span class="brand-name-inline">Jose Quesada</span>
 </a>
-      <div class="nav-right">
-        <nav class="nav-links" aria-label="Primary navigation">
-          <a href="#services" data-i18n="navServices">Servicios</a>
-          <a href="#education" data-i18n="navEducation">Estudios</a>
-          <a href="#portfolio" data-i18n="navPortfolio">Portafolio</a>
-          <a href="cv.html?lang=es" data-i18n="navCV" data-cv-link>CV</a>
-          <a href="#contact" data-i18n="navContact">Contacto</a>
-        </nav>
-        <div class="lang-switch" aria-label="Language selector">
-          <button type="button" class="active" data-lang="es">ES</button>
-          <button type="button" data-lang="en">EN</button>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <main id="top">
-    <div data-lang-content="es" class="active">
-      <section class="hero">
-        <div class="container hero-grid">
-          <div class="hero-copy">
+<div class="nav-right">
+<nav aria-label="Primary navigation" class="nav-links">
+<a data-i18n="navServices" href="#services">Servicios</a>
+<a data-i18n="navEducation" href="#education">Estudios</a>
+<a data-i18n="navClientProjects" href="#portfolio">Proyectos de clientes</a><a data-i18n="navPersonalProjects" data-personal-link="" href="portfolio.html?lang=es">Portfolio</a>
+<a data-cv-link="" data-i18n="navCV" href="cv.html?lang=es">CV</a>
+<a data-i18n="navContact" href="#contact">Contacto</a>
+</nav>
+<div aria-label="Language selector" class="lang-switch">
+<button class="active" data-lang="es" type="button">ES</button>
+<button data-lang="en" type="button">EN</button>
+</div>
+</div>
+</div>
+</header>
+<main id="top">
+<div class="active" data-lang-content="es">
+<section class="hero">
+<div class="container hero-grid">
+<div class="hero-copy">
 <div class="eyebrow"><span class="dot"></span> Ingeniería de datos, analítica e integración de sistemas</div>
-            <h1>Construyo plataformas de datos confiables para equipos que necesitan <span class="gradient-text">claridad, automatización y mejores decisiones.</span></h1>
-            <p class="lead">Soy José Quesada Ortiz, ingeniero industrial convertido en Data & Analytics Engineer. Mi enfoque combina pensamiento de procesos, ingeniería de datos y analítica aplicada.</p>
-            <p class="hero-footnote"><strong>Lo que me motiva:</strong> entender cómo trabaja realmente una operación y transformar datos dispersos en soluciones que ahorran tiempo, reducen errores y ayudan al negocio a actuar con confianza.</p>
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="mailto:jaquesada92@outlook.com?subject=Consulta%20sobre%20servicios%20de%20datos">Hablemos de tu proyecto</a>
-              <a class="btn btn-secondary" href="https://www.linkedin.com/in/jquesada92/" target="_blank" rel="noopener noreferrer">Ver LinkedIn</a>
-              <a class="btn btn-secondary" href="cv.html?lang=es" data-cv-link>Ver CV</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="services">
-        <div class="container split">
-          <div class="panel">
-            <div class="section-head compact-head">
-              <div>
-                <h2>Consultoría de datos aplicada</h2>
-                <p>Integro arquitectura, ingeniería y analítica para convertir datos dispersos en plataformas confiables, procesos automatizados y decisiones mejor informadas.</p>
-              </div>
-            </div>
-            <h3>Servicios principales</h3>
-            <p class="muted">Mi enfoque parte del problema de negocio: entender las fuentes, ordenar el flujo de datos, construir modelos reutilizables y llevar la información hasta dashboards, KPIs o productos analíticos accionables.</p>
-            <ul class="list">
-              <li><span class="check">✓</span><span>Consultoría y diseño de arquitecturas de datos, lakehouse y data warehouse.</span></li>
-              <li><span class="check">✓</span><span>Ingesta e integración desde sistemas, WMS, ERP, e-commerce, APIs, formularios, hojas de cálculo y web scraping.</span></li>
-              <li><span class="check">✓</span><span>Desarrollo de procesos ETL/ELT batch o streaming, eligiendo el enfoque adecuado según el caso: SQL, pandas, Polars, PySpark u otras opciones.</span></li>
-              <li><span class="check">✓</span><span>Implementación de arquitectura medallion con capas Bronze, Silver y Gold combinadas con modelos de data warehouse.</span></li>
-              <li><span class="check">✓</span><span>Análisis de datos, definición de KPIs, reconciliación, calidad de datos y datasets confiables.</span></li>
-              <li><span class="check">✓</span><span>Desarrollo de dashboards, modelos BI e ingeniería analítica para equipos de negocio.</span></li>
-            </ul>
-          </div>
-          <div class="timeline service-timeline">
-            <div class="timeline-item"><div class="timeline-date">Arquitectura</div><div><h3>Plataformas gobernadas</h3><p>Diseño de capas, dominios, flujos de datos, modelos analíticos y fuentes únicas de verdad para reducir deuda técnica y facilitar el consumo.</p></div></div>
-            <div class="timeline-item"><div class="timeline-date">Integración</div><div><h3>Datos desde múltiples fuentes</h3><p>Conexión de sistemas operativos, archivos, formularios, APIs y automatizaciones para centralizar datos y eliminar trabajo manual.</p></div></div>
-            <div class="timeline-item"><div class="timeline-date">ETL/ELT</div><div><h3>Pipelines flexibles y sostenibles</h3><p>Construcción y optimización de procesos batch o streaming, seleccionando la solución más simple y mantenible según volumen, frecuencia y complejidad.</p></div></div>
-            <div class="timeline-item"><div class="timeline-date">Medallion + DW</div><div><h3>De datos crudos a modelos de negocio</h3><p>Implementación de Bronze/Silver/Gold y modelos dimensionales para reporting, reconciliación, analítica avanzada y escalabilidad.</p></div></div>
-            <div class="timeline-item"><div class="timeline-date">Analytics & BI</div><div><h3>Decisiones basadas en datos</h3><p>Análisis, KPIs, dashboards, Power BI y modelos de consumo para que los equipos entiendan qué ocurre y actúen con confianza.</p></div></div>
-          </div>
-        </div>
-      </section>
-
+<h1>Construyo plataformas de datos confiables para equipos que necesitan <span class="gradient-text">claridad, automatización y mejores decisiones.</span></h1>
+<p class="lead">Soy José Quesada Ortiz, ingeniero industrial convertido en Data &amp; Analytics Engineer. Mi enfoque combina pensamiento de procesos, ingeniería de datos y analítica aplicada.</p>
+<p class="hero-footnote"><strong>Lo que me motiva:</strong> entender cómo trabaja realmente una operación y transformar datos dispersos en soluciones que ahorran tiempo, reducen errores y ayudan al negocio a actuar con confianza.</p>
+<div class="hero-actions">
+<a class="btn btn-primary" href="mailto:jaquesada92@outlook.com?subject=Consulta%20sobre%20servicios%20de%20datos">Hablemos de tu proyecto</a>
+<a class="btn btn-secondary" href="https://www.linkedin.com/in/jquesada92/" rel="noopener noreferrer" target="_blank">Ver LinkedIn</a>
+<a class="btn btn-secondary" data-cv-link="" href="cv.html?lang=es">Ver CV</a>
+</div>
+</div>
+</div>
+</section>
+<section id="services">
+<div class="container split">
+<div class="panel">
+<div class="section-head compact-head">
+<div>
+<h2>Consultoría de datos aplicada</h2>
+<p>Integro arquitectura, ingeniería y analítica para convertir datos dispersos en plataformas confiables, procesos automatizados y decisiones mejor informadas.</p>
+</div>
+</div>
+<h3>Servicios principales</h3>
+<p class="muted">Mi enfoque parte del problema de negocio: entender las fuentes, ordenar el flujo de datos, construir modelos reutilizables y llevar la información hasta dashboards, KPIs o productos analíticos accionables.</p>
+<ul class="list">
+<li><span class="check">✓</span><span>Consultoría y diseño de arquitecturas de datos, lakehouse y data warehouse.</span></li>
+<li><span class="check">✓</span><span>Ingesta e integración desde sistemas, WMS, ERP, e-commerce, APIs, formularios, hojas de cálculo y web scraping.</span></li>
+<li><span class="check">✓</span><span>Desarrollo de procesos ETL/ELT batch o streaming, eligiendo el enfoque adecuado según el caso: SQL, pandas, Polars, PySpark u otras opciones.</span></li>
+<li><span class="check">✓</span><span>Implementación de arquitectura medallion con capas Bronze, Silver y Gold combinadas con modelos de data warehouse.</span></li>
+<li><span class="check">✓</span><span>Análisis de datos, definición de KPIs, reconciliación, calidad de datos y datasets confiables.</span></li>
+<li><span class="check">✓</span><span>Desarrollo de dashboards, modelos BI e ingeniería analítica para equipos de negocio.</span></li>
+</ul>
+</div>
+<div class="timeline service-timeline">
+<div class="timeline-item"><div class="timeline-date">Arquitectura</div><div><h3>Plataformas gobernadas</h3><p>Diseño de capas, dominios, flujos de datos, modelos analíticos y fuentes únicas de verdad para reducir deuda técnica y facilitar el consumo.</p></div></div>
+<div class="timeline-item"><div class="timeline-date">Integración</div><div><h3>Datos desde múltiples fuentes</h3><p>Conexión de sistemas operativos, archivos, formularios, APIs y automatizaciones para centralizar datos y eliminar trabajo manual.</p></div></div>
+<div class="timeline-item"><div class="timeline-date">ETL/ELT</div><div><h3>Pipelines flexibles y sostenibles</h3><p>Construcción y optimización de procesos batch o streaming, seleccionando la solución más simple y mantenible según volumen, frecuencia y complejidad.</p></div></div>
+<div class="timeline-item"><div class="timeline-date">Medallion + DW</div><div><h3>De datos crudos a modelos de negocio</h3><p>Implementación de Bronze/Silver/Gold y modelos dimensionales para reporting, reconciliación, analítica avanzada y escalabilidad.</p></div></div>
+<div class="timeline-item"><div class="timeline-date">Analytics &amp; BI</div><div><h3>Decisiones basadas en datos</h3><p>Análisis, KPIs, dashboards, Power BI y modelos de consumo para que los equipos entiendan qué ocurre y actúen con confianza.</p></div></div>
+</div>
+</div>
+</section>
 <section id="education">
-  <div class="container">
-    <div class="section-head">
-      <div>
-        <h2>Estudios y certificaciones</h2>
-        <p>Formación en ingeniería, supply chain, analítica y plataformas modernas de datos, complementada con certificaciones prácticas en Databricks, Spark y Microsoft Fabric.</p>
-      </div>
-    </div>
-
-    <div class="education-layout">
-      <div class="education-panel">
-        <h3>Formación académica</h3>
-        <p>Mi base en ingeniería industrial y supply chain me permite conectar procesos operativos, tecnología y analítica para convertir problemas de negocio en soluciones de datos.</p>
-
-        <div class="education-list">
-          <div class="education-item">
-            <strong>Ingeniería Industrial</strong>
-            <span>Formación en procesos, operaciones, mejora continua, análisis cuantitativo y gestión industrial.</span>
-          </div>
-          <div class="education-item">
-            <strong>Maestría en Supply Chain Management</strong>
-            <span>Especialización en logística, planificación, inventario, materiales y procesos end-to-end.</span>
-          </div>
-          <div class="education-item">
-            <strong>Big Data & Analytics</strong>
-            <span>Formación complementaria orientada a analítica, datos y aplicaciones empresariales.</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="education-panel">
-        <h3>Certificaciones y plataformas</h3>
-        <p>Certificaciones enfocadas en ingeniería de datos, procesamiento distribuido, lakehouse, analítica y soluciones modernas sobre cloud.</p>
-
-        <div class="cert-grid">
-          <div class="cert-card">
-            <strong>Databricks Data Engineer Associate</strong>
-            <span>Lakehouse, pipelines, Delta Lake, data engineering y buenas prácticas en Databricks.</span>
-          </div>
-          <div class="cert-card">
-            <strong>Databricks Apache Spark Developer</strong>
-            <span>Procesamiento distribuido con Spark, PySpark, optimización y transformación de datos.</span>
-          </div>
-          <div class="cert-card">
-            <strong>Microsoft Fabric Analytics Engineer Associate</strong>
-            <span>Modelos semánticos, Power BI, lakehouse, warehouse y analítica empresarial en Fabric.</span>
-          </div>
-          <div class="cert-card">
-            <strong>Azure Data Fundamentals</strong>
-            <span>Fundamentos de datos, servicios cloud, almacenamiento, procesamiento y analítica en Azure.</span>
-          </div>
-        </div>
-
-        <p class="tool-summary"><strong>Stack relacionado:</strong> Databricks, PySpark, Delta Lake, Unity Catalog, Azure Data Factory, Microsoft Fabric, Azure SQL, Power BI, Tableau, Looker, Power Automate y APIs.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-      <section>
-        <div class="container split">
-          <div class="highlight">
-            <h2>¿Cuándo puedo ayudarte?</h2>
-            <p class="muted">Soy una buena opción cuando tu empresa necesita ordenar su operación analítica, mejorar procesos operativos, automatizar tareas manuales, integrar sistemas, modernizar pipelines, mejorar reportes o preparar datos para IA sin perder de vista el impacto de negocio.</p>
-          </div>
-          <div class="service-fit">
-            <div class="card"><h3>Procesos manuales y datos dispersos</h3><p>Cuando la operación depende de WMS, ERP, Excel/spreadsheets, formularios, APIs, web scraping, bases de datos o sistemas externos y necesitas integrar datos, automatizar tareas con Power Automate, medir KPIs y mejorar el flujo de trabajo.</p></div>
-            <div class="card"><h3>Dashboards lentos o inconsistentes</h3><p>Cuando Power BI o los reportes tienen demasiada lógica, bajo performance o diferencias entre áreas.</p></div>
-            <div class="card"><h3>Pipelines difíciles de mantener</h3><p>Cuando los procesos no tienen trazabilidad, validaciones, capas claras o estándares de desarrollo.</p></div>
-            <div class="card"><h3>Datos para IA y forecasting</h3><p>Cuando quieres crear bases confiables para machine learning, automatización, planning o decisiones predictivas.</p></div>
-          </div>
-        </div>
-      </section>
-
-
-      <section id="portfolio">
-        <div class="container">
-          <div class="section-head">
-            <div>
-              <h2>Proyectos de clientes</h2>
-              <p>Casos de éxito seleccionados de clientes, enfocados en modernización de plataformas de datos, analítica aplicada, data engineering para data science, forecasting y optimización de procesos.</p>
-            </div>
-          </div>
-          <div class="portfolio-grid">
-            <article class="project-card featured success-case">
-              <div class="project-top">
-                <div class="project-meta">Caso de éxito · Modernización de plataforma de datos</div>
-                <h3>From Data Chaos to an AI-Ready Lakehouse</h3>
-                <p>Modernización de una plataforma de datos en retail / supply chain alrededor de Infor M3. El proyecto transformó un ecosistema fragmentado, con alta dependencia de Azure SQL y procesos aislados, en una base Lakehouse gobernada con Databricks, Delta Lake, Unity Catalog, capas Bronze/Silver, reconciliación automática, backfill y data products por dominio. La solución también implementó CDC y propagación incremental de cambios hacia el Data Warehouse como capa Gold/serving para consumo analítico.</p>
-              </div>
-              <div class="case-metrics">
-                <div class="case-metric"><strong>80+</strong><span>tablas procesadas con un framework dinámico basado en configuración.</span></div>
-                <div class="case-metric"><strong>75%–98%</strong><span>reducción del tiempo de procesamiento por tabla: de 2–4 horas a 5–30 minutos, según volumen de archivos.</span></div>
-                <div class="case-metric"><strong>80%+</strong><span>reducción de costo al reemplazar Dataflows por Copy Activities sobre Delta.</span></div>
-                <div class="case-metric"><strong>100%</strong><span>reconciliación Bronze vs Infor Compass para entidades validadas.</span></div>
-              </div>
-              <div class="case-columns">
-                <div class="case-column"><h4>Reto</h4><ul><li>Procesos tabla por tabla difíciles de mantener.</li><li>Dependencia fuerte de Azure SQL y vistas complejas.</li><li>Falta de snapshots históricos, trazabilidad y recuperación.</li></ul></div>
-                <div class="case-column"><h4>Solución</h4><ul><li>Arquitectura medallion con Bronze append-only y Silver deduplicado.</li><li>Framework reusable de ingesta, deduplicación y backfill.</li><li>Lakeflow pipelines y data products por dominio para operación y analítica.</li></ul></div>
-                <div class="case-column"><h4>Impacto</h4><ul><li>Menor costo e infraestructura más eficiente.</li><li>Mayor confianza con reconciliación y controles de calidad.</li><li>Base gobernada y preparada para analítica avanzada e IA.</li></ul></div>
-              </div>
-              <div class="project-tags">
-                <span>Databricks</span><span>Delta Lake</span><span>Unity Catalog</span><span>Lakeflow</span><span>CDC</span><span>Medallion Architecture</span><span>Data Quality</span><span>Incremental Gold</span><span>Backfill</span><span>Cost Optimization</span><span>Data Products</span>
-              </div>
-              <div class="project-actions">
-                <a class="btn btn-secondary" href="#contact">Conversar sobre este caso</a>
-              </div>
-            </article>
-
-
-<article class="project-card featured success-case">
-  <div class="project-top">
-    <div class="project-meta">Caso de éxito · Data Engineering para Data Science</div>
-    <h3>AS Applied Data Science Support</h3>
-    <p>Proyecto global con Bayer Crop Science enfocado en analizar, limpiar y habilitar datos de aplicaciones de agroquímicos provenientes de granjas en Estados Unidos, Canadá, Brasil y Rusia. El trabajo permitió recuperar y hacer utilizable aproximadamente el 80% de un universo de 350M records, transformando datos generados por sensores y polígonos de granjas en datasets listos para análisis agronómico, feature engineering y soporte a modelos predictivos relacionados con riesgo de enfermedades y hongos en cultivos.</p>
-  </div>
-
-
-<div class="case-wide-grid">
-  <div class="case-wide-card">
-    <h4>Data challenge</h4>
-    <p>El proyecto trabajó con datos globales de aplicaciones de agroquímicos generados por sensores y polígonos de granjas en Estados Unidos, Canadá, Brasil y Rusia.</p>
-    <div class="mini-metrics">
-      <div class="mini-metric"><strong>350M records</strong><span>Data analizada, limpiada y preparada para consumo analítico.</span></div>
-      <div class="mini-metric"><strong>80% enabled</strong><span>Porción aproximada habilitada para análisis, feature engineering y modelado.</span></div>
-    </div>
-  </div>
-
-  <div class="case-wide-card">
-    <h4>Technical solution</h4>
-    <ul>
-      <li>Clase reusable en Python sobre PySpark para retrieval, transformación y feature engineering.</li>
-      <li>Estandarización y traducción de nombres de agroquímicos entre países y sistemas fuente.</li>
-      <li>Validación de polígonos de granjas para clasificar asignaciones correctas vs. incorrectas.</li>
-      <li>Lógica para identificar aplicaciones parciales vs. completas y generar estadísticas por aplicación.</li>
-    </ul>
-  </div>
-
-  <div class="case-wide-card">
-    <h4>Impact</h4>
-    <ul>
-      <li>Reducción de código duplicado entre notebooks y miembros del equipo.</li>
-      <li>Centralización de lógica crítica del pipeline en una clase reutilizable.</li>
-      <li>Datasets más limpios, consistentes y listos para modelos predictivos.</li>
-      <li>Adopción interna por múltiples miembros del equipo.</li>
-    </ul>
-    <div class="mini-metrics">
-      <div class="mini-metric"><strong>PySpark class</strong><span>Componente reusable para transformar datos as-applied.</span></div>
-      <div class="mini-metric"><strong>Team adoption</strong><span>La clase fue usada por múltiples miembros del equipo y luego centralizada.</span></div>
-    </div>
-  </div>
+<div class="container">
+<div class="section-head">
+<div>
+<h2>Estudios y certificaciones</h2>
+<p>Formación en ingeniería, supply chain, analítica y plataformas modernas de datos, complementada con certificaciones prácticas en Databricks, Spark y Microsoft Fabric.</p>
 </div>
-
+</div>
+<div class="education-layout">
+<div class="education-panel">
+<h3>Formación académica</h3>
+<p>Mi base en ingeniería industrial y supply chain me permite conectar procesos operativos, tecnología y analítica para convertir problemas de negocio en soluciones de datos.</p>
+<div class="education-list">
+<div class="education-item">
+<strong>Ingeniería Industrial</strong>
+<span>Formación en procesos, operaciones, mejora continua, análisis cuantitativo y gestión industrial.</span>
+</div>
+<div class="education-item">
+<strong>Maestría en Supply Chain Management</strong>
+<span>Especialización en logística, planificación, inventario, materiales y procesos end-to-end.</span>
+</div>
+<div class="education-item">
+<strong>Big Data &amp; Analytics</strong>
+<span>Formación complementaria orientada a analítica, datos y aplicaciones empresariales.</span>
+</div>
+</div>
+</div>
+<div class="education-panel">
+<h3>Certificaciones y plataformas</h3>
+<p>Certificaciones enfocadas en ingeniería de datos, procesamiento distribuido, lakehouse, analítica y soluciones modernas sobre cloud.</p>
+<div class="cert-grid">
+<div class="cert-card">
+<strong>Databricks Data Engineer Associate</strong>
+<span>Lakehouse, pipelines, Delta Lake, data engineering y buenas prácticas en Databricks.</span>
+</div>
+<div class="cert-card">
+<strong>Databricks Apache Spark Developer</strong>
+<span>Procesamiento distribuido con Spark, PySpark, optimización y transformación de datos.</span>
+</div>
+<div class="cert-card">
+<strong>Microsoft Fabric Analytics Engineer Associate</strong>
+<span>Modelos semánticos, Power BI, lakehouse, warehouse y analítica empresarial en Fabric.</span>
+</div>
+<div class="cert-card">
+<strong>Azure Data Fundamentals</strong>
+<span>Fundamentos de datos, servicios cloud, almacenamiento, procesamiento y analítica en Azure.</span>
+</div>
+</div>
+<p class="tool-summary"><strong>Stack relacionado:</strong> Databricks, PySpark, Delta Lake, Unity Catalog, Azure Data Factory, Microsoft Fabric, Azure SQL, Power BI, Tableau, Looker, Power Automate y APIs.</p>
+</div>
+</div>
+</div>
+</section>
+<section>
+<div class="container split">
+<div class="highlight">
+<h2>¿Cuándo puedo ayudarte?</h2>
+<p class="muted">Soy una buena opción cuando tu empresa necesita ordenar su operación analítica, mejorar procesos operativos, automatizar tareas manuales, integrar sistemas, modernizar pipelines, mejorar reportes o preparar datos para IA sin perder de vista el impacto de negocio.</p>
+</div>
+<div class="service-fit">
+<div class="card"><h3>Procesos manuales y datos dispersos</h3><p>Cuando la operación depende de WMS, ERP, Excel/spreadsheets, formularios, APIs, web scraping, bases de datos o sistemas externos y necesitas integrar datos, automatizar tareas con Power Automate, medir KPIs y mejorar el flujo de trabajo.</p></div>
+<div class="card"><h3>Dashboards lentos o inconsistentes</h3><p>Cuando Power BI o los reportes tienen demasiada lógica, bajo performance o diferencias entre áreas.</p></div>
+<div class="card"><h3>Pipelines difíciles de mantener</h3><p>Cuando los procesos no tienen trazabilidad, validaciones, capas claras o estándares de desarrollo.</p></div>
+<div class="card"><h3>Datos para IA y forecasting</h3><p>Cuando quieres crear bases confiables para machine learning, automatización, planning o decisiones predictivas.</p></div>
+</div>
+</div>
+</section>
+<section id="portfolio">
+<div class="container">
+<div class="section-head">
+<div>
+<h2>Proyectos de clientes</h2>
+<p>Casos de éxito seleccionados de clientes, enfocados en modernización de plataformas de datos, data engineering para data science, forecasting y optimización de procesos.</p>
+</div>
+</div>
+<div class="portfolio-grid client-success-grid"><article class="project-card featured success-case">
+<div class="project-top">
+<div class="project-meta">Caso de éxito · Modernización de plataforma de datos</div>
+<h3>From Data Chaos to an AI-Ready Lakehouse</h3>
+<p>Modernización de una plataforma de datos en retail / supply chain alrededor de Infor M3. El proyecto transformó un ecosistema fragmentado, con alta dependencia de Azure SQL y procesos aislados, en una base Lakehouse gobernada con Databricks, Delta Lake, Unity Catalog, capas Bronze/Silver, reconciliación automática, backfill y data products por dominio. La solución también implementó CDC y propagación incremental de cambios hacia el Data Warehouse como capa Gold/serving para consumo analítico.</p>
+</div>
+<div class="case-metrics">
+<div class="case-metric"><strong>80+</strong><span>tablas procesadas con un framework dinámico basado en configuración.</span></div>
+<div class="case-metric"><strong>75%–98%</strong><span>reducción del tiempo de procesamiento por tabla: de 2–4 horas a 5–30 minutos, según volumen de archivos.</span></div>
+<div class="case-metric"><strong>80%+</strong><span>reducción de costo al reemplazar Dataflows por Copy Activities sobre Delta.</span></div>
+<div class="case-metric"><strong>100%</strong><span>reconciliación Bronze vs Infor Compass para entidades validadas.</span></div>
+</div>
+<div class="case-columns">
+<div class="case-column"><h4>Reto</h4><ul><li>Procesos tabla por tabla difíciles de mantener.</li><li>Dependencia fuerte de Azure SQL y vistas complejas.</li><li>Falta de snapshots históricos, trazabilidad y recuperación.</li></ul></div>
+<div class="case-column"><h4>Solución</h4><ul><li>Arquitectura medallion con Bronze append-only y Silver deduplicado.</li><li>Framework reusable de ingesta, deduplicación y backfill.</li><li>Lakeflow pipelines y data products por dominio para operación y analítica.</li></ul></div>
+<div class="case-column"><h4>Impacto</h4><ul><li>Menor costo e infraestructura más eficiente.</li><li>Mayor confianza con reconciliación y controles de calidad.</li><li>Base gobernada y preparada para analítica avanzada e IA.</li></ul></div>
+</div>
+<div class="project-tags">
+<span>Databricks</span><span>Delta Lake</span><span>Unity Catalog</span><span>Lakeflow</span><span>CDC</span><span>Medallion Architecture</span><span>Data Quality</span><span>Incremental Gold</span><span>Backfill</span><span>Cost Optimization</span><span>Data Products</span>
+</div>
+<div class="project-actions">
+<a class="btn btn-secondary" href="#contact">Conversar sobre este caso</a>
+</div>
+</article><article class="project-card featured success-case">
+<div class="project-top">
+<div class="project-meta">Caso de éxito · Data Engineering para Data Science</div>
+<h3>AS Applied Data Science Support</h3>
+<p>Proyecto global con Bayer Crop Science enfocado en analizar, limpiar y habilitar datos de aplicaciones de agroquímicos provenientes de granjas en Estados Unidos, Canadá, Brasil y Rusia. El trabajo permitió recuperar y hacer utilizable aproximadamente el 80% de un universo de 350M records, transformando datos generados por sensores y polígonos de granjas en datasets listos para análisis agronómico, feature engineering y soporte a modelos predictivos relacionados con riesgo de enfermedades y hongos en cultivos.</p>
+</div>
+<div class="case-wide-grid">
+<div class="case-wide-card">
+<h4>Data challenge</h4>
+<p>El proyecto trabajó con datos globales de aplicaciones de agroquímicos generados por sensores y polígonos de granjas en Estados Unidos, Canadá, Brasil y Rusia.</p>
+<div class="mini-metrics">
+<div class="mini-metric"><strong>350M records</strong><span>Data analizada, limpiada y preparada para consumo analítico.</span></div>
+<div class="mini-metric"><strong>80% enabled</strong><span>Porción aproximada habilitada para análisis, feature engineering y modelado.</span></div>
+</div>
+</div>
+<div class="case-wide-card">
+<h4>Technical solution</h4>
+<ul>
+<li>Clase reusable en Python sobre PySpark para retrieval, transformación y feature engineering.</li>
+<li>Estandarización y traducción de nombres de agroquímicos entre países y sistemas fuente.</li>
+<li>Validación de polígonos de granjas para clasificar asignaciones correctas vs. incorrectas.</li>
+<li>Lógica para identificar aplicaciones parciales vs. completas y generar estadísticas por aplicación.</li>
+</ul>
+</div>
+<div class="case-wide-card">
+<h4>Impact</h4>
+<ul>
+<li>Reducción de código duplicado entre notebooks y miembros del equipo.</li>
+<li>Centralización de lógica crítica del pipeline en una clase reutilizable.</li>
+<li>Datasets más limpios, consistentes y listos para modelos predictivos.</li>
+<li>Adopción interna por múltiples miembros del equipo.</li>
+</ul>
+<div class="mini-metrics">
+<div class="mini-metric"><strong>PySpark class</strong><span>Componente reusable para transformar datos as-applied.</span></div>
+<div class="mini-metric"><strong>Team adoption</strong><span>La clase fue usada por múltiples miembros del equipo y luego centralizada.</span></div>
+</div>
+</div>
+</div>
 <div class="impact-quote">
-    <strong>Señal de impacto:</strong> el feedback interno destacó que la clase cubría tantas partes del pipeline que gran parte del equipo empezó a usarla, impulsando la necesidad de centralizarla para evitar múltiples versiones.
+<strong>Señal de impacto:</strong> el feedback interno destacó que la clase cubría tantas partes del pipeline que gran parte del equipo empezó a usarla, impulsando la necesidad de centralizarla para evitar múltiples versiones.
   </div>
-
-  <div class="chips" aria-label="AS Applied stack">
-    <span class="chip">Python</span><span class="chip">PySpark</span><span class="chip">Pandas</span><span class="chip">S3</span><span class="chip">Domino</span><span class="chip">Matplotlib</span><span class="chip">Seaborn</span><span class="chip">Plotly</span><span class="chip">Feature Engineering</span><span class="chip">Sensor Data</span><span class="chip">Polygon Validation</span><span class="chip">Geospatial QA</span><span class="chip">Data Cleaning</span>
-  </div>
-</article>
-
-
-<article class="project-card featured success-case">
-  <div class="project-top">
-    <div class="project-meta">Caso de éxito · Forecasting e inventario</div>
-    <h3>Medical Supplies Distribution Center Inventory Optimization</h3>
-    <p>Proyecto para un centro de distribución de productos médicos e insumos enfocado en estandarizar categorías de productos, consolidar marcas y habilitar decisiones de compra basadas en forecast, demanda histórica y top marcas. La solución permitió apoyar el proceso de compras y reducir el overstock en un 60%.</p>
-  </div>
-
-  <div class="case-wide-grid">
-    <div class="case-wide-card">
-      <h4>Reto de negocio</h4>
-      <p>El centro de distribución manejaba múltiples marcas y tipos de productos médicos con clasificación inconsistente, dificultando la visibilidad de inventario, análisis de demanda y planificación de compras.</p>
-    </div>
-
-    <div class="case-wide-card">
-      <h4>Solución técnica</h4>
-      <ul>
-        <li>Estandarización de productos por tipo y categoría a través de todas las marcas.</li>
-        <li>Construcción de modelos de forecasting por categoría usando Python y AutoTS.</li>
-        <li>Procesamiento y preparación de datos con AWS Glue para alimentar modelos y reporting.</li>
-        <li>Clasificación de top marcas y análisis de demanda para apoyar decisiones de compra.</li>
-      </ul>
-    </div>
-
-    <div class="case-wide-card">
-      <h4>Impacto</h4>
-      <ul>
-        <li>Mejor visibilidad de categorías, marcas y patrones de demanda.</li>
-        <li>Compras más alineadas con forecast, top marcas y rotación real de productos.</li>
-        <li>Reducción de capital inmovilizado por exceso de inventario.</li>
-      </ul>
-      <div class="mini-metrics">
-        <div class="mini-metric"><strong>60% menos overstock</strong><span>Dashboard en Looker que da soporte al proceso de compras con forecast, top marcas e inventario.</span></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="chips" aria-label="Medical inventory optimization stack">
-    <span class="chip">Python</span><span class="chip">AutoTS</span><span class="chip">AWS Glue</span><span class="chip">Looker</span><span class="chip">Forecasting</span><span class="chip">Inventory Optimization</span><span class="chip">Product Categorization</span><span class="chip">Demand Planning</span>
-  </div>
-</article>
-
-            <article class="project-card featured dashboard-project">
-              <div class="project-top">
-                <div class="project-meta">Proyecto end-to-end · Databricks Lakehouse + Power BI</div>
-                <h3>databricks-lakeflow-gov-panama</h3>
-                <p>Proyecto lakehouse que integra datos públicos de planilla del Gobierno Central de Panamá: extrae datos desde una API pública, guarda archivos en staging, procesa con Databricks Lakeflow / Spark Declarative Pipelines y organiza capas Bronze y Silver con historial SCD Type 2, auditoría y controles de calidad. El dashboard embebido de Power BI es la capa analítica final del mismo proyecto.</p>
-                <div class="project-tags">
-                  <span>Databricks</span><span>Lakeflow</span><span>PySpark</span><span>Delta Lake</span><span>SCD Type 2</span><span>Data Quality</span><span>Power BI</span><span>Public Data</span><span>Dashboard</span>
-                </div>
-                <div class="project-actions">
-                  <a class="btn btn-secondary" href="https://github.com/jquesada92/databricks-lakeflow-gov-panama" target="_blank" rel="noopener noreferrer">Ver repo</a>
-                  <a class="btn btn-secondary" href="https://app.powerbi.com/view?r=eyJrIjoiOGUxOTk0ZWEtODg2NC00NDEzLTllMWYtOTdkMjkxMWE3ZWU3IiwidCI6IjBhNzk5NDU0LTM1NTAtNGZiNi1iNGMzLWY5ZWIzMmVhOWU2NCJ9" target="_blank" rel="noopener noreferrer">Abrir dashboard</a>
-                </div>
-              </div>
-              <div class="embed-shell" aria-label="Power BI dashboard: Planilla Gobierno Central">
-                <iframe title="Planilla Gobierno Central" width="600" height="636" src="https://app.powerbi.com/view?r=eyJrIjoiOGUxOTk0ZWEtODg2NC00NDEzLTllMWYtOTdkMjkxMWE3ZWU3IiwidCI6IjBhNzk5NDU0LTM1NTAtNGZiNi1iNGMzLWY5ZWIzMmVhOWU2NCJ9" frameborder="0" allowFullScreen="true" loading="lazy"></iframe>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <div class="project-top">
-                <div class="project-meta">Data Science · R</div>
-                <h3>House-Pricing-R-Data-Science</h3>
-                <p>Proyecto de análisis y modelado en R para explorar datos de precios de viviendas. Refuerza mi base analítica, estadística y de comunicación técnica mediante scripts, R Markdown y entregables reproducibles.</p>
-                <div class="project-tags">
-                  <span>R</span><span>R Markdown</span><span>Data Science</span><span>EDA</span><span>Statistical Modeling</span>
-                </div>
-              </div>
-              <div class="project-actions">
-                <a class="btn btn-secondary" href="https://github.com/jquesada92/House-Pricing-R-Data-Science" target="_blank" rel="noopener noreferrer">Ver repo</a>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <div class="project-top">
-                <div class="project-meta">Streaming · Observabilidad local</div>
-                <h3>pyspark-strctured-streaming</h3>
-                <p>Proyecto local de streaming para capturar pruebas de velocidad de internet, ingerir JSON con PySpark Structured Streaming, escribir tablas Apache Iceberg usando PostgreSQL como catálogo y visualizar resultados casi en tiempo real con Dash.</p>
-                <div class="project-tags">
-                  <span>PySpark</span><span>Structured Streaming</span><span>Apache Iceberg</span><span>PostgreSQL</span><span>Docker</span><span>Dash</span>
-                </div>
-              </div>
-              <div class="project-actions">
-                <a class="btn btn-secondary" href="https://github.com/jquesada92/pyspark-strctured-streaming" target="_blank" rel="noopener noreferrer">Ver repo</a>
-              </div>
-            </article>
-          </div>
-
-
-          <div class="personal-portfolio">
-            <div class="personal-portfolio-head">
-              <h3>Proyectos personales</h3>
-              <p>Dashboards, repositorios y laboratorios técnicos propios donde aplico lakehouse, APIs, datos públicos, streaming, BI, data science y visualización.</p>
-            </div>
-
-            <div class="embed-card">
-              <div class="embed-card-header">
-                <div>
-                  <div class="project-meta">Databricks dashboard · Open-Meteo Lakehouse</div>
-                  <h4>openmeteo-databricks-pipeline</h4>
-                  <p>Pipeline lakehouse con datos meteorológicos de Open-Meteo, procesamiento en Databricks y visualización embebida para explorar métricas climáticas. El proyecto muestra ingesta desde API, transformación, modelado analítico y consumo en dashboard.</p>
-                </div>
-                <div class="project-actions">
-                  <a class="btn btn-secondary" href="https://github.com/jquesada92/openmeteo-databricks-pipeline" target="_blank" rel="noopener noreferrer">Ver repo</a>
-                </div>
-              </div>
-              <div class="databricks-embed" aria-label="Databricks dashboard Open-Meteo">
-                <iframe
-                  src="https://dbc-f88938f0-02c4.cloud.databricks.com/embed/dashboardsv3/01f169bd287d107980e1ddecf126e9b3?o=138626662718526"
-                  width="100%"
-                  height="600"
-                  frameborder="0">
-                </iframe>
-              </div>
-            </div>
-
-            <div class="repo-grid">
-              <article class="repo-card">
-                <div class="project-meta">Public data · Contraloría Panamá</div>
-                <h4>databricks-lakeflow-gov-panama</h4>
-                <p>Proyecto con datos públicos de planilla del Gobierno Central de Panamá, procesados con Databricks Lakeflow, capas Bronze/Silver, controles de calidad y dashboard en Power BI.</p>
-                <div class="project-tags"><span>Databricks</span><span>Lakeflow</span><span>PySpark</span><span>Power BI</span><span>Public Data</span></div>
-                <div class="project-actions"><a class="btn btn-secondary" href="https://github.com/jquesada92/databricks-lakeflow-gov-panama" target="_blank" rel="noopener noreferrer">Ver repo</a></div>
-              </article>
-
-              <article class="repo-card">
-                <div class="project-meta">Streaming · Observabilidad local</div>
-                <h4>pyspark-strctured-streaming</h4>
-                <p>Demo de procesamiento streaming con PySpark, generación de datos dummy y visualización para explicar micro-batch, agregaciones y monitoreo de flujos.</p>
-                <div class="project-tags"><span>PySpark</span><span>Structured Streaming</span><span>Dash</span><span>Plotly</span></div>
-                <div class="project-actions"><a class="btn btn-secondary" href="https://github.com/jquesada92/pyspark-strctured-streaming" target="_blank" rel="noopener noreferrer">Ver repo</a></div>
-              </article>
-
-              <article class="repo-card">
-                <div class="project-meta">Data Science · R</div>
-                <h4>House-Pricing-R-Data-Science</h4>
-                <p>Proyecto de data science en R para explorar, limpiar y modelar datos de precios de viviendas, con enfoque en análisis exploratorio, preparación de variables y modelado predictivo.</p>
-                <div class="project-tags"><span>R</span><span>Data Science</span><span>EDA</span><span>Predictive Modeling</span></div>
-                <div class="project-actions"><a class="btn btn-secondary" href="https://github.com/jquesada92/House-Pricing-R-Data-Science" target="_blank" rel="noopener noreferrer">Ver repo</a></div>
-              </article>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      <section id="contact">
-        <div class="container">
-          <div class="cta">
-            <h2>¿Tienes un proyecto de datos?</h2>
-            <p>Hablemos si necesitas mejorar procesos operativos, integrar sistemas, automatizar flujos con Power Automate, construir pipelines, limpiar datos, mejorar dashboards, diseñar una arquitectura lakehouse o convertir trabajo manual en soluciones analíticas confiables.</p>
-            <div class="hero-actions" style="justify-content:center">
-              <a class="btn btn-primary" href="mailto:jaquesada92@outlook.com?subject=Consulta%20sobre%20servicios%20de%20datos">Enviar correo</a>
-              <a class="btn btn-secondary" href="https://www.linkedin.com/in/jquesada92/" target="_blank" rel="noopener noreferrer">Conectar en LinkedIn</a>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-
-    <div data-lang-content="en">
-      <section class="hero">
-        <div class="container hero-grid">
-          <div class="hero-copy">
+<div aria-label="AS Applied stack" class="chips">
+<span class="chip">Python</span><span class="chip">PySpark</span><span class="chip">Pandas</span><span class="chip">S3</span><span class="chip">Domino</span><span class="chip">Matplotlib</span><span class="chip">Seaborn</span><span class="chip">Plotly</span><span class="chip">Feature Engineering</span><span class="chip">Sensor Data</span><span class="chip">Polygon Validation</span><span class="chip">Geospatial QA</span><span class="chip">Data Cleaning</span>
+</div>
+</article><article class="project-card featured success-case">
+<div class="project-top">
+<div class="project-meta">Caso de éxito · Forecasting e inventario</div>
+<h3>Medical Supplies Distribution Center Inventory Optimization</h3>
+<p>Proyecto para un centro de distribución de productos médicos e insumos enfocado en estandarizar categorías de productos, consolidar marcas y habilitar decisiones de compra basadas en forecast, demanda histórica y top marcas. La solución permitió apoyar el proceso de compras y reducir el overstock en un 60%.</p>
+</div>
+<div class="case-wide-grid">
+<div class="case-wide-card">
+<h4>Reto de negocio</h4>
+<p>El centro de distribución manejaba múltiples marcas y tipos de productos médicos con clasificación inconsistente, dificultando la visibilidad de inventario, análisis de demanda y planificación de compras.</p>
+</div>
+<div class="case-wide-card">
+<h4>Solución técnica</h4>
+<ul>
+<li>Estandarización de productos por tipo y categoría a través de todas las marcas.</li>
+<li>Construcción de modelos de forecasting por categoría usando Python y AutoTS.</li>
+<li>Procesamiento y preparación de datos con AWS Glue para alimentar modelos y reporting.</li>
+<li>Clasificación de top marcas y análisis de demanda para apoyar decisiones de compra.</li>
+</ul>
+</div>
+<div class="case-wide-card">
+<h4>Impacto</h4>
+<ul>
+<li>Mejor visibilidad de categorías, marcas y patrones de demanda.</li>
+<li>Compras más alineadas con forecast, top marcas y rotación real de productos.</li>
+<li>Reducción de capital inmovilizado por exceso de inventario.</li>
+</ul>
+<div class="mini-metrics">
+<div class="mini-metric"><strong>60% menos overstock</strong><span>Dashboard en Looker que da soporte al proceso de compras con forecast, top marcas e inventario.</span></div>
+</div>
+</div>
+</div>
+<div aria-label="Medical inventory optimization stack" class="chips">
+<span class="chip">Python</span><span class="chip">AutoTS</span><span class="chip">AWS Glue</span><span class="chip">Looker</span><span class="chip">Forecasting</span><span class="chip">Inventory Optimization</span><span class="chip">Product Categorization</span><span class="chip">Demand Planning</span>
+</div>
+</article></div>
+</div>
+</section>
+<section id="contact">
+<div class="container">
+<div class="cta">
+<h2>¿Tienes un proyecto de datos?</h2>
+<p>Hablemos si necesitas mejorar procesos operativos, integrar sistemas, automatizar flujos con Power Automate, construir pipelines, limpiar datos, mejorar dashboards, diseñar una arquitectura lakehouse o convertir trabajo manual en soluciones analíticas confiables.</p>
+<div class="hero-actions" style="justify-content:center">
+<a class="btn btn-primary" href="mailto:jaquesada92@outlook.com?subject=Consulta%20sobre%20servicios%20de%20datos">Enviar correo</a>
+<a class="btn btn-secondary" href="https://www.linkedin.com/in/jquesada92/" rel="noopener noreferrer" target="_blank">Conectar en LinkedIn</a>
+</div>
+</div>
+</div>
+</section>
+</div>
+<div data-lang-content="en">
+<section class="hero">
+<div class="container hero-grid">
+<div class="hero-copy">
 <div class="eyebrow"><span class="dot"></span> Data engineering, analytics and system integration</div>
-            <h1>I build reliable data platforms for teams that need <span class="gradient-text">clarity, automation and better decisions.</span></h1>
-            <p class="lead">I’m José Quesada Ortiz, an industrial engineer turned Data & Analytics Engineer. My approach combines process thinking, data engineering and applied analytics.</p>
-            <p class="hero-footnote"><strong>What drives me:</strong> understanding how an operation really works and turning scattered data into solutions that save time, reduce errors and help the business act with confidence.</p>
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="mailto:jaquesada92@outlook.com?subject=Data%20services%20inquiry">Let’s discuss your project</a>
-              <a class="btn btn-secondary" href="https://www.linkedin.com/in/jquesada92/" target="_blank" rel="noopener noreferrer">View LinkedIn</a>
-              <a class="btn btn-secondary" href="cv.html?lang=es" data-cv-link>View CV</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="services-en">
-        <div class="container split">
-          <div class="panel">
-            <div class="section-head compact-head">
-              <div>
-                <h2>Applied data consulting</h2>
-                <p>I combine architecture, engineering and analytics to turn scattered data into reliable platforms, automated processes and better-informed decisions.</p>
-              </div>
-            </div>
-            <h3>Core services</h3>
-            <p class="muted">My approach starts with the business problem: understanding the sources, organizing the data flow, building reusable models and delivering information through dashboards, KPIs or actionable analytics products.</p>
-            <ul class="list">
-              <li><span class="check">✓</span><span>Consulting and design for data architecture, lakehouse and data warehouse solutions.</span></li>
-              <li><span class="check">✓</span><span>Data ingestion and integration from systems, WMS, ERP, e-commerce, APIs, forms, spreadsheets and web scraping.</span></li>
-              <li><span class="check">✓</span><span>Batch or streaming ETL/ELT development, choosing the right approach for each case: SQL, pandas, Polars, PySpark or other fit-for-purpose options.</span></li>
-              <li><span class="check">✓</span><span>Medallion architecture implementation with Bronze, Silver and Gold layers combined with data warehouse models.</span></li>
-              <li><span class="check">✓</span><span>Data analysis, KPI definition, reconciliation, data quality and reliable datasets.</span></li>
-              <li><span class="check">✓</span><span>Dashboard development, BI models and analytics engineering for business teams.</span></li>
-            </ul>
-          </div>
-          <div class="timeline service-timeline">
-            <div class="timeline-item"><div class="timeline-date">Architecture</div><div><h3>Governed platforms</h3><p>Design of layers, domains, data flows, analytical models and single sources of truth to reduce technical debt and simplify consumption.</p></div></div>
-            <div class="timeline-item"><div class="timeline-date">Integration</div><div><h3>Data from multiple sources</h3><p>Connection of operational systems, files, forms, APIs and automation flows to centralize data and reduce manual work.</p></div></div>
-            <div class="timeline-item"><div class="timeline-date">ETL/ELT</div><div><h3>Flexible and maintainable pipelines</h3><p>Development and optimization of batch or streaming processes, selecting the simplest sustainable approach based on volume, frequency and complexity.</p></div></div>
-            <div class="timeline-item"><div class="timeline-date">Medallion + DW</div><div><h3>From raw data to business models</h3><p>Implementation of Bronze/Silver/Gold layers and dimensional models for reporting, reconciliation, advanced analytics and scalability.</p></div></div>
-            <div class="timeline-item"><div class="timeline-date">Analytics & BI</div><div><h3>Data-driven decisions</h3><p>Analysis, KPIs, dashboards, Power BI and consumption models that help teams understand what is happening and act with confidence.</p></div></div>
-          </div>
-        </div>
-      </section>
-
-<section id="education-en">
-  <div class="container">
-    <div class="section-head">
-      <div>
-        <h2>Education and certifications</h2>
-        <p>Education in engineering, supply chain, analytics and modern data platforms, complemented by practical certifications in Databricks, Spark and Microsoft Fabric.</p>
-      </div>
-    </div>
-
-    <div class="education-layout">
-      <div class="education-panel">
-        <h3>Academic background</h3>
-        <p>My foundation in industrial engineering and supply chain helps me connect operations, technology and analytics to turn business problems into data solutions.</p>
-
-        <div class="education-list">
-          <div class="education-item">
-            <strong>Industrial Engineering</strong>
-            <span>Background in processes, operations, continuous improvement, quantitative analysis and industrial management.</span>
-          </div>
-          <div class="education-item">
-            <strong>Master’s in Supply Chain Management</strong>
-            <span>Specialization in logistics, planning, inventory, materials and end-to-end operational processes.</span>
-          </div>
-          <div class="education-item">
-            <strong>Big Data & Analytics</strong>
-            <span>Complementary education focused on analytics, data and business applications.</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="education-panel">
-        <h3>Certifications and platforms</h3>
-        <p>Certifications focused on data engineering, distributed processing, lakehouse, analytics and modern cloud data solutions.</p>
-
-        <div class="cert-grid">
-          <div class="cert-card">
-            <strong>Databricks Data Engineer Associate</strong>
-            <span>Lakehouse, pipelines, Delta Lake, data engineering and Databricks best practices.</span>
-          </div>
-          <div class="cert-card">
-            <strong>Databricks Apache Spark Developer</strong>
-            <span>Distributed processing with Spark, PySpark, optimization and data transformations.</span>
-          </div>
-          <div class="cert-card">
-            <strong>Microsoft Fabric Analytics Engineer Associate</strong>
-            <span>Semantic models, Power BI, lakehouse, warehouse and enterprise analytics in Fabric.</span>
-          </div>
-          <div class="cert-card">
-            <strong>Azure Data Fundamentals</strong>
-            <span>Data fundamentals, cloud services, storage, processing and analytics in Azure.</span>
-          </div>
-        </div>
-
-        <p class="tool-summary"><strong>Related stack:</strong> Databricks, PySpark, Delta Lake, Unity Catalog, Azure Data Factory, Microsoft Fabric, Azure SQL, Power BI, Tableau, Looker, Power Automate and APIs.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-      <section>
-        <div class="container split">
-          <div class="highlight">
-            <h2>When can I help?</h2>
-            <p class="muted">I am a strong fit when your company needs to organize its analytics operation, improve operational processes, automate manual tasks, integrate systems, modernize pipelines, improve reporting or prepare data for AI while staying focused on business impact.</p>
-          </div>
-          <div class="service-fit">
-            <div class="card"><h3>Manual processes and scattered data</h3><p>When operations depend on WMS, ERP, Excel/spreadsheets, forms, APIs, web scraping, databases or external systems and you need to integrate data, automate tasks with Power Automate, measure KPIs and improve workflows.</p></div>
-            <div class="card"><h3>Slow or inconsistent dashboards</h3><p>When Power BI or reports carry too much logic, perform poorly or show differences across departments.</p></div>
-            <div class="card"><h3>Hard-to-maintain pipelines</h3><p>When processes lack traceability, validation rules, clear layers or development standards.</p></div>
-            <div class="card"><h3>Data for AI and forecasting</h3><p>When you want reliable foundations for machine learning, automation, planning or predictive decisions.</p></div>
-          </div>
-        </div>
-      </section>
-
-
-      <section id="portfolio-en">
-        <div class="container">
-          <div class="section-head">
-            <div>
-              <h2>Client projects</h2>
-              <p>Selected client success cases focused on data platform modernization, applied analytics, data engineering for data science, forecasting and process optimization.</p>
-            </div>
-          </div>
-          <div class="portfolio-grid">
-            <article class="project-card featured success-case">
-              <div class="project-top">
-                <div class="project-meta">Success story · Data platform modernization</div>
-                <h3>From Data Chaos to an AI-Ready Lakehouse</h3>
-                <p>Retail / supply chain data platform modernization around Infor M3. The project transformed a fragmented, Azure SQL-heavy estate with isolated processes into a governed Lakehouse foundation using Databricks, Delta Lake, Unity Catalog, Bronze/Silver layers, automated reconciliation, backfill capabilities and domain-oriented data products. The solution also implemented CDC and incremental change propagation into the Data Warehouse as the Gold/serving layer for analytical consumption.</p>
-              </div>
-              <div class="case-metrics">
-                <div class="case-metric"><strong>80+</strong><span>tables processed through a dynamic configuration-driven framework.</span></div>
-                <div class="case-metric"><strong>75%–98%</strong><span>reduction in processing time per table: from 2–4 hours to 5–30 minutes, depending on file volume.</span></div>
-                <div class="case-metric"><strong>80%+</strong><span>cost reduction by replacing Dataflows with Copy Activities over Delta.</span></div>
-                <div class="case-metric"><strong>100%</strong><span>Bronze vs Infor Compass reconciliation for validated entities.</span></div>
-              </div>
-              <div class="case-columns">
-                <div class="case-column"><h4>Challenge</h4><ul><li>Table-by-table processes that were hard to maintain.</li><li>Heavy Azure SQL dependency and complex views.</li><li>No reliable historical snapshots, traceability or recovery path.</li></ul></div>
-                <div class="case-column"><h4>Solution</h4><ul><li>Medallion architecture with append-only Bronze and deduplicated Silver.</li><li>Reusable ingestion, deduplication and backfill framework.</li><li>Lakeflow pipelines and domain data products for operations and analytics.</li></ul></div>
-                <div class="case-column"><h4>Impact</h4><ul><li>Lower cost and more efficient infrastructure.</li><li>Higher trust through reconciliation and data quality controls.</li><li>Governed foundation ready for advanced analytics and AI.</li></ul></div>
-              </div>
-              <div class="project-tags">
-                <span>Databricks</span><span>Delta Lake</span><span>Unity Catalog</span><span>Lakeflow</span><span>Medallion Architecture</span><span>Data Quality</span><span>Backfill</span><span>Cost Optimization</span><span>Data Products</span>
-              </div>
-              <div class="project-actions">
-                <a class="btn btn-secondary" href="#contact-en">Discuss this case</a>
-              </div>
-            </article>
-
-
-<article class="project-card featured success-case">
-  <div class="project-top">
-    <div class="project-meta">Success case · Data Engineering for Data Science</div>
-    <h3>AS Applied Data Science Support</h3>
-    <p>Global Bayer Crop Science project focused on analyzing, cleaning and enabling agrochemical application data from farms across the United States, Canada, Brazil and Russia. The work helped recover and make usable approximately 80% of a 350M-record dataset, transforming sensor-generated application data and farm polygons into analytics-ready datasets for agronomic analysis, feature engineering and predictive modeling support around crop disease and fungus risk.</p>
-  </div>
-
-
-<div class="case-wide-grid">
-  <div class="case-wide-card">
-    <h4>Data challenge</h4>
-    <p>The project worked with global agrochemical application data generated by sensors and farm polygons across the United States, Canada, Brazil and Russia.</p>
-    <div class="mini-metrics">
-      <div class="mini-metric"><strong>350M records</strong><span>Data analyzed, cleaned and prepared for analytical consumption.</span></div>
-      <div class="mini-metric"><strong>80% enabled</strong><span>Approximate portion enabled for analysis, feature engineering and modeling.</span></div>
-    </div>
-  </div>
-
-  <div class="case-wide-card">
-    <h4>Technical solution</h4>
-    <ul>
-      <li>Reusable Python class on top of PySpark for retrieval, transformation and feature engineering.</li>
-      <li>Standardization and translation of agrochemical product names across countries and source systems.</li>
-      <li>Farm polygon validation to classify correct vs. incorrect assignments.</li>
-      <li>Logic to identify partial vs. complete applications and generate application-level statistics.</li>
-    </ul>
-  </div>
-
-  <div class="case-wide-card">
-    <h4>Impact</h4>
-    <ul>
-      <li>Reduced duplicated code across notebooks and team members.</li>
-      <li>Centralized critical pipeline logic into a reusable class.</li>
-      <li>Cleaner, more consistent datasets ready for predictive models.</li>
-      <li>Internal adoption by multiple team members.</li>
-    </ul>
-    <div class="mini-metrics">
-      <div class="mini-metric"><strong>PySpark class</strong><span>Reusable component for as-applied data transformation.</span></div>
-      <div class="mini-metric"><strong>Team adoption</strong><span>The class was used by multiple team members and later centralized.</span></div>
-    </div>
-  </div>
+<h1>I build reliable data platforms for teams that need <span class="gradient-text">clarity, automation and better decisions.</span></h1>
+<p class="lead">I’m José Quesada Ortiz, an industrial engineer turned Data &amp; Analytics Engineer. My approach combines process thinking, data engineering and applied analytics.</p>
+<p class="hero-footnote"><strong>What drives me:</strong> understanding how an operation really works and turning scattered data into solutions that save time, reduce errors and help the business act with confidence.</p>
+<div class="hero-actions">
+<a class="btn btn-primary" href="mailto:jaquesada92@outlook.com?subject=Data%20services%20inquiry">Let’s discuss your project</a>
+<a class="btn btn-secondary" href="https://www.linkedin.com/in/jquesada92/" rel="noopener noreferrer" target="_blank">View LinkedIn</a>
+<a class="btn btn-secondary" data-cv-link="" href="cv.html?lang=es">View CV</a>
 </div>
-
+</div>
+</div>
+</section>
+<section id="services-en">
+<div class="container split">
+<div class="panel">
+<div class="section-head compact-head">
+<div>
+<h2>Applied data consulting</h2>
+<p>I combine architecture, engineering and analytics to turn scattered data into reliable platforms, automated processes and better-informed decisions.</p>
+</div>
+</div>
+<h3>Core services</h3>
+<p class="muted">My approach starts with the business problem: understanding the sources, organizing the data flow, building reusable models and delivering information through dashboards, KPIs or actionable analytics products.</p>
+<ul class="list">
+<li><span class="check">✓</span><span>Consulting and design for data architecture, lakehouse and data warehouse solutions.</span></li>
+<li><span class="check">✓</span><span>Data ingestion and integration from systems, WMS, ERP, e-commerce, APIs, forms, spreadsheets and web scraping.</span></li>
+<li><span class="check">✓</span><span>Batch or streaming ETL/ELT development, choosing the right approach for each case: SQL, pandas, Polars, PySpark or other fit-for-purpose options.</span></li>
+<li><span class="check">✓</span><span>Medallion architecture implementation with Bronze, Silver and Gold layers combined with data warehouse models.</span></li>
+<li><span class="check">✓</span><span>Data analysis, KPI definition, reconciliation, data quality and reliable datasets.</span></li>
+<li><span class="check">✓</span><span>Dashboard development, BI models and analytics engineering for business teams.</span></li>
+</ul>
+</div>
+<div class="timeline service-timeline">
+<div class="timeline-item"><div class="timeline-date">Architecture</div><div><h3>Governed platforms</h3><p>Design of layers, domains, data flows, analytical models and single sources of truth to reduce technical debt and simplify consumption.</p></div></div>
+<div class="timeline-item"><div class="timeline-date">Integration</div><div><h3>Data from multiple sources</h3><p>Connection of operational systems, files, forms, APIs and automation flows to centralize data and reduce manual work.</p></div></div>
+<div class="timeline-item"><div class="timeline-date">ETL/ELT</div><div><h3>Flexible and maintainable pipelines</h3><p>Development and optimization of batch or streaming processes, selecting the simplest sustainable approach based on volume, frequency and complexity.</p></div></div>
+<div class="timeline-item"><div class="timeline-date">Medallion + DW</div><div><h3>From raw data to business models</h3><p>Implementation of Bronze/Silver/Gold layers and dimensional models for reporting, reconciliation, advanced analytics and scalability.</p></div></div>
+<div class="timeline-item"><div class="timeline-date">Analytics &amp; BI</div><div><h3>Data-driven decisions</h3><p>Analysis, KPIs, dashboards, Power BI and consumption models that help teams understand what is happening and act with confidence.</p></div></div>
+</div>
+</div>
+</section>
+<section id="education-en">
+<div class="container">
+<div class="section-head">
+<div>
+<h2>Education and certifications</h2>
+<p>Education in engineering, supply chain, analytics and modern data platforms, complemented by practical certifications in Databricks, Spark and Microsoft Fabric.</p>
+</div>
+</div>
+<div class="education-layout">
+<div class="education-panel">
+<h3>Academic background</h3>
+<p>My foundation in industrial engineering and supply chain helps me connect operations, technology and analytics to turn business problems into data solutions.</p>
+<div class="education-list">
+<div class="education-item">
+<strong>Industrial Engineering</strong>
+<span>Background in processes, operations, continuous improvement, quantitative analysis and industrial management.</span>
+</div>
+<div class="education-item">
+<strong>Master’s in Supply Chain Management</strong>
+<span>Specialization in logistics, planning, inventory, materials and end-to-end operational processes.</span>
+</div>
+<div class="education-item">
+<strong>Big Data &amp; Analytics</strong>
+<span>Complementary education focused on analytics, data and business applications.</span>
+</div>
+</div>
+</div>
+<div class="education-panel">
+<h3>Certifications and platforms</h3>
+<p>Certifications focused on data engineering, distributed processing, lakehouse, analytics and modern cloud data solutions.</p>
+<div class="cert-grid">
+<div class="cert-card">
+<strong>Databricks Data Engineer Associate</strong>
+<span>Lakehouse, pipelines, Delta Lake, data engineering and Databricks best practices.</span>
+</div>
+<div class="cert-card">
+<strong>Databricks Apache Spark Developer</strong>
+<span>Distributed processing with Spark, PySpark, optimization and data transformations.</span>
+</div>
+<div class="cert-card">
+<strong>Microsoft Fabric Analytics Engineer Associate</strong>
+<span>Semantic models, Power BI, lakehouse, warehouse and enterprise analytics in Fabric.</span>
+</div>
+<div class="cert-card">
+<strong>Azure Data Fundamentals</strong>
+<span>Data fundamentals, cloud services, storage, processing and analytics in Azure.</span>
+</div>
+</div>
+<p class="tool-summary"><strong>Related stack:</strong> Databricks, PySpark, Delta Lake, Unity Catalog, Azure Data Factory, Microsoft Fabric, Azure SQL, Power BI, Tableau, Looker, Power Automate and APIs.</p>
+</div>
+</div>
+</div>
+</section>
+<section>
+<div class="container split">
+<div class="highlight">
+<h2>When can I help?</h2>
+<p class="muted">I am a strong fit when your company needs to organize its analytics operation, improve operational processes, automate manual tasks, integrate systems, modernize pipelines, improve reporting or prepare data for AI while staying focused on business impact.</p>
+</div>
+<div class="service-fit">
+<div class="card"><h3>Manual processes and scattered data</h3><p>When operations depend on WMS, ERP, Excel/spreadsheets, forms, APIs, web scraping, databases or external systems and you need to integrate data, automate tasks with Power Automate, measure KPIs and improve workflows.</p></div>
+<div class="card"><h3>Slow or inconsistent dashboards</h3><p>When Power BI or reports carry too much logic, perform poorly or show differences across departments.</p></div>
+<div class="card"><h3>Hard-to-maintain pipelines</h3><p>When processes lack traceability, validation rules, clear layers or development standards.</p></div>
+<div class="card"><h3>Data for AI and forecasting</h3><p>When you want reliable foundations for machine learning, automation, planning or predictive decisions.</p></div>
+</div>
+</div>
+</section>
+<section id="portfolio-en">
+<div class="container">
+<div class="section-head">
+<div>
+<h2>Client projects</h2>
+<p>Selected client success cases focused on data platform modernization, data engineering for data science, forecasting and process optimization.</p>
+</div>
+</div>
+<div class="portfolio-grid client-success-grid"><article class="project-card featured success-case">
+<div class="project-top">
+<div class="project-meta">Success story · Data platform modernization</div>
+<h3>From Data Chaos to an AI-Ready Lakehouse</h3>
+<p>Retail / supply chain data platform modernization around Infor M3. The project transformed a fragmented, Azure SQL-heavy estate with isolated processes into a governed Lakehouse foundation using Databricks, Delta Lake, Unity Catalog, Bronze/Silver layers, automated reconciliation, backfill capabilities and domain-oriented data products. The solution also implemented CDC and incremental change propagation into the Data Warehouse as the Gold/serving layer for analytical consumption.</p>
+</div>
+<div class="case-metrics">
+<div class="case-metric"><strong>80+</strong><span>tables processed through a dynamic configuration-driven framework.</span></div>
+<div class="case-metric"><strong>75%–98%</strong><span>reduction in processing time per table: from 2–4 hours to 5–30 minutes, depending on file volume.</span></div>
+<div class="case-metric"><strong>80%+</strong><span>cost reduction by replacing Dataflows with Copy Activities over Delta.</span></div>
+<div class="case-metric"><strong>100%</strong><span>Bronze vs Infor Compass reconciliation for validated entities.</span></div>
+</div>
+<div class="case-columns">
+<div class="case-column"><h4>Challenge</h4><ul><li>Table-by-table processes that were hard to maintain.</li><li>Heavy Azure SQL dependency and complex views.</li><li>No reliable historical snapshots, traceability or recovery path.</li></ul></div>
+<div class="case-column"><h4>Solution</h4><ul><li>Medallion architecture with append-only Bronze and deduplicated Silver.</li><li>Reusable ingestion, deduplication and backfill framework.</li><li>Lakeflow pipelines and domain data products for operations and analytics.</li></ul></div>
+<div class="case-column"><h4>Impact</h4><ul><li>Lower cost and more efficient infrastructure.</li><li>Higher trust through reconciliation and data quality controls.</li><li>Governed foundation ready for advanced analytics and AI.</li></ul></div>
+</div>
+<div class="project-tags">
+<span>Databricks</span><span>Delta Lake</span><span>Unity Catalog</span><span>Lakeflow</span><span>Medallion Architecture</span><span>Data Quality</span><span>Backfill</span><span>Cost Optimization</span><span>Data Products</span>
+</div>
+<div class="project-actions">
+<a class="btn btn-secondary" href="#contact-en">Discuss this case</a>
+</div>
+</article><article class="project-card featured success-case">
+<div class="project-top">
+<div class="project-meta">Success case · Data Engineering for Data Science</div>
+<h3>AS Applied Data Science Support</h3>
+<p>Global Bayer Crop Science project focused on analyzing, cleaning and enabling agrochemical application data from farms across the United States, Canada, Brazil and Russia. The work helped recover and make usable approximately 80% of a 350M-record dataset, transforming sensor-generated application data and farm polygons into analytics-ready datasets for agronomic analysis, feature engineering and predictive modeling support around crop disease and fungus risk.</p>
+</div>
+<div class="case-wide-grid">
+<div class="case-wide-card">
+<h4>Data challenge</h4>
+<p>The project worked with global agrochemical application data generated by sensors and farm polygons across the United States, Canada, Brazil and Russia.</p>
+<div class="mini-metrics">
+<div class="mini-metric"><strong>350M records</strong><span>Data analyzed, cleaned and prepared for analytical consumption.</span></div>
+<div class="mini-metric"><strong>80% enabled</strong><span>Approximate portion enabled for analysis, feature engineering and modeling.</span></div>
+</div>
+</div>
+<div class="case-wide-card">
+<h4>Technical solution</h4>
+<ul>
+<li>Reusable Python class on top of PySpark for retrieval, transformation and feature engineering.</li>
+<li>Standardization and translation of agrochemical product names across countries and source systems.</li>
+<li>Farm polygon validation to classify correct vs. incorrect assignments.</li>
+<li>Logic to identify partial vs. complete applications and generate application-level statistics.</li>
+</ul>
+</div>
+<div class="case-wide-card">
+<h4>Impact</h4>
+<ul>
+<li>Reduced duplicated code across notebooks and team members.</li>
+<li>Centralized critical pipeline logic into a reusable class.</li>
+<li>Cleaner, more consistent datasets ready for predictive models.</li>
+<li>Internal adoption by multiple team members.</li>
+</ul>
+<div class="mini-metrics">
+<div class="mini-metric"><strong>PySpark class</strong><span>Reusable component for as-applied data transformation.</span></div>
+<div class="mini-metric"><strong>Team adoption</strong><span>The class was used by multiple team members and later centralized.</span></div>
+</div>
+</div>
+</div>
 <div class="impact-quote">
-    <strong>Impact signal:</strong> internal feedback highlighted that the class covered so much of the pipeline that much of the team started using it, creating the need to centralize the solution and avoid multiple versions.
+<strong>Impact signal:</strong> internal feedback highlighted that the class covered so much of the pipeline that much of the team started using it, creating the need to centralize the solution and avoid multiple versions.
   </div>
-
-  <div class="chips" aria-label="AS Applied stack">
-    <span class="chip">Python</span><span class="chip">PySpark</span><span class="chip">Pandas</span><span class="chip">S3</span><span class="chip">Domino</span><span class="chip">Matplotlib</span><span class="chip">Seaborn</span><span class="chip">Plotly</span><span class="chip">Feature Engineering</span><span class="chip">Sensor Data</span><span class="chip">Polygon Validation</span><span class="chip">Geospatial QA</span><span class="chip">Data Cleaning</span>
-  </div>
-</article>
-
-
-<article class="project-card featured success-case">
-  <div class="project-top">
-    <div class="project-meta">Success case · Forecasting and inventory</div>
-    <h3>Medical Supplies Distribution Center Inventory Optimization</h3>
-    <p>Project for a medical products and supplies distribution center focused on standardizing product categories, consolidating brands and enabling purchasing decisions based on forecasts, historical demand and top-performing brands. The solution supported the purchasing process and reduced overstock by 60%.</p>
-  </div>
-
-  <div class="case-wide-grid">
-    <div class="case-wide-card">
-      <h4>Business challenge</h4>
-      <p>The distribution center handled multiple brands and product types with inconsistent classification, limiting inventory visibility, demand analysis and purchasing planning.</p>
-    </div>
-
-    <div class="case-wide-card">
-      <h4>Technical solution</h4>
-      <ul>
-        <li>Standardized products by type and category across all brands.</li>
-        <li>Built category-level forecasting models using Python and AutoTS.</li>
-        <li>Processed and prepared data with AWS Glue to support modeling and reporting.</li>
-        <li>Classified top brands and analyzed demand to support purchasing decisions.</li>
-      </ul>
-    </div>
-
-    <div class="case-wide-card">
-      <h4>Impact</h4>
-      <ul>
-        <li>Improved visibility into categories, brands and demand patterns.</li>
-        <li>Purchasing decisions better aligned with forecasts, top brands and product rotation.</li>
-        <li>Reduced capital tied up in excess inventory.</li>
-      </ul>
-      <div class="mini-metrics">
-        <div class="mini-metric"><strong>60% less overstock</strong><span>Looker dashboard supporting the purchasing process with forecasts, top brands and inventory monitoring.</span></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="chips" aria-label="Medical inventory optimization stack">
-    <span class="chip">Python</span><span class="chip">AutoTS</span><span class="chip">AWS Glue</span><span class="chip">Looker</span><span class="chip">Forecasting</span><span class="chip">Inventory Optimization</span><span class="chip">Product Categorization</span><span class="chip">Demand Planning</span>
-  </div>
-</article>
-
-            <article class="project-card featured dashboard-project">
-              <div class="project-top">
-                <div class="project-meta">End-to-end project · Databricks Lakehouse + Power BI</div>
-                <h3>databricks-lakeflow-gov-panama</h3>
-                <p>Lakehouse project that integrates Panama Central Government payroll public data: it extracts data from a public API, lands files into staging, processes them with Databricks Lakeflow / Spark Declarative Pipelines and organizes Bronze and Silver layers with SCD Type 2 history, auditability and data quality controls. The embedded Power BI dashboard is the final analytics layer of the same project.</p>
-                <div class="project-tags">
-                  <span>Databricks</span><span>Lakeflow</span><span>PySpark</span><span>Delta Lake</span><span>SCD Type 2</span><span>Data Quality</span><span>Power BI</span><span>Public Data</span><span>Dashboard</span>
-                </div>
-                <div class="project-actions">
-                  <a class="btn btn-secondary" href="https://github.com/jquesada92/databricks-lakeflow-gov-panama" target="_blank" rel="noopener noreferrer">View repo</a>
-                  <a class="btn btn-secondary" href="https://app.powerbi.com/view?r=eyJrIjoiOGUxOTk0ZWEtODg2NC00NDEzLTllMWYtOTdkMjkxMWE3ZWU3IiwidCI6IjBhNzk5NDU0LTM1NTAtNGZiNi1iNGMzLWY5ZWIzMmVhOWU2NCJ9" target="_blank" rel="noopener noreferrer">Open dashboard</a>
-                </div>
-              </div>
-              <div class="embed-shell" aria-label="Power BI dashboard: Central Government Payroll">
-                <iframe title="Planilla Gobierno Central" width="600" height="636" src="https://app.powerbi.com/view?r=eyJrIjoiOGUxOTk0ZWEtODg2NC00NDEzLTllMWYtOTdkMjkxMWE3ZWU3IiwidCI6IjBhNzk5NDU0LTM1NTAtNGZiNi1iNGMzLWY5ZWIzMmVhOWU2NCJ9" frameborder="0" allowFullScreen="true" loading="lazy"></iframe>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <div class="project-top">
-                <div class="project-meta">Data Science · R</div>
-                <h3>House-Pricing-R-Data-Science</h3>
-                <p>R-based analytics and modeling project for exploring housing price data. It reinforces analytical, statistical and technical communication foundations through scripts, R Markdown and reproducible deliverables.</p>
-                <div class="project-tags">
-                  <span>R</span><span>R Markdown</span><span>Data Science</span><span>EDA</span><span>Statistical Modeling</span>
-                </div>
-              </div>
-              <div class="project-actions">
-                <a class="btn btn-secondary" href="https://github.com/jquesada92/House-Pricing-R-Data-Science" target="_blank" rel="noopener noreferrer">View repo</a>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <div class="project-top">
-                <div class="project-meta">Streaming · Local observability</div>
-                <h3>pyspark-strctured-streaming</h3>
-                <p>Local streaming project for capturing internet speed test events, ingesting JSON with PySpark Structured Streaming, writing Apache Iceberg tables with PostgreSQL as the catalog and visualizing near-real-time results with Dash.</p>
-                <div class="project-tags">
-                  <span>PySpark</span><span>Structured Streaming</span><span>Apache Iceberg</span><span>PostgreSQL</span><span>Docker</span><span>Dash</span>
-                </div>
-              </div>
-              <div class="project-actions">
-                <a class="btn btn-secondary" href="https://github.com/jquesada92/pyspark-strctured-streaming" target="_blank" rel="noopener noreferrer">View repo</a>
-              </div>
-            </article>
-          </div>
-
-
-          <div class="personal-portfolio">
-            <div class="personal-portfolio-head">
-              <h3>Personal projects</h3>
-              <p>Dashboards, repositories and technical labs where I apply lakehouse, APIs, public data, streaming, BI, data science and visualization.</p>
-            </div>
-
-            <div class="embed-card">
-              <div class="embed-card-header">
-                <div>
-                  <div class="project-meta">Databricks dashboard · Open-Meteo Lakehouse</div>
-                  <h4>openmeteo-databricks-pipeline</h4>
-                  <p>Lakehouse pipeline using Open-Meteo weather data, Databricks processing and an embedded dashboard to explore climate metrics. The project demonstrates API ingestion, transformation, analytical modeling and dashboard consumption.</p>
-                </div>
-                <div class="project-actions">
-                  <a class="btn btn-secondary" href="https://github.com/jquesada92/openmeteo-databricks-pipeline" target="_blank" rel="noopener noreferrer">View repo</a>
-                </div>
-              </div>
-              <div class="databricks-embed" aria-label="Databricks dashboard Open-Meteo">
-                <iframe
-                  src="https://dbc-f88938f0-02c4.cloud.databricks.com/embed/dashboardsv3/01f169bd287d107980e1ddecf126e9b3?o=138626662718526"
-                  width="100%"
-                  height="600"
-                  frameborder="0">
-                </iframe>
-              </div>
-            </div>
-
-            <div class="repo-grid">
-              <article class="repo-card">
-                <div class="project-meta">Public data · Panama Contraloría</div>
-                <h4>databricks-lakeflow-gov-panama</h4>
-                <p>Project using public payroll data from Panama’s Central Government, processed with Databricks Lakeflow, Bronze/Silver layers, quality controls and a Power BI dashboard.</p>
-                <div class="project-tags"><span>Databricks</span><span>Lakeflow</span><span>PySpark</span><span>Power BI</span><span>Public Data</span></div>
-                <div class="project-actions"><a class="btn btn-secondary" href="https://github.com/jquesada92/databricks-lakeflow-gov-panama" target="_blank" rel="noopener noreferrer">View repo</a></div>
-              </article>
-
-              <article class="repo-card">
-                <div class="project-meta">Streaming · Local observability</div>
-                <h4>pyspark-strctured-streaming</h4>
-                <p>Streaming processing demo with PySpark, dummy data generation and visualization to explain micro-batches, aggregations and flow monitoring concepts.</p>
-                <div class="project-tags"><span>PySpark</span><span>Structured Streaming</span><span>Dash</span><span>Plotly</span></div>
-                <div class="project-actions"><a class="btn btn-secondary" href="https://github.com/jquesada92/pyspark-strctured-streaming" target="_blank" rel="noopener noreferrer">View repo</a></div>
-              </article>
-
-              <article class="repo-card">
-                <div class="project-meta">Data Science · R</div>
-                <h4>House-Pricing-R-Data-Science</h4>
-                <p>R data science project to explore, clean and model housing price data, focused on exploratory analysis, variable preparation and predictive modeling.</p>
-                <div class="project-tags"><span>R</span><span>Data Science</span><span>EDA</span><span>Predictive Modeling</span></div>
-                <div class="project-actions"><a class="btn btn-secondary" href="https://github.com/jquesada92/House-Pricing-R-Data-Science" target="_blank" rel="noopener noreferrer">View repo</a></div>
-              </article>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      <section id="contact-en">
-        <div class="container">
-          <div class="cta">
-            <h2>Do you have a data project?</h2>
-            <p>Let’s talk if you need to improve operational processes, integrate systems, automate workflows with Power Automate, build pipelines, clean data, improve dashboards, design a lakehouse architecture or turn manual work into trusted analytics solutions.</p>
-            <div class="hero-actions" style="justify-content:center">
-              <a class="btn btn-primary" href="mailto:jaquesada92@outlook.com?subject=Data%20services%20inquiry">Send email</a>
-              <a class="btn btn-secondary" href="https://www.linkedin.com/in/jquesada92/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-  </main>
-
-  <footer>
-    <div class="container footer-grid">
-      <div>© <span id="year"></span> José Quesada Ortiz. Data Engineering & Analytics Services.</div>
-      <div class="footer-links">
-        <a href="mailto:jaquesada92@outlook.com">Email</a>
-        <a href="https://www.linkedin.com/in/jquesada92/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="https://github.com/jquesada92" target="_blank" rel="noopener noreferrer">GitHub</a>
-      </div>
-    </div>
-  </footer>
-
-  <script>
+<div aria-label="AS Applied stack" class="chips">
+<span class="chip">Python</span><span class="chip">PySpark</span><span class="chip">Pandas</span><span class="chip">S3</span><span class="chip">Domino</span><span class="chip">Matplotlib</span><span class="chip">Seaborn</span><span class="chip">Plotly</span><span class="chip">Feature Engineering</span><span class="chip">Sensor Data</span><span class="chip">Polygon Validation</span><span class="chip">Geospatial QA</span><span class="chip">Data Cleaning</span>
+</div>
+</article><article class="project-card featured success-case">
+<div class="project-top">
+<div class="project-meta">Success case · Forecasting and inventory</div>
+<h3>Medical Supplies Distribution Center Inventory Optimization</h3>
+<p>Project for a medical products and supplies distribution center focused on standardizing product categories, consolidating brands and enabling purchasing decisions based on forecasts, historical demand and top-performing brands. The solution supported the purchasing process and reduced overstock by 60%.</p>
+</div>
+<div class="case-wide-grid">
+<div class="case-wide-card">
+<h4>Business challenge</h4>
+<p>The distribution center handled multiple brands and product types with inconsistent classification, limiting inventory visibility, demand analysis and purchasing planning.</p>
+</div>
+<div class="case-wide-card">
+<h4>Technical solution</h4>
+<ul>
+<li>Standardized products by type and category across all brands.</li>
+<li>Built category-level forecasting models using Python and AutoTS.</li>
+<li>Processed and prepared data with AWS Glue to support modeling and reporting.</li>
+<li>Classified top brands and analyzed demand to support purchasing decisions.</li>
+</ul>
+</div>
+<div class="case-wide-card">
+<h4>Impact</h4>
+<ul>
+<li>Improved visibility into categories, brands and demand patterns.</li>
+<li>Purchasing decisions better aligned with forecasts, top brands and product rotation.</li>
+<li>Reduced capital tied up in excess inventory.</li>
+</ul>
+<div class="mini-metrics">
+<div class="mini-metric"><strong>60% less overstock</strong><span>Looker dashboard supporting the purchasing process with forecasts, top brands and inventory monitoring.</span></div>
+</div>
+</div>
+</div>
+<div aria-label="Medical inventory optimization stack" class="chips">
+<span class="chip">Python</span><span class="chip">AutoTS</span><span class="chip">AWS Glue</span><span class="chip">Looker</span><span class="chip">Forecasting</span><span class="chip">Inventory Optimization</span><span class="chip">Product Categorization</span><span class="chip">Demand Planning</span>
+</div>
+</article></div>
+</div>
+</section>
+<section id="contact-en">
+<div class="container">
+<div class="cta">
+<h2>Do you have a data project?</h2>
+<p>Let’s talk if you need to improve operational processes, integrate systems, automate workflows with Power Automate, build pipelines, clean data, improve dashboards, design a lakehouse architecture or turn manual work into trusted analytics solutions.</p>
+<div class="hero-actions" style="justify-content:center">
+<a class="btn btn-primary" href="mailto:jaquesada92@outlook.com?subject=Data%20services%20inquiry">Send email</a>
+<a class="btn btn-secondary" href="https://www.linkedin.com/in/jquesada92/" rel="noopener noreferrer" target="_blank">Connect on LinkedIn</a>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<footer>
+<div class="container footer-grid">
+<div>© <span id="year"></span> José Quesada Ortiz. Data Engineering &amp; Analytics Services.</div>
+<div class="footer-links">
+<a href="mailto:jaquesada92@outlook.com">Email</a>
+<a href="https://www.linkedin.com/in/jquesada92/" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+<a href="https://github.com/jquesada92" rel="noopener noreferrer" target="_blank">GitHub</a>
+</div>
+</div>
+</footer>
+<script>
   (function () {
     const translations = {
       es: {
         navServices: 'Servicios',
         navEducation: 'Estudios',
-        navPortfolio: 'Proyectos',
+        navClientProjects: 'Proyectos de clientes',
+        navPersonalProjects: 'Portfolio',
         navCV: 'CV',
         navContact: 'Contacto',
         anchors: {
           navServices: '#services',
           navEducation: '#education',
-          navPortfolio: '#portfolio',
+          navClientProjects: '#portfolio',
           navContact: '#contact'
         }
       },
       en: {
         navServices: 'Services',
         navEducation: 'Education',
-        navPortfolio: 'Projects',
+        navClientProjects: 'Client projects',
+        navPersonalProjects: 'Portfolio',
         navCV: 'CV',
         navContact: 'Contact',
         anchors: {
           navServices: '#services-en',
           navEducation: '#education-en',
-          navPortfolio: '#portfolio-en',
+          navClientProjects: '#portfolio-en',
           navContact: '#contact-en'
         }
       }
@@ -1995,6 +1804,9 @@
         if (key === 'navCV' || item.hasAttribute('data-cv-link')) {
           item.setAttribute('href', 'cv.html?lang=' + lang);
           item.setAttribute('data-cv-link', '');
+        } else if (key === 'navPersonalProjects' || item.hasAttribute('data-personal-link')) {
+          item.setAttribute('href', 'portfolio.html?lang=' + lang);
+          item.setAttribute('data-personal-link', '');
         } else if (translations[lang].anchors[key]) {
           item.setAttribute('href', translations[lang].anchors[key]);
         }
@@ -2002,6 +1814,10 @@
 
       document.querySelectorAll('[data-cv-link]').forEach(link => {
         link.setAttribute('href', 'cv.html?lang=' + lang);
+      });
+
+      document.querySelectorAll('[data-personal-link]').forEach(link => {
+        link.setAttribute('href', 'portfolio.html?lang=' + lang);
       });
 
       try {

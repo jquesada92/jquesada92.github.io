@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Redirecting to Portfolio</title>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const lang = params.get('lang') === 'en' ? 'en' : 'es';
+    window.location.replace('portfolio.html?lang=' + lang);
+  </script>
+  <meta http-equiv="refresh" content="0; url=portfolio.html">
+</head>
+<body>
+  <p>Redirecting to <a href="portfolio.html">Portfolio</a>...</p>
+</body>
+</html>
