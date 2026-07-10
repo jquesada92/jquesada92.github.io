@@ -1,10 +1,20 @@
 # Jose Quesada Professional Site
 
-Ready for GitHub Pages.
+Restored from the last stable version and updated safely.
 
-## Update included
+## Safe update included
 
-- Medical Supplies Distribution Center case refined:
-  - Overstock reduction and Looker dashboard are presented together under Impact.
-  - The dashboard is described as supporting the purchasing process.
-  - Removed the separate 60% card from the business challenge column.
+- Existing portfolio section title changed to:
+  - ES: Proyectos de clientes
+  - EN: Client projects
+- Existing personal portfolio subsection title changed to:
+  - ES: Proyectos personales
+  - EN: Personal projects
+- No DOM restructuring was applied.
+- Language routing and CV links were preserved.
+
+## Files
+
+- index.html
+- cv.html
+- assets/

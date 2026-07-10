@@ -610,6 +610,101 @@
   }
 }
 
+
+    .personal-portfolio {
+      margin-top: 34px;
+      padding-top: 30px;
+      border-top: 1px solid var(--line);
+    }
+    .personal-portfolio-head {
+      margin-bottom: 20px;
+      max-width: 900px;
+    }
+    .personal-portfolio-head h3 {
+      font-size: clamp(28px, 4vw, 44px);
+      margin-bottom: 10px;
+      letter-spacing: -0.04em;
+    }
+    .personal-portfolio-head p {
+      color: var(--muted);
+      line-height: 1.7;
+      margin: 0;
+    }
+    .repo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: var(--gap);
+      margin-top: 20px;
+    }
+    .repo-card {
+      padding: 22px;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.055);
+      min-height: 100%;
+    }
+    .repo-card h4 {
+      margin: 0 0 10px;
+      color: var(--text);
+      font-size: 19px;
+      letter-spacing: -0.02em;
+    }
+    .repo-card p {
+      color: var(--muted);
+      line-height: 1.6;
+      margin: 0 0 14px;
+    }
+    .repo-card .project-tags {
+      margin-top: 14px;
+    }
+    .embed-card {
+      margin-top: 22px;
+      padding: 22px;
+      border-radius: 22px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.055);
+    }
+    .embed-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 18px;
+      margin-bottom: 16px;
+    }
+    .embed-card-header h4 {
+      margin: 0 0 6px;
+      color: var(--text);
+      font-size: 22px;
+    }
+    .embed-card-header p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.6;
+      max-width: 760px;
+    }
+    .databricks-embed {
+      width: 100%;
+      height: 600px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 18px;
+      overflow: hidden;
+      background: rgba(0,0,0,.18);
+    }
+    .databricks-embed iframe {
+      width: 100%;
+      height: 600px;
+      border: 0;
+      display: block;
+      border-radius: 18px;
+    }
+    @media (max-width: 1080px) {
+      .repo-grid { grid-template-columns: 1fr; }
+      .embed-card-header { flex-direction: column; }
+    }
+    @media (max-width: 760px) {
+      .databricks-embed, .databricks-embed iframe { height: 520px; }
+    }
+
     .portfolio-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1214,8 +1309,8 @@
         <div class="container">
           <div class="section-head">
             <div>
-              <h2>Proyectos y dashboards</h2>
-              <p>Casos y proyectos seleccionados que muestran modernización de plataformas de datos, arquitectura Lakehouse, integración, analítica aplicada, dashboards y procesamiento batch/streaming.</p>
+              <h2>Proyectos de clientes</h2>
+              <p>Casos de éxito seleccionados de clientes, enfocados en modernización de plataformas de datos, analítica aplicada, data engineering para data science, forecasting y optimización de procesos.</p>
             </div>
           </div>
           <div class="portfolio-grid">
@@ -1385,6 +1480,62 @@
               </div>
             </article>
           </div>
+
+
+          <div class="personal-portfolio">
+            <div class="personal-portfolio-head">
+              <h3>Proyectos personales</h3>
+              <p>Dashboards, repositorios y laboratorios técnicos propios donde aplico lakehouse, APIs, datos públicos, streaming, BI, data science y visualización.</p>
+            </div>
+
+            <div class="embed-card">
+              <div class="embed-card-header">
+                <div>
+                  <div class="project-meta">Databricks dashboard · Open-Meteo Lakehouse</div>
+                  <h4>openmeteo-databricks-pipeline</h4>
+                  <p>Pipeline lakehouse con datos meteorológicos de Open-Meteo, procesamiento en Databricks y visualización embebida para explorar métricas climáticas. El proyecto muestra ingesta desde API, transformación, modelado analítico y consumo en dashboard.</p>
+                </div>
+                <div class="project-actions">
+                  <a class="btn btn-secondary" href="https://github.com/jquesada92/openmeteo-databricks-pipeline" target="_blank" rel="noopener noreferrer">Ver repo</a>
+                </div>
+              </div>
+              <div class="databricks-embed" aria-label="Databricks dashboard Open-Meteo">
+                <iframe
+                  src="https://dbc-f88938f0-02c4.cloud.databricks.com/embed/dashboardsv3/01f169bd287d107980e1ddecf126e9b3?o=138626662718526"
+                  width="100%"
+                  height="600"
+                  frameborder="0">
+                </iframe>
+              </div>
+            </div>
+
+            <div class="repo-grid">
+              <article class="repo-card">
+                <div class="project-meta">Public data · Contraloría Panamá</div>
+                <h4>databricks-lakeflow-gov-panama</h4>
+                <p>Proyecto con datos públicos de planilla del Gobierno Central de Panamá, procesados con Databricks Lakeflow, capas Bronze/Silver, controles de calidad y dashboard en Power BI.</p>
+                <div class="project-tags"><span>Databricks</span><span>Lakeflow</span><span>PySpark</span><span>Power BI</span><span>Public Data</span></div>
+                <div class="project-actions"><a class="btn btn-secondary" href="https://github.com/jquesada92/databricks-lakeflow-gov-panama" target="_blank" rel="noopener noreferrer">Ver repo</a></div>
+              </article>
+
+              <article class="repo-card">
+                <div class="project-meta">Streaming · Observabilidad local</div>
+                <h4>pyspark-strctured-streaming</h4>
+                <p>Demo de procesamiento streaming con PySpark, generación de datos dummy y visualización para explicar micro-batch, agregaciones y monitoreo de flujos.</p>
+                <div class="project-tags"><span>PySpark</span><span>Structured Streaming</span><span>Dash</span><span>Plotly</span></div>
+                <div class="project-actions"><a class="btn btn-secondary" href="https://github.com/jquesada92/pyspark-strctured-streaming" target="_blank" rel="noopener noreferrer">Ver repo</a></div>
+              </article>
+
+              <article class="repo-card">
+                <div class="project-meta">Data Science · R</div>
+                <h4>House-Pricing-R-Data-Science</h4>
+                <p>Proyecto de data science en R para explorar, limpiar y modelar datos de precios de viviendas, con enfoque en análisis exploratorio, preparación de variables y modelado predictivo.</p>
+                <div class="project-tags"><span>R</span><span>Data Science</span><span>EDA</span><span>Predictive Modeling</span></div>
+                <div class="project-actions"><a class="btn btn-secondary" href="https://github.com/jquesada92/House-Pricing-R-Data-Science" target="_blank" rel="noopener noreferrer">Ver repo</a></div>
+              </article>
+            </div>
+          </div>
+
         </div>
       </section>
 
@@ -1528,8 +1679,8 @@
         <div class="container">
           <div class="section-head">
             <div>
-              <h2>Projects and dashboards</h2>
-              <p>Selected cases and projects showing data platform modernization, Lakehouse architecture, integration, applied analytics, dashboards and batch/streaming processing.</p>
+              <h2>Client projects</h2>
+              <p>Selected client success cases focused on data platform modernization, applied analytics, data engineering for data science, forecasting and process optimization.</p>
             </div>
           </div>
           <div class="portfolio-grid">
@@ -1699,6 +1850,62 @@
               </div>
             </article>
           </div>
+
+
+          <div class="personal-portfolio">
+            <div class="personal-portfolio-head">
+              <h3>Personal projects</h3>
+              <p>Dashboards, repositories and technical labs where I apply lakehouse, APIs, public data, streaming, BI, data science and visualization.</p>
+            </div>
+
+            <div class="embed-card">
+              <div class="embed-card-header">
+                <div>
+                  <div class="project-meta">Databricks dashboard · Open-Meteo Lakehouse</div>
+                  <h4>openmeteo-databricks-pipeline</h4>
+                  <p>Lakehouse pipeline using Open-Meteo weather data, Databricks processing and an embedded dashboard to explore climate metrics. The project demonstrates API ingestion, transformation, analytical modeling and dashboard consumption.</p>
+                </div>
+                <div class="project-actions">
+                  <a class="btn btn-secondary" href="https://github.com/jquesada92/openmeteo-databricks-pipeline" target="_blank" rel="noopener noreferrer">View repo</a>
+                </div>
+              </div>
+              <div class="databricks-embed" aria-label="Databricks dashboard Open-Meteo">
+                <iframe
+                  src="https://dbc-f88938f0-02c4.cloud.databricks.com/embed/dashboardsv3/01f169bd287d107980e1ddecf126e9b3?o=138626662718526"
+                  width="100%"
+                  height="600"
+                  frameborder="0">
+                </iframe>
+              </div>
+            </div>
+
+            <div class="repo-grid">
+              <article class="repo-card">
+                <div class="project-meta">Public data · Panama Contraloría</div>
+                <h4>databricks-lakeflow-gov-panama</h4>
+                <p>Project using public payroll data from Panama’s Central Government, processed with Databricks Lakeflow, Bronze/Silver layers, quality controls and a Power BI dashboard.</p>
+                <div class="project-tags"><span>Databricks</span><span>Lakeflow</span><span>PySpark</span><span>Power BI</span><span>Public Data</span></div>
+                <div class="project-actions"><a class="btn btn-secondary" href="https://github.com/jquesada92/databricks-lakeflow-gov-panama" target="_blank" rel="noopener noreferrer">View repo</a></div>
+              </article>
+
+              <article class="repo-card">
+                <div class="project-meta">Streaming · Local observability</div>
+                <h4>pyspark-strctured-streaming</h4>
+                <p>Streaming processing demo with PySpark, dummy data generation and visualization to explain micro-batches, aggregations and flow monitoring concepts.</p>
+                <div class="project-tags"><span>PySpark</span><span>Structured Streaming</span><span>Dash</span><span>Plotly</span></div>
+                <div class="project-actions"><a class="btn btn-secondary" href="https://github.com/jquesada92/pyspark-strctured-streaming" target="_blank" rel="noopener noreferrer">View repo</a></div>
+              </article>
+
+              <article class="repo-card">
+                <div class="project-meta">Data Science · R</div>
+                <h4>House-Pricing-R-Data-Science</h4>
+                <p>R data science project to explore, clean and model housing price data, focused on exploratory analysis, variable preparation and predictive modeling.</p>
+                <div class="project-tags"><span>R</span><span>Data Science</span><span>EDA</span><span>Predictive Modeling</span></div>
+                <div class="project-actions"><a class="btn btn-secondary" href="https://github.com/jquesada92/House-Pricing-R-Data-Science" target="_blank" rel="noopener noreferrer">View repo</a></div>
+              </article>
+            </div>
+          </div>
+
         </div>
       </section>
 
@@ -1734,7 +1941,7 @@
       es: {
         navServices: 'Servicios',
         navEducation: 'Estudios',
-        navPortfolio: 'Portafolio',
+        navPortfolio: 'Proyectos',
         navCV: 'CV',
         navContact: 'Contacto',
         anchors: {
@@ -1747,7 +1954,7 @@
       en: {
         navServices: 'Services',
         navEducation: 'Education',
-        navPortfolio: 'Portfolio',
+        navPortfolio: 'Projects',
         navCV: 'CV',
         navContact: 'Contact',
         anchors: {
@@ -1827,10 +2034,5 @@
     if (year) year.textContent = new Date().getFullYear();
   })();
 </script>
-<!-- Cloudflare Web Analytics -->
- <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "d2363e21368244a18340fe04da64f5e0"}'>
-  
- </script>
- <!-- End Cloudflare Web Analytics -->
 </body>
 </html>
