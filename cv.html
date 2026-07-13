@@ -282,6 +282,66 @@
       color: #243047;
     }
 
+
+.cert-columns {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.cert-group {
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 14px 16px;
+  break-inside: avoid;
+}
+
+.cert-group h3 {
+  margin: 0 0 8px;
+  color: var(--accent);
+  font-size: 14px;
+  letter-spacing: -0.01em;
+}
+
+.cert-group ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.cert-group li {
+  margin: 5px 0;
+  color: var(--muted);
+}
+
+@media (max-width: 780px) {
+  .cert-columns {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media print {
+  .cert-columns {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .cert-group {
+    padding: 9px 10px;
+  }
+
+  .cert-group h3 {
+    font-size: 11.5px;
+    margin-bottom: 5px;
+  }
+
+  .cert-group li {
+    font-size: 10.5px;
+    margin: 3px 0;
+  }
+}
+
     .lang-content { display: none; }
     .lang-content.active { display: block; }
 
@@ -408,6 +468,7 @@
             <div>Panama City, Panama</div>
             <div>+507 6780-6830</div>
             <div><a href="mailto:jaquesada92@outlook.com">jaquesada92@outlook.com</a></div>
+            <div><a href="https://www.linkedin.com/in/jquesada92/">LinkedIn</a> · <a href="https://github.com/jquesada92">GitHub</a></div>
           </div>
         </header>
 
@@ -424,19 +485,33 @@
             <div class="skill-value">Power BI, Tableau, Looker, Plotly, Matplotlib, Seaborn</div>
           </div>
         </section>
-
-        <section>
-          <h2>Certificaciones</h2>
-          <ul>
-            <li>Databricks Certified Data Engineer Associate</li>
-            <li>Databricks Certified Associate Developer for Apache Spark</li>
-            <li>Microsoft Certified: Fabric Analytics Engineer Associate (DP-600)</li>
-            <li>Microsoft Certified: Fabric Data Engineer Associate (DP-700)</li>
-            <li>Microsoft Certified: Azure Data Fundamentals</li>
-            <li>IBM Data Engineering Professional Certificate</li>
-            <li>IBM Data Science Professional Certificate</li>
-          </ul>
-        </section>
+<section>
+  <h2>Certificaciones</h2>
+  <div class="cert-columns">
+    <div class="cert-group">
+      <h3>Microsoft / Azure &amp; Fabric</h3>
+      <ul>
+        <li>Microsoft Certified: Fabric Analytics Engineer Associate (DP-600)</li>
+        <li>Microsoft Certified: Fabric Data Engineer Associate (DP-700)</li>
+        <li>Microsoft Certified: Azure Data Fundamentals</li>
+      </ul>
+    </div>
+    <div class="cert-group">
+      <h3>Databricks</h3>
+      <ul>
+        <li>Databricks Certified Data Engineer Associate</li>
+        <li>Databricks Certified Associate Developer for Apache Spark</li>
+      </ul>
+    </div>
+    <div class="cert-group">
+      <h3>IBM</h3>
+      <ul>
+        <li>IBM Data Engineering Professional Certificate</li>
+        <li>IBM Data Science Professional Certificate</li>
+      </ul>
+    </div>
+  </div>
+</section>
         <section>
   <h2>Experiencia profesional</h2>
 
@@ -572,19 +647,33 @@
             <div class="skill-value">Power BI, Tableau, Looker, Plotly, Matplotlib, Seaborn</div>
           </div>
         </section>
-
-        <section>
-          <h2>Certifications</h2>
-          <ul>
-            <li>Databricks Certified Data Engineer Associate</li>
-            <li>Databricks Certified Associate Developer for Apache Spark</li>
-            <li>Microsoft Certified: Fabric Analytics Engineer Associate (DP-600)</li>
-            <li>Microsoft Certified: Fabric Data Engineer Associate (DP-700)</li>
-            <li>Microsoft Certified: Azure Data Fundamentals</li>
-            <li>IBM Data Engineering Professional Certificate</li>
-            <li>IBM Data Science Professional Certificate</li>
-          </ul>
-        </section>
+<section>
+  <h2>Certifications</h2>
+  <div class="cert-columns">
+    <div class="cert-group">
+      <h3>Microsoft / Azure &amp; Fabric</h3>
+      <ul>
+        <li>Microsoft Certified: Fabric Analytics Engineer Associate (DP-600)</li>
+        <li>Microsoft Certified: Fabric Data Engineer Associate (DP-700)</li>
+        <li>Microsoft Certified: Azure Data Fundamentals</li>
+      </ul>
+    </div>
+    <div class="cert-group">
+      <h3>Databricks</h3>
+      <ul>
+        <li>Databricks Certified Data Engineer Associate</li>
+        <li>Databricks Certified Associate Developer for Apache Spark</li>
+      </ul>
+    </div>
+    <div class="cert-group">
+      <h3>IBM</h3>
+      <ul>
+        <li>IBM Data Engineering Professional Certificate</li>
+        <li>IBM Data Science Professional Certificate</li>
+      </ul>
+    </div>
+  </div>
+</section>
         <section>
   <h2>Professional experience</h2>
 
