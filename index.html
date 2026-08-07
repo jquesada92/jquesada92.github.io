@@ -1221,6 +1221,7 @@
 }
 
 </style>
+<link href="assets/recommendations.css" rel="stylesheet"/>
 </head>
 <body>
 <header>
@@ -1243,7 +1244,9 @@
 <nav aria-label="Primary navigation" class="nav-links">
 <a data-i18n="navServices" href="#services">Servicios</a>
 <a data-i18n="navEducation" href="#education">Estudios</a>
-<a data-i18n="navClientProjects" href="#portfolio">Proyectos de clientes</a><a data-i18n="navPersonalProjects" data-personal-link="" href="portfolio.html?lang=es">Portfolio</a>
+<a data-i18n="navClientProjects" href="#portfolio">Proyectos de clientes</a>
+<a data-i18n="navFeedback" href="#feedback">Feedback</a>
+<a data-i18n="navPersonalProjects" data-personal-link="" href="portfolio.html?lang=es">Portfolio</a>
 <a data-cv-link="" data-i18n="navCV" href="cv.html?lang=es">CV</a>
 <a data-i18n="navContact" href="#contact">Contacto</a>
 </nav>
@@ -1488,6 +1491,17 @@
 <span class="chip">Python</span><span class="chip">AutoTS</span><span class="chip">AWS Glue</span><span class="chip">Looker</span><span class="chip">Forecasting</span><span class="chip">Inventory Optimization</span><span class="chip">Product Categorization</span><span class="chip">Demand Planning</span>
 </div>
 </article></div>
+</div>
+</section>
+<section id="feedback">
+<div class="container">
+<div class="section-head">
+<div>
+<h2>Feedback recibido</h2>
+<p>Lo que clientes y líderes con quienes he trabajado destacan sobre mi capacidad para convertir problemas complejos en soluciones de datos prácticas, rápidas y confiables.</p>
+</div>
+</div>
+<div class="feedback-grid" data-feedback-lang="es" id="feedback-grid-es"></div>
 </div>
 </section>
 <section id="contact">
@@ -1738,6 +1752,17 @@
 </article></div>
 </div>
 </section>
+<section id="feedback-en">
+<div class="container">
+<div class="section-head">
+<div>
+<h2>Client feedback</h2>
+<p>What clients and leaders I have worked with say about my ability to turn complex business and data challenges into practical, reliable solutions.</p>
+</div>
+</div>
+<div class="feedback-grid" data-feedback-lang="en" id="feedback-grid-en"></div>
+</div>
+</section>
 <section id="contact-en">
 <div class="container">
 <div class="cta">
@@ -1769,6 +1794,7 @@
         navServices: 'Servicios',
         navEducation: 'Estudios',
         navClientProjects: 'Proyectos de clientes',
+        navFeedback: 'Feedback',
         navPersonalProjects: 'Portfolio',
         navCV: 'CV',
         navContact: 'Contacto',
@@ -1776,6 +1802,7 @@
           navServices: '#services',
           navEducation: '#education',
           navClientProjects: '#portfolio',
+          navFeedback: '#feedback',
           navContact: '#contact'
         }
       },
@@ -1783,6 +1810,7 @@
         navServices: 'Services',
         navEducation: 'Education',
         navClientProjects: 'Client projects',
+        navFeedback: 'Feedback',
         navPersonalProjects: 'Portfolio',
         navCV: 'CV',
         navContact: 'Contact',
@@ -1790,6 +1818,7 @@
           navServices: '#services-en',
           navEducation: '#education-en',
           navClientProjects: '#portfolio-en',
+          navFeedback: '#feedback-en',
           navContact: '#contact-en'
         }
       }
@@ -1870,5 +1899,6 @@
     if (year) year.textContent = new Date().getFullYear();
   })();
 </script>
+<script src="assets/recommendations.js"></script>
 </body>
 </html>
