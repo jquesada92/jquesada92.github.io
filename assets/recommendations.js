@@ -60,23 +60,29 @@
     return labels[lang].client + ' · ' + formatted;
   }
 
-  function buildCard(item, lang) {
-    const article = createElement('article', 'feedback-card');
-
-    const author = createElement('div', 'feedback-author');
+  function createAvatar(item, lang) {
     const avatarLink = createElement('a', 'feedback-avatar-wrap');
     avatarLink.href = item.author_profile_url || '#';
     avatarLink.target = '_blank';
     avatarLink.rel = 'noopener noreferrer';
-    avatarLink.setAttribute('aria-label', labels[lang].profile + ': ' + (item.author_name || ''));
+    avatarLink.setAttribute(
+      'aria-label',
+      labels[lang].profile + ': ' + (item.author_name || '')
+    );
 
-    const fallback = createElement('span', 'feedback-initials', initials(item.author_name));
+    const fallback = createElement(
+      'span',
+      'feedback-initials',
+      initials(item.author_name)
+    );
     avatarLink.appendChild(fallback);
 
     if (item.profile_image_url) {
       const image = createElement('img', 'feedback-avatar');
       image.src = item.profile_image_url;
-      image.alt = item.author_name ? item.author_name + ' profile photo' : 'LinkedIn profile photo';
+      image.alt = item.author_name
+        ? item.author_name + ' profile photo'
+        : 'LinkedIn profile photo';
       image.loading = 'lazy';
       image.referrerPolicy = 'no-referrer';
       image.addEventListener('load', function () {
@@ -89,32 +95,59 @@
       avatarLink.appendChild(image);
     }
 
-    const details = createElement('div', 'feedback-author-details');
-    const nameRow = createElement('div', 'feedback-name-row');
+    return avatarLink;
+  }
+
+  function buildCard(item, lang) {
+    const article = createElement('article', 'feedback-card');
+
+    const profile = createElement('div', 'feedback-profile');
+    const identity = createElement('div', 'feedback-identity');
+    identity.appendChild(createAvatar(item, lang));
+
+    const identityText = createElement('div', 'feedback-identity-text');
     const nameLink = createElement('a', 'feedback-name-link');
     nameLink.href = item.author_profile_url || '#';
     nameLink.target = '_blank';
     nameLink.rel = 'noopener noreferrer';
-    nameLink.appendChild(createElement('strong', '', item.author_name || 'LinkedIn member'));
-    nameRow.appendChild(nameLink);
+    nameLink.appendChild(
+      createElement('strong', '', item.author_name || 'LinkedIn member')
+    );
+    identityText.appendChild(nameLink);
+    identity.appendChild(identityText);
+    profile.appendChild(identity);
 
-    const profileLink = createElement('a', 'feedback-profile-link', labels[lang].profile + ' ↗');
+    profile.appendChild(
+      createElement('span', 'feedback-author-role', item.headline || '')
+    );
+    profile.appendChild(
+      createElement(
+        'span',
+        'feedback-relationship',
+        formatRelationship(item, lang)
+      )
+    );
+
+    const profileLink = createElement(
+      'a',
+      'feedback-profile-link',
+      labels[lang].profile + ' ↗'
+    );
     profileLink.href = item.author_profile_url || '#';
     profileLink.target = '_blank';
     profileLink.rel = 'noopener noreferrer';
-    nameRow.appendChild(profileLink);
+    profile.appendChild(profileLink);
 
-    details.appendChild(nameRow);
-    details.appendChild(createElement('span', 'feedback-author-role', item.headline || ''));
-    details.appendChild(createElement('span', 'feedback-relationship', formatRelationship(item, lang)));
+    const quoteWrap = createElement('div', 'feedback-content');
+    const quote = createElement(
+      'blockquote',
+      'feedback-quote',
+      item.recommendation_text || ''
+    );
+    quoteWrap.appendChild(quote);
 
-    author.appendChild(avatarLink);
-    author.appendChild(details);
-    article.appendChild(author);
-
-    const quote = createElement('blockquote', 'feedback-quote', item.recommendation_text || '');
-    article.appendChild(quote);
-
+    article.appendChild(profile);
+    article.appendChild(quoteWrap);
     return article;
   }
 
@@ -135,11 +168,15 @@
   }
 
   async function loadRecommendations() {
-    const containers = Array.from(document.querySelectorAll('[data-feedback-lang]'));
+    const containers = Array.from(
+      document.querySelectorAll('[data-feedback-lang]')
+    );
     if (!containers.length) return;
 
     containers.forEach(container => {
-      const lang = container.getAttribute('data-feedback-lang') === 'en' ? 'en' : 'es';
+      const lang = container.getAttribute('data-feedback-lang') === 'en'
+        ? 'en'
+        : 'es';
       setStatus(container, labels[lang].loading);
     });
 
@@ -153,20 +190,26 @@
         : [];
 
       containers.forEach(container => {
-        const lang = container.getAttribute('data-feedback-lang') === 'en' ? 'en' : 'es';
+        const lang = container.getAttribute('data-feedback-lang') === 'en'
+          ? 'en'
+          : 'es';
         render(container, recommendations, lang);
       });
     } catch (error) {
       console.error('Could not load LinkedIn recommendations:', error);
       containers.forEach(container => {
-        const lang = container.getAttribute('data-feedback-lang') === 'en' ? 'en' : 'es';
+        const lang = container.getAttribute('data-feedback-lang') === 'en'
+          ? 'en'
+          : 'es';
         setStatus(container, labels[lang].error);
       });
     }
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', loadRecommendations, { once: true });
+    document.addEventListener('DOMContentLoaded', loadRecommendations, {
+      once: true
+    });
   } else {
     loadRecommendations();
   }
