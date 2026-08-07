@@ -1,66 +1,41 @@
 /* Client feedback / recommendations */
 .feedback-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: var(--gap);
+  grid-template-columns: 1fr;
+  gap: 18px;
   align-items: stretch;
+  max-width: 980px;
 }
 
 .feedback-card {
   position: relative;
   display: flex;
   flex-direction: column;
-  min-height: 100%;
-  padding: 26px;
+  padding: 22px 24px;
   border: 1px solid var(--line);
-  border-radius: var(--radius);
+  border-radius: 20px;
   background:
-    radial-gradient(circle at top right, rgba(82,213,255,.10), transparent 16rem),
-    linear-gradient(180deg, rgba(255,255,255,.09), rgba(255,255,255,.045));
-  box-shadow: var(--shadow);
+    radial-gradient(circle at top right, rgba(82,213,255,.07), transparent 18rem),
+    linear-gradient(180deg, rgba(255,255,255,.075), rgba(255,255,255,.04));
+  box-shadow: 0 14px 36px rgba(0,0,0,.20);
   overflow: hidden;
-}
-
-.feedback-card::before {
-  content: "“";
-  position: absolute;
-  top: 6px;
-  right: 18px;
-  color: rgba(82,213,255,.20);
-  font-family: Georgia, serif;
-  font-size: 92px;
-  line-height: 1;
-  pointer-events: none;
-}
-
-.feedback-quote {
-  position: relative;
-  z-index: 1;
-  margin: 0 0 24px;
-  color: var(--text);
-  font-size: 15px;
-  line-height: 1.7;
-  white-space: pre-line;
 }
 
 .feedback-author {
   display: grid;
-  grid-template-columns: 58px minmax(0, 1fr);
+  grid-template-columns: 56px minmax(0, 1fr);
   gap: 14px;
-  align-items: center;
-  margin-top: auto;
-  padding-top: 20px;
-  border-top: 1px solid rgba(255,255,255,.10);
+  align-items: start;
 }
 
 .feedback-avatar-wrap {
   position: relative;
-  width: 58px;
-  height: 58px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   overflow: hidden;
-  border: 1px solid rgba(82,213,255,.35);
-  background: rgba(82,213,255,.12);
+  border: 1px solid rgba(82,213,255,.30);
+  background: rgba(82,213,255,.11);
 }
 
 .feedback-avatar {
@@ -76,41 +51,80 @@
   display: grid;
   place-items: center;
   color: var(--accent);
+  font-size: 14px;
   font-weight: 900;
   letter-spacing: .02em;
 }
 
+.feedback-author-details {
+  min-width: 0;
+}
+
+.feedback-name-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 2px;
+}
+
+.feedback-name-link {
+  min-width: 0;
+}
+
 .feedback-author strong {
   display: block;
-  margin-bottom: 3px;
   color: var(--text);
-  font-size: 17px;
+  font-size: 16px;
+  line-height: 1.25;
 }
 
 .feedback-author-role,
 .feedback-relationship {
   display: block;
   color: var(--muted);
-  font-size: 13px;
+  font-size: 12.5px;
   line-height: 1.45;
 }
 
 .feedback-profile-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  margin-top: 8px;
+  flex: 0 0 auto;
   color: var(--accent);
-  font-size: 13px;
-  font-weight: 800;
+  font-size: 12px;
+  font-weight: 750;
+  white-space: nowrap;
 }
 
-.feedback-profile-link:hover {
+.feedback-profile-link:hover,
+.feedback-name-link:hover {
   text-decoration: underline;
 }
 
+.feedback-quote {
+  position: relative;
+  margin: 18px 0 0;
+  padding: 18px 0 0;
+  border-top: 1px solid rgba(255,255,255,.10);
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 450;
+  line-height: 1.62;
+  white-space: pre-line;
+}
+
+.feedback-quote::before {
+  content: "“";
+  position: absolute;
+  top: 8px;
+  right: 2px;
+  color: rgba(82,213,255,.18);
+  font-family: Georgia, serif;
+  font-size: 42px;
+  line-height: 1;
+  pointer-events: none;
+}
+
 .feedback-status {
-  grid-column: 1 / -1;
   padding: 22px;
   border: 1px dashed var(--line);
   border-radius: 18px;
@@ -118,9 +132,35 @@
   text-align: center;
 }
 
-@media (max-width: 960px) {
-  .feedback-grid {
-    grid-template-columns: 1fr;
+@media (max-width: 640px) {
+  .feedback-card {
+    padding: 18px;
+  }
+
+  .feedback-author {
+    grid-template-columns: 48px minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .feedback-avatar-wrap {
+    width: 48px;
+    height: 48px;
+  }
+
+  .feedback-name-row {
+    display: block;
+  }
+
+  .feedback-profile-link {
+    display: inline-flex;
+    margin-top: 6px;
+  }
+
+  .feedback-quote {
+    margin-top: 15px;
+    padding-top: 15px;
+    font-size: 13.5px;
+    line-height: 1.6;
   }
 }
 
