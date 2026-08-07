@@ -1,3 +1,4 @@
+# One-time initializer for the bilingual client feedback section.
 name: Add feedback section
 
 on:
