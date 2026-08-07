@@ -1,0 +1,143 @@
+/* Client feedback / recommendations */
+.feedback-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--gap);
+  align-items: stretch;
+}
+
+.feedback-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background:
+    radial-gradient(circle at top right, rgba(82,213,255,.10), transparent 16rem),
+    linear-gradient(180deg, rgba(255,255,255,.09), rgba(255,255,255,.045));
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.feedback-card::before {
+  content: "“";
+  position: absolute;
+  top: 6px;
+  right: 18px;
+  color: rgba(82,213,255,.20);
+  font-family: Georgia, serif;
+  font-size: 92px;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.feedback-quote {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 24px;
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.7;
+  white-space: pre-line;
+}
+
+.feedback-author {
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr);
+  gap: 14px;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,.10);
+}
+
+.feedback-avatar-wrap {
+  position: relative;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid rgba(82,213,255,.35);
+  background: rgba(82,213,255,.12);
+}
+
+.feedback-avatar {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.feedback-initials {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: var(--accent);
+  font-weight: 900;
+  letter-spacing: .02em;
+}
+
+.feedback-author strong {
+  display: block;
+  margin-bottom: 3px;
+  color: var(--text);
+  font-size: 17px;
+}
+
+.feedback-author-role,
+.feedback-relationship {
+  display: block;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.feedback-profile-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.feedback-profile-link:hover {
+  text-decoration: underline;
+}
+
+.feedback-status {
+  grid-column: 1 / -1;
+  padding: 22px;
+  border: 1px dashed var(--line);
+  border-radius: 18px;
+  color: var(--muted);
+  text-align: center;
+}
+
+@media (max-width: 960px) {
+  .feedback-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media print {
+  .feedback-card {
+    border: 1px solid #ddd;
+    background: #fff;
+    box-shadow: none;
+  }
+
+  .feedback-quote,
+  .feedback-author strong {
+    color: #111;
+  }
+
+  .feedback-author-role,
+  .feedback-relationship {
+    color: #333;
+  }
+}
