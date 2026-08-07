@@ -27,15 +27,6 @@
     return element;
   }
 
-  function initials(name) {
-    return String(name || '')
-      .split(/\s+/)
-      .filter(Boolean)
-      .slice(0, 2)
-      .map(part => part.charAt(0).toUpperCase())
-      .join('') || 'L';
-  }
-
   function extractDate(relationship) {
     const match = String(relationship || '').match(
       /^([A-Za-z]+\s+\d{1,2},\s+\d{4})/
@@ -72,13 +63,6 @@
       labels[lang].profile + ': ' + (item.author_name || '')
     );
 
-    const fallback = createElement(
-      'span',
-      'feedback-initials',
-      initials(item.author_name)
-    );
-    avatarLink.appendChild(fallback);
-
     if (item.profile_image_url) {
       const image = createElement('img', 'feedback-avatar');
       image.src = item.profile_image_url;
@@ -87,12 +71,8 @@
         : 'LinkedIn profile photo';
       image.loading = 'lazy';
       image.referrerPolicy = 'no-referrer';
-      image.addEventListener('load', function () {
-        fallback.hidden = true;
-      });
       image.addEventListener('error', function () {
         image.remove();
-        fallback.hidden = false;
       });
       avatarLink.appendChild(image);
     }
