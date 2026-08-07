@@ -1,0 +1,55 @@
+{
+  "schema_version": 2,
+  "source": "LinkedIn HTML snapshot",
+  "total_active": 3,
+  "recommendations": [
+    {
+      "id": "linkedin-anthony-loh-59b096a",
+      "recommendation_urn": "urn:li:fsd_recommendation:7491191836284219393",
+      "source": "LinkedIn",
+      "author_name": "Anthony Loh",
+      "author_profile_url": "https://www.linkedin.com/in/anthony-loh-59b096a",
+      "headline": "Analytics Engineer at Burton Snowboards",
+      "relationship": "August 6, 2026, Anthony was José’s client",
+      "recommendation_text": "I had the pleasure of working with Jose at Burton, where he served as a data engineer consultant on our team. Jose consistently impressed me with how fast he moved on Databricks and Python projects, turning around complex data engineering work in a fraction of the time you'd expect.\n\nWhat stood out most was his problem-solving ability — he had a knack for cutting through complicated technical challenges and finding practical solutions quickly, without cutting corners. That speed, paired with sharp instincts for where the real issue was, made him one of the most efficient consultants I've worked with.\n\nAny team would be lucky to have Jose's speed and problem-solving skills on a data engineering project. I recommend him without hesitation.",
+      "profile_image_url": "https://media.licdn.com/dms/image/v2/C4D03AQHwhfVUbUSxaw/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1619113338024?e=1787788800&v=beta&t=yqcKqUFkkcSoroKkAf89E8f8qPcE-cMKxw-3jTnAUhU",
+      "profile_image_asset_key": "C4D03AQHwhfVUbUSxaw",
+      "profile_image_url_expires_at": "2026-08-27T00:00:00+00:00",
+      "profile_image_local_path": "assets/recommendations/linkedin-anthony-loh-59b096a.jpg",
+      "status": "active",
+      "content_hash": "4375cedeaf5266b115dc467b0d13eb6c7c23cf5056b7382893fbb549eb235bb8"
+    },
+    {
+      "id": "linkedin-louis-hassell-86b75b10a",
+      "recommendation_urn": "urn:li:fsd_recommendation:7363358662590951424",
+      "source": "LinkedIn",
+      "author_name": "Louis Hassell",
+      "author_profile_url": "https://www.linkedin.com/in/louis-hassell-86b75b10a",
+      "headline": "Senior Data Scientist at Corteva",
+      "relationship": "August 18, 2025, Louis was José’s client",
+      "recommendation_text": "Jose was a great engineer to work with!\n\nI was always impressed with his technical acumen as well as his ability to break apart business problems into engineered solutions.\n\nJose frequently produced high quality code bases using both pyspark and regular python. He also worked well with our team helping to walk people through his solutions, providing top notch code reviews, and even presenting some of his work to the broader org.\n\nI'd highly recommend Jose!",
+      "profile_image_url": "https://media.licdn.com/dms/image/v2/C4E03AQGV2PsCh-Qq-w/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1544383783159?e=1787788800&v=beta&t=8uQ5YOROj7O2a53WDRzapEqNXczYi1HAEtJyG7uJzgo",
+      "profile_image_asset_key": "C4E03AQGV2PsCh-Qq-w",
+      "profile_image_url_expires_at": "2026-08-27T00:00:00+00:00",
+      "profile_image_local_path": "assets/recommendations/linkedin-louis-hassell-86b75b10a.jpg",
+      "status": "active",
+      "content_hash": "5baa52f2f4f9ca2ebee7adf2fd098f81eec1acd5b55b04622c4f50b6f5e30344"
+    },
+    {
+      "id": "linkedin-leonardocasavola",
+      "recommendation_urn": "urn:li:fsd_recommendation:685786903",
+      "source": "LinkedIn",
+      "author_name": "Leonardo Casavola",
+      "author_profile_url": "https://www.linkedin.com/in/leonardocasavola",
+      "headline": "Global Procurement Manager at Nestle",
+      "relationship": "October 25, 2022, Leonardo was José’s client",
+      "recommendation_text": "I worked with José for 3 years as his customer. I was at HP Panama and José was on the 3PL team. Not only José consistently delivered excellent results that positively impacted the service leves of the operations, but also he showed great teamwork, soft skills, and willingness to learn. I also recommend José for his can-do attitude and his outstanding IT skills",
+      "profile_image_url": "https://media.licdn.com/dms/image/v2/C4E03AQGtJWMOKCJG1g/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1618374834985?e=1787788800&v=beta&t=fJ8fMUS-APjVJQ75B2FZqP4kYQm1FuOFVY7bHVQiIuA",
+      "profile_image_asset_key": "C4E03AQGtJWMOKCJG1g",
+      "profile_image_url_expires_at": "2026-08-27T00:00:00+00:00",
+      "profile_image_local_path": "assets/recommendations/linkedin-leonardocasavola.jpg",
+      "status": "active",
+      "content_hash": "f6435305441c965a82acd7b73bf28bff5d929564c615d4eae0bb9e203219eb25"
+    }
+  ]
+}
