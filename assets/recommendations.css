@@ -2,32 +2,32 @@
 .feedback-grid {
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: minmax(320px, 1fr);
-  gap: 16px;
+  grid-auto-columns: minmax(290px, 82vw);
+  gap: 12px;
   width: 100%;
   overflow-x: auto;
   overscroll-behavior-inline: contain;
   scroll-snap-type: inline proximity;
-  padding-bottom: 8px;
+  padding-bottom: 6px;
 }
 
 .feedback-card {
   min-width: 0;
   scroll-snap-align: start;
-  padding: 18px 20px;
+  padding: 14px 15px;
   border: 1px solid var(--line);
-  border-radius: 18px;
+  border-radius: 15px;
   background:
-    radial-gradient(circle at top right, rgba(82,213,255,.055), transparent 16rem),
-    linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.038));
-  box-shadow: 0 12px 28px rgba(0,0,0,.16);
+    radial-gradient(circle at top right, rgba(82,213,255,.05), transparent 14rem),
+    linear-gradient(180deg, rgba(255,255,255,.065), rgba(255,255,255,.035));
+  box-shadow: 0 9px 22px rgba(0,0,0,.14);
 }
 
 .feedback-author {
   position: static;
   display: grid;
-  grid-template-columns: 48px minmax(0, 1fr);
-  gap: 12px;
+  grid-template-columns: 40px minmax(0, 1fr);
+  gap: 9px;
   align-items: start;
   margin: 0;
   padding: 0;
@@ -38,12 +38,12 @@
 
 .feedback-avatar-wrap {
   position: relative;
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   overflow: hidden;
-  border: 1px solid rgba(82,213,255,.28);
-  background: rgba(82,213,255,.10);
+  border: 1px solid rgba(82,213,255,.25);
+  background: rgba(82,213,255,.08);
 }
 
 .feedback-avatar {
@@ -51,17 +51,6 @@
   height: 100%;
   display: block;
   object-fit: cover;
-}
-
-.feedback-initials {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  color: var(--accent);
-  font-size: 12px;
-  font-weight: 850;
-  letter-spacing: .02em;
 }
 
 .feedback-author-details,
@@ -72,8 +61,8 @@
 .feedback-name-link strong {
   display: block;
   color: var(--text);
-  font-size: 14.5px;
-  line-height: 1.25;
+  font-size: 13px;
+  line-height: 1.2;
   overflow-wrap: anywhere;
 }
 
@@ -81,12 +70,12 @@
 .feedback-relationship {
   display: block;
   color: var(--muted);
-  font-size: 11.5px;
-  line-height: 1.38;
+  font-size: 10px;
+  line-height: 1.3;
 }
 
 .feedback-author-role {
-  margin-top: 2px;
+  margin-top: 1px;
 }
 
 .feedback-name-link:hover {
@@ -94,41 +83,42 @@
 }
 
 .feedback-quote {
-  margin: 14px 0 0;
+  margin: 10px 0 0;
   padding: 0;
   border: 0;
   color: var(--text);
-  font-size: 12.75px;
+  font-size: 11.5px;
   font-weight: 400;
-  line-height: 1.55;
-  white-space: pre-line;
+  line-height: 1.42;
+  white-space: normal;
+  text-wrap: pretty;
 }
 
 .feedback-status {
-  padding: 20px;
+  padding: 16px;
   border: 1px dashed var(--line);
-  border-radius: 16px;
+  border-radius: 14px;
   color: var(--muted);
-  font-size: 13px;
+  font-size: 12px;
   text-align: center;
 }
 
 .feedback-grid::-webkit-scrollbar {
-  height: 8px;
+  height: 7px;
 }
 
 .feedback-grid::-webkit-scrollbar-track {
-  background: rgba(255,255,255,.035);
+  background: rgba(255,255,255,.03);
   border-radius: 999px;
 }
 
 .feedback-grid::-webkit-scrollbar-thumb {
-  background: rgba(82,213,255,.22);
+  background: rgba(82,213,255,.20);
   border-radius: 999px;
 }
 
-/* Three compact cards in one row on desktop. */
-@media (min-width: 1080px) {
+/* Keep all recommendations in a single compact desktop row. */
+@media (min-width: 900px) {
   .feedback-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     grid-auto-flow: row;
@@ -138,29 +128,29 @@
   }
 }
 
-/* Preserve one horizontal row with swipe/scroll on narrow screens. */
 @media (max-width: 640px) {
   .feedback-grid {
-    grid-auto-columns: minmax(285px, 86vw);
+    grid-auto-columns: minmax(275px, 86vw);
   }
 
   .feedback-card {
-    padding: 16px;
+    padding: 13px;
   }
 
   .feedback-author {
-    grid-template-columns: 44px minmax(0, 1fr);
-    gap: 10px;
+    grid-template-columns: 38px minmax(0, 1fr);
+    gap: 8px;
   }
 
   .feedback-avatar-wrap {
-    width: 44px;
-    height: 44px;
+    width: 38px;
+    height: 38px;
   }
 
   .feedback-quote {
-    margin-top: 12px;
-    font-size: 12.5px;
+    margin-top: 9px;
+    font-size: 11.25px;
+    line-height: 1.4;
   }
 }
 
@@ -171,7 +161,7 @@
   }
 
   .feedback-card {
-    margin-bottom: 14px;
+    margin-bottom: 12px;
     border: 1px solid #ddd;
     background: #fff;
     box-shadow: none;
