@@ -62,8 +62,6 @@
 
   function buildCard(item, lang) {
     const article = createElement('article', 'feedback-card');
-    const quote = createElement('blockquote', 'feedback-quote', item.recommendation_text || '');
-    article.appendChild(quote);
 
     const author = createElement('div', 'feedback-author');
     const avatarLink = createElement('a', 'feedback-avatar-wrap');
@@ -92,24 +90,31 @@
     }
 
     const details = createElement('div', 'feedback-author-details');
+    const nameRow = createElement('div', 'feedback-name-row');
     const nameLink = createElement('a', 'feedback-name-link');
     nameLink.href = item.author_profile_url || '#';
     nameLink.target = '_blank';
     nameLink.rel = 'noopener noreferrer';
     nameLink.appendChild(createElement('strong', '', item.author_name || 'LinkedIn member'));
-    details.appendChild(nameLink);
-    details.appendChild(createElement('span', 'feedback-author-role', item.headline || ''));
-    details.appendChild(createElement('span', 'feedback-relationship', formatRelationship(item, lang)));
+    nameRow.appendChild(nameLink);
 
     const profileLink = createElement('a', 'feedback-profile-link', labels[lang].profile + ' ↗');
     profileLink.href = item.author_profile_url || '#';
     profileLink.target = '_blank';
     profileLink.rel = 'noopener noreferrer';
-    details.appendChild(profileLink);
+    nameRow.appendChild(profileLink);
+
+    details.appendChild(nameRow);
+    details.appendChild(createElement('span', 'feedback-author-role', item.headline || ''));
+    details.appendChild(createElement('span', 'feedback-relationship', formatRelationship(item, lang)));
 
     author.appendChild(avatarLink);
     author.appendChild(details);
     article.appendChild(author);
+
+    const quote = createElement('blockquote', 'feedback-quote', item.recommendation_text || '');
+    article.appendChild(quote);
+
     return article;
   }
 
