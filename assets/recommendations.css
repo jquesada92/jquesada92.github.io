@@ -2,36 +2,44 @@
 .feedback-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 18px;
-  align-items: stretch;
-  max-width: 980px;
+  gap: 16px;
+  width: 100%;
+  max-width: 1080px;
 }
 
 .feedback-card {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  padding: 22px 24px;
+  display: grid;
+  grid-template-columns: minmax(210px, 250px) minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+  padding: 20px 22px;
   border: 1px solid var(--line);
-  border-radius: 20px;
+  border-radius: 18px;
   background:
-    radial-gradient(circle at top right, rgba(82,213,255,.07), transparent 18rem),
-    linear-gradient(180deg, rgba(255,255,255,.075), rgba(255,255,255,.04));
-  box-shadow: 0 14px 36px rgba(0,0,0,.20);
-  overflow: hidden;
+    radial-gradient(circle at top right, rgba(82,213,255,.06), transparent 18rem),
+    linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.04));
+  box-shadow: 0 12px 30px rgba(0,0,0,.18);
 }
 
-.feedback-author {
+.feedback-profile {
+  min-width: 0;
+  padding-right: 22px;
+  border-right: 1px solid rgba(255,255,255,.10);
+}
+
+.feedback-identity {
   display: grid;
-  grid-template-columns: 56px minmax(0, 1fr);
-  gap: 14px;
-  align-items: start;
+  grid-template-columns: 50px minmax(0, 1fr);
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
 .feedback-avatar-wrap {
   position: relative;
-  width: 56px;
-  height: 56px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   overflow: hidden;
   border: 1px solid rgba(82,213,255,.30);
@@ -51,48 +59,42 @@
   display: grid;
   place-items: center;
   color: var(--accent);
-  font-size: 14px;
-  font-weight: 900;
+  font-size: 13px;
+  font-weight: 850;
   letter-spacing: .02em;
 }
 
-.feedback-author-details {
-  min-width: 0;
-}
-
-.feedback-name-row {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 14px;
-  margin-bottom: 2px;
-}
-
+.feedback-identity-text,
 .feedback-name-link {
   min-width: 0;
 }
 
-.feedback-author strong {
+.feedback-name-link strong {
   display: block;
   color: var(--text);
-  font-size: 16px;
-  line-height: 1.25;
+  font-size: 15px;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
 }
 
 .feedback-author-role,
 .feedback-relationship {
   display: block;
   color: var(--muted);
-  font-size: 12.5px;
+  font-size: 11.75px;
   line-height: 1.45;
 }
 
+.feedback-author-role {
+  margin-bottom: 3px;
+}
+
 .feedback-profile-link {
-  flex: 0 0 auto;
+  display: inline-flex;
+  margin-top: 9px;
   color: var(--accent);
-  font-size: 12px;
+  font-size: 11.75px;
   font-weight: 750;
-  white-space: nowrap;
 }
 
 .feedback-profile-link:hover,
@@ -100,67 +102,69 @@
   text-decoration: underline;
 }
 
+.feedback-content {
+  min-width: 0;
+}
+
 .feedback-quote {
   position: relative;
-  margin: 18px 0 0;
-  padding: 18px 0 0;
-  border-top: 1px solid rgba(255,255,255,.10);
+  margin: 0;
+  padding: 0 30px 0 0;
   color: var(--text);
-  font-size: 14px;
-  font-weight: 450;
-  line-height: 1.62;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.58;
   white-space: pre-line;
 }
 
 .feedback-quote::before {
   content: "“";
   position: absolute;
-  top: 8px;
-  right: 2px;
-  color: rgba(82,213,255,.18);
+  top: -10px;
+  right: 0;
+  color: rgba(82,213,255,.17);
   font-family: Georgia, serif;
-  font-size: 42px;
+  font-size: 40px;
   line-height: 1;
   pointer-events: none;
 }
 
 .feedback-status {
-  padding: 22px;
+  padding: 20px;
   border: 1px dashed var(--line);
-  border-radius: 18px;
+  border-radius: 16px;
   color: var(--muted);
+  font-size: 13px;
   text-align: center;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 760px) {
   .feedback-card {
+    grid-template-columns: 1fr;
+    gap: 16px;
     padding: 18px;
   }
 
-  .feedback-author {
-    grid-template-columns: 48px minmax(0, 1fr);
-    gap: 12px;
+  .feedback-profile {
+    padding-right: 0;
+    padding-bottom: 14px;
+    border-right: 0;
+    border-bottom: 1px solid rgba(255,255,255,.10);
+  }
+
+  .feedback-identity {
+    grid-template-columns: 46px minmax(0, 1fr);
   }
 
   .feedback-avatar-wrap {
-    width: 48px;
-    height: 48px;
-  }
-
-  .feedback-name-row {
-    display: block;
-  }
-
-  .feedback-profile-link {
-    display: inline-flex;
-    margin-top: 6px;
+    width: 46px;
+    height: 46px;
   }
 
   .feedback-quote {
-    margin-top: 15px;
-    padding-top: 15px;
-    font-size: 13.5px;
-    line-height: 1.6;
+    padding-right: 24px;
+    font-size: 12.75px;
+    line-height: 1.56;
   }
 }
 
@@ -171,8 +175,12 @@
     box-shadow: none;
   }
 
+  .feedback-profile {
+    border-color: #ddd;
+  }
+
   .feedback-quote,
-  .feedback-author strong {
+  .feedback-name-link strong {
     color: #111;
   }
 
