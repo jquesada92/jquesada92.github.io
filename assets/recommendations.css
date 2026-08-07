@@ -127,6 +127,7 @@
   border-radius: 999px;
 }
 
+/* Three compact cards in one row on desktop. */
 @media (min-width: 1080px) {
   .feedback-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -137,6 +138,7 @@
   }
 }
 
+/* Preserve one horizontal row with swipe/scroll on narrow screens. */
 @media (max-width: 640px) {
   .feedback-grid {
     grid-auto-columns: minmax(285px, 86vw);
