@@ -102,8 +102,8 @@
 
   function buildCard(item, lang) {
     const article = createElement('article', 'feedback-card');
-    const header = createElement('header', 'feedback-author');
-    header.appendChild(createAvatar(item, lang));
+    const author = createElement('div', 'feedback-author');
+    author.appendChild(createAvatar(item, lang));
 
     const details = createElement('div', 'feedback-author-details');
     const nameLink = createElement('a', 'feedback-name-link');
@@ -126,8 +126,8 @@
       )
     );
 
-    header.appendChild(details);
-    article.appendChild(header);
+    author.appendChild(details);
+    article.appendChild(author);
     article.appendChild(
       createElement(
         'blockquote',
