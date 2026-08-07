@@ -37,7 +37,9 @@
   }
 
   function extractDate(relationship) {
-    const match = String(relationship || '').match(/^([A-Za-z]+\s+\d{1,2},\s+\d{4})/);
+    const match = String(relationship || '').match(
+      /^([A-Za-z]+\s+\d{1,2},\s+\d{4})/
+    );
     return match ? match[1] : '';
   }
 
@@ -100,12 +102,10 @@
 
   function buildCard(item, lang) {
     const article = createElement('article', 'feedback-card');
+    const header = createElement('header', 'feedback-author');
+    header.appendChild(createAvatar(item, lang));
 
-    const profile = createElement('div', 'feedback-profile');
-    const identity = createElement('div', 'feedback-identity');
-    identity.appendChild(createAvatar(item, lang));
-
-    const identityText = createElement('div', 'feedback-identity-text');
+    const details = createElement('div', 'feedback-author-details');
     const nameLink = createElement('a', 'feedback-name-link');
     nameLink.href = item.author_profile_url || '#';
     nameLink.target = '_blank';
@@ -113,14 +113,12 @@
     nameLink.appendChild(
       createElement('strong', '', item.author_name || 'LinkedIn member')
     );
-    identityText.appendChild(nameLink);
-    identity.appendChild(identityText);
-    profile.appendChild(identity);
 
-    profile.appendChild(
+    details.appendChild(nameLink);
+    details.appendChild(
       createElement('span', 'feedback-author-role', item.headline || '')
     );
-    profile.appendChild(
+    details.appendChild(
       createElement(
         'span',
         'feedback-relationship',
@@ -128,26 +126,16 @@
       )
     );
 
-    const profileLink = createElement(
-      'a',
-      'feedback-profile-link',
-      labels[lang].profile + ' ↗'
+    header.appendChild(details);
+    article.appendChild(header);
+    article.appendChild(
+      createElement(
+        'blockquote',
+        'feedback-quote',
+        item.recommendation_text || ''
+      )
     );
-    profileLink.href = item.author_profile_url || '#';
-    profileLink.target = '_blank';
-    profileLink.rel = 'noopener noreferrer';
-    profile.appendChild(profileLink);
 
-    const quoteWrap = createElement('div', 'feedback-content');
-    const quote = createElement(
-      'blockquote',
-      'feedback-quote',
-      item.recommendation_text || ''
-    );
-    quoteWrap.appendChild(quote);
-
-    article.appendChild(profile);
-    article.appendChild(quoteWrap);
     return article;
   }
 
