@@ -12,7 +12,9 @@
       "headline": "Sr. Manager, Enterprise Analytics @ Burton Snowboards | Data Platform Modernization | Analytics Strategy | Governance | Business Intelligence",
       "relationship": "August 11, 2026, Jill was José’s client",
       "recommendation_text": "Jose was a fantastic data engineering partner to my team for years, through our entire ERP migration to M3, right up until his engagement ended in March 2026. What stood out most was how dependable he was, he showed up, communicated clearly, and worked through problems with us rather than just for us.\n\nThat reliability mattered most when my team took on several major legacy SAP reports that were critical to go-live but that we hadn't owned before the migration. Jose helped translate business specs into M3 tables and field logic, joining data across many source tables and building out calculated columns, even as we all worked through real unknowns together. He was accessible to us at a time when the rest of data engineering couldn't be, since they were pulled in other directions across the ERP.\n\nJose stayed on as our main point of contact for Enterprise Analytics and our Power BI data, later helping stand up our first Databricks structure and beginning the shift toward Unity Catalog before moving on from the engagement.\n\nI'd recommend Jose to any team looking for a consultant who's both technically capable and genuinely easy to work with.",
-      "profile_image_url": "",
+      "profile_image_url": "https://media.licdn.com/dms/image/v2/C4E03AQHEDA1T85itVA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1517608674686?e=1787788800&v=beta&t=EXD6qXs_Z6DDM5t_z3Hx70MZmB2psHVLw2WuwYJymHY",
+      "profile_image_asset_key": "C4E03AQHEDA1T85itVA",
+      "profile_image_url_expires_at": "2026-08-27T00:00:00+00:00",
       "profile_image_local_path": "",
       "status": "active",
       "content_hash": "e807082586a379f854f42542db81e9d14417ac87c44cfc4e0870e9d859373c86"
