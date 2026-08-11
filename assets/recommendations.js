@@ -82,7 +82,9 @@
       labels[lang].profile + ': ' + (item.author_name || '')
     );
 
-    const imageSource = item.profile_image_local_path || item.profile_image_url;
+    // Use the remote profile image URL as the source of truth.
+    // If it is missing or stops loading, show the person's initials instead.
+    const imageSource = item.profile_image_url;
 
     if (imageSource) {
       const image = createElement('img', 'feedback-avatar');
