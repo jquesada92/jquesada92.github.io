@@ -40,6 +40,8 @@
   position: relative;
   width: 38px;
   height: 38px;
+  display: grid;
+  place-items: center;
   border-radius: 50%;
   overflow: hidden;
   border: 1px solid rgba(82,213,255,.25);
@@ -51,6 +53,17 @@
   height: 100%;
   display: block;
   object-fit: cover;
+}
+
+.feedback-avatar-fallback {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: .02em;
 }
 
 .feedback-author-details,
@@ -117,10 +130,10 @@
   border-radius: 999px;
 }
 
-/* Keep all three recommendations side by side on tablets and desktop. */
+/* Four recommendations render as a readable 2x2 grid on tablets and desktop. */
 @media (min-width: 700px) {
   .feedback-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-auto-flow: row;
     grid-auto-columns: auto;
     align-items: start;
@@ -146,7 +159,7 @@
 @media print {
   .feedback-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     overflow: visible;
   }
 
